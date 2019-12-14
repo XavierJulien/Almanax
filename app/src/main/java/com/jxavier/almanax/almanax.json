@@ -1,0 +1,2559 @@
+{
+  "dofus": {
+    "09-25": {
+      "name": "Franho",
+      "offering": "4 Dent de Crocodaille",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 150 % sur les Crocodailles.",
+      "objectID": "47234"
+    },
+    "09-26": {
+      "name": "Nufrank",
+      "offering": "3 Obsidienne",
+      "bonusTitle": "Bonus : Minerai abondant",
+      "bonusDescription": "Les quantités de Dolomite et d'Obsidienne récupérées par les Mineurs sont augmentées de 175 %.",
+      "objectID": "39112"
+    },
+    "09-27": {
+      "name": "Wasaru",
+      "offering": "4 Poils de Yokai Firefoux",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 125 % dans le donjon des Firefoux.",
+      "objectID": "54204"
+    },
+    "09-28": {
+      "name": "Sad",
+      "offering": "3 Plume du Serpiplume",
+      "bonusTitle": "Bonus : Apparition des étoiles",
+      "bonusDescription": "La vitesse d'apparition des étoiles sur les groupes de monstres est augmentée dans la zone du Labyrinthe du Minotoror : une étoile apparaît toutes les 5 minutes.",
+      "objectID": "53004"
+    },
+    "09-29": {
+      "name": "Dethoama",
+      "offering": "2 Maillot de corps de Barbroussa",
+      "bonusTitle": "Bonus : Challenge supplémentaire",
+      "bonusDescription": "Un challenge supplémentaire est généré contre les monstres présents dans la zone de l'Arche d'Otomaï.",
+      "objectID": "15011"
+    },
+    "09-30": {
+      "name": "Sulp",
+      "offering": "2 Croupion du Bitouf aérien",
+      "bonusTitle": "Bonus : Percepteurs avides",
+      "bonusDescription": "Le butin généré par les Percepteurs est augmenté de 300 % dans le donjon de la Canopée du Kimbo.",
+      "objectID": "15022"
+    },
+    "10-01": {
+      "name": "Moomoo",
+      "offering": "2 Os de Fantôme Maho Firefoux",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 75 % sur les Fantômes de Pandala.",
+      "objectID": "47008"
+    },
+    "10-02": {
+      "name": "Kosal",
+      "offering": "20 Bois de Chêne",
+      "bonusTitle": "Bonus : Bois abondant",
+      "bonusDescription": "Les quantités de Bois de Chêne récupérées par les Bûcherons sont augmentées de 150 %.",
+      "objectID": "38092"
+    },
+    "10-03": {
+      "name": "Chik",
+      "offering": "3 Arc de Boisaille",
+      "bonusTitle": "Bonus : Quête répétable",
+      "bonusDescription": "Une quête répétable spéciale est disponible aujourd'hui près de la fontaine du village d'Amakna. Réalisable à partir du niveau 20, elle est indépendante de la quête d'offrande.",
+      "objectID": "2001"
+    },
+    "10-04": {
+      "name": "Jujü",
+      "offering": "3 Pic du Prespic",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 100 % dans la zone de la Milifutaie.",
+      "objectID": "47134"
+    },
+    "10-05": {
+      "name": "Ounirom",
+      "offering": "3 Bâton de Crabe",
+      "bonusTitle": "Bonus : Économie d'ingrédients",
+      "bonusDescription": "Les Pêcheurs économisent 10 % de leurs ingrédients lorsqu'ils fabriquent des objets.",
+      "objectID": "49074"
+    },
+    "10-06": {
+      "name": "Ketzakwet",
+      "offering": "2 Étamine de Floribonde",
+      "bonusTitle": "Bonus : Challenges augmentés",
+      "bonusDescription": "Les bonus apportés par les challenges réussis sont augmentés de 200 % dans le donjon du Laboratoire du Tynril.",
+      "objectID": "36008"
+    },
+    "10-07": {
+      "name": "Krûnsh",
+      "offering": "1 Racine d'Abraknyde Sombre",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 100 % dans la zone de la forêt des Abraknydes Sombres.",
+      "objectID": "98232"
+    },
+    "10-08": {
+      "name": "Kroketh",
+      "offering": "4 Museau",
+      "bonusTitle": "Bonus : Gibier abondant",
+      "bonusDescription": "Les quantités de viande récupérées par les Chasseurs de tous niveaux sont augmentées de 100 %.",
+      "objectID": "63372"
+    },
+    "10-09": {
+      "name": "Nitsougnal",
+      "offering": "4 Poils de Soryo Firefoux",
+      "bonusTitle": "Bonus : Challenge supplémentaire",
+      "bonusDescription": "Un challenge supplémentaire est généré contre les Firefoux.",
+      "objectID": "54203"
+    },
+    "10-10": {
+      "name": "Benjo",
+      "offering": "2 Carpe d'Iem vidée",
+      "bonusTitle": "Bonus : Élevage de Dragodindes",
+      "bonusDescription": "Toutes les variétés de Dragodindes Dorées donnent naissance à un bébé supplémentaire.",
+      "objectID": "62306"
+    },
+    "10-11": {
+      "name": "Emattera",
+      "offering": "2 Résidu de Solfataré",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 75 % sur les monstres des Larmes d'Ouronigride.",
+      "objectID": "51471"
+    },
+    "10-12": {
+      "name": "Diakollec",
+      "offering": "3 Bois de Bambouto",
+      "bonusTitle": "Bonus : Expérience des quêtes",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 100 % pour toutes les quêtes.",
+      "objectID": "38675"
+    },
+    "10-13": {
+      "name": "Takeza",
+      "offering": "3 Bifstèque de Dragoviande",
+      "bonusTitle": "Bonus : Expérience des Dragodindes",
+      "bonusDescription": "Les gains d'expérience des montures Dragodindes sont augmentés de 200 %.",
+      "objectID": "69118"
+    },
+    "10-14": {
+      "name": "Eylen",
+      "offering": "7 Aile du Tofu Maléfique",
+      "bonusTitle": "Bonus : Challenges augmentés",
+      "bonusDescription": "Les bonus apportés par les challenges réussis sont augmentés de 200 % dans la zone de la forêt Maléfique.",
+      "objectID": "104048"
+    },
+    "10-15": {
+      "name": "Dnegeleht",
+      "offering": "20 Fleur de Chanvre",
+      "bonusTitle": "Bonus : Cueillette abondante",
+      "bonusDescription": "Les quantités de Fleurs de Chanvre récupérées par les Alchimistes sont augmentées de 125 %.",
+      "objectID": "35156"
+    },
+    "10-16": {
+      "name": "Kuri",
+      "offering": "9 Corne du Boufcoul",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 125 % dans le donjon de la Caverne du Koulosse.",
+      "objectID": "47009"
+    },
+    "10-17": {
+      "name": "Yaloop",
+      "offering": "3 Chair de Larve Conservée **",
+      "bonusTitle": "Bonus : Économie d'ingrédients",
+      "bonusDescription": "Les récolteurs économisent 15 % de leurs ingrédients lorsqu'ils fabriquent des objets dans la zone de la forêt des Pins Perdus.",
+      "objectID": "64383"
+    },
+    "10-18": {
+      "name": "Fry",
+      "offering": "2 Enfumoir Zoth",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 75 % sur les Zoths.",
+      "objectID": "15130"
+    },
+    "10-19": {
+      "name": "Zellina",
+      "offering": "3 Brochet",
+      "bonusTitle": "Bonus : Apparition des ressources",
+      "bonusDescription": "La vitesse d'apparition des poissons de tous types est augmentée de 100 %.",
+      "objectID": "41400"
+    },
+    "10-20": {
+      "name": "Sephy",
+      "offering": "7 Coquille de Dragoeuf Noir",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 100 % dans la zone de la presqu'île des Dragoeufs.",
+      "objectID": "111203"
+    },
+    "10-21": {
+      "name": "Baba",
+      "offering": "4 Jambon cuit",
+      "bonusTitle": "Bonus : Fabrication intensive",
+      "bonusDescription": "Les quantités d'objets fabriqués par les Bouchers sont augmentées de 25 %.",
+      "objectID": "69130"
+    },
+    "10-22": {
+      "name": "Viviantho",
+      "offering": "7 Plumes de Tofu",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 100 % dans la zone du Berceau.",
+      "objectID": "53014"
+    },
+    "10-23": {
+      "name": "Patawaii",
+      "offering": "4 Plume de Corbac",
+      "bonusTitle": "Bonus : Apparition des étoiles",
+      "bonusDescription": "La vitesse d'apparition des étoiles sur les groupes de monstres est augmentée dans la zone des Landes de Sidimote : une étoile apparaît toutes les 15 minutes.",
+      "objectID": "53327"
+    },
+    "10-24": {
+      "name": "Sili",
+      "offering": "40 Fer",
+      "bonusTitle": "Bonus : Minerai abondant",
+      "bonusDescription": "Les quantités de Fer récupérées par les Mineurs sont augmentées de 150 %.",
+      "objectID": "39024"
+    },
+    "10-25": {
+      "name": "Rikoo",
+      "offering": "2 Poil de Smilomouth",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 75 % sur les monstres de la forêt des Pins Perdus.",
+      "objectID": "54676"
+    },
+    "10-26": {
+      "name": "Capt",
+      "offering": "5 Dent de Wabbit",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 125 % dans le donjon Wabbit.",
+      "objectID": "47758"
+    },
+    "10-27": {
+      "name": "Coyo",
+      "offering": "3 Grande Baguette de Boisaille",
+      "bonusTitle": "Bonus : Économie d'ingrédients",
+      "bonusDescription": "Les Sculpteurs économisent 10 % de leurs ingrédients lorsqu'ils fabriquent des objets.",
+      "objectID": "3008"
+    },
+    "10-28": {
+      "name": "Fredocigam",
+      "offering": "20 Chanvre",
+      "bonusTitle": "Bonus : Récolte abondante",
+      "bonusDescription": "Les quantités de Chanvre récupérées par les Paysans sont augmentées de 125 %.",
+      "objectID": "34121"
+    },
+    "10-29": {
+      "name": "Tchokun",
+      "offering": "2 Oreille de Soryo Givrefoux",
+      "bonusTitle": "Bonus : Challenges augmentés",
+      "bonusDescription": "Les bonus apportés par les challenges réussis sont augmentés de 150 % sur les Givrefoux.",
+      "objectID": "106629"
+    },
+    "10-30": {
+      "name": "Macugny",
+      "offering": "2 Peau d'Ouilleur",
+      "bonusTitle": "Bonus : Challenge supplémentaire",
+      "bonusDescription": "Un challenge supplémentaire est généré contre les monstres présents dans la zone de la forêt Enneigée.",
+      "objectID": "59630"
+    },
+    "10-31": {
+      "name": "Asid",
+      "offering": "4 Poils de Barbe du Bwork Mage",
+      "bonusTitle": "Bonus : Cadeaux surprises",
+      "bonusDescription": "Des Surprises de Trikortritt ont été ajoutées aux butins des monstres. Lorsqu'elles sont utilisées, elles permettent d'obtenir des Bonbons d'Halouine ou bien de se retrouver transformé en Petite Chauffe-Soutrille.",
+      "objectID": "54131"
+    },
+    "11-01": {
+      "name": "Mitomiel",
+      "offering": "2 Slip de Bwork Archer",
+      "bonusTitle": "Bonus : Butin et XP en slip",
+      "bonusDescription": "Les gains d'expérience lors des combats contre les monstres et les chances d'obtenir du butin sont augmentés de 50 % pour tous les aventuriers qui sont équipés d'un slip.",
+      "objectID": "56649"
+    },
+    "11-02": {
+      "name": "Nikodeus",
+      "offering": "9 Moustache de Kolérat",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 125 % dans le donjon du laboratoire de Brumen Tinctorias.",
+      "objectID": "15451"
+    },
+    "11-03": {
+      "name": "Miloune",
+      "offering": "1 Petite Cape Sombre",
+      "bonusTitle": "Bonus : Économie d'ingrédients",
+      "bonusDescription": "Les artisans et les récolteurs économisent 15 % de leurs ingrédients lorsqu'ils fabriquent des objets dans la zone du Village d'Amakna.",
+      "objectID": "17015"
+    },
+    "11-04": {
+      "name": "Kacinka",
+      "offering": "2 Sceau Royal Contrefait",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 75 % sur les Bandits et les Artisans Sombres.",
+      "objectID": "15131"
+    },
+    "11-05": {
+      "name": "Mathrû",
+      "offering": "2 Poil de Chachachovage",
+      "bonusTitle": "Bonus : Challenges augmentés",
+      "bonusDescription": "Les bonus apportés par les challenges réussis sont augmentés de 200 % dans la zone du port de Givre.",
+      "objectID": "54677"
+    },
+    "11-06": {
+      "name": "Hito",
+      "offering": "20 Bois de Châtaignier",
+      "bonusTitle": "Bonus : Bois abondant",
+      "bonusDescription": "Les quantités de Bois de Châtaignier récupérées par les Bûcherons sont augmentées de 125 %.",
+      "objectID": "38086"
+    },
+    "11-07": {
+      "name": "Pouki",
+      "offering": "2 Calice de Fécorce",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 100 % dans la zone de la jungle Obscure.",
+      "objectID": "36012"
+    },
+    "11-08": {
+      "name": "Poup",
+      "offering": "2 Queue de Prespic",
+      "bonusTitle": "Bonus : Challenge supplémentaire",
+      "bonusDescription": "Un challenge supplémentaire est généré contre les monstres présents dans la zone du Bord de la forêt Maléfique.",
+      "objectID": "65579"
+    },
+    "11-09": {
+      "name": "Tilapiatsu",
+      "offering": "2 Coquille de Fantimonier",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 100 % dans la zone du Berceau d'Alma.",
+      "objectID": "111751"
+    },
+    "11-10": {
+      "name": "Otoul",
+      "offering": "7 Goujon vidé",
+      "bonusTitle": "Bonus : Élevage de Dragodindes",
+      "bonusDescription": "Toutes les variétés de Dragodindes Orchidée donnent naissance à un bébé supplémentaire.",
+      "objectID": "62295"
+    },
+    "11-11": {
+      "name": "Namsporp",
+      "offering": "4 Écaille de Crocodaille",
+      "bonusTitle": "Bonus : Bénédiction de Miss Triste",
+      "bonusDescription": "Miss Triste attend les aventuriers qui veulent se refaire une laideur près de la fontaine du village d'Amakna. Sa bénédiction transforme temporairement en Crocodaille (effet qui disparaît quand un combat est lancé) et en Souffre-Douleur (bonus de 50 Puissance et 10 dommages fixes durant 15 combats).",
+      "objectID": "59233"
+    },
+    "11-12": {
+      "name": "Jacoula",
+      "offering": "3 Raie Bleue",
+      "bonusTitle": "Bonus : Pêche abondante",
+      "bonusDescription": "Les quantités de Poissons de mer géants récupérées par les Pêcheurs sont augmentées de 150 %.",
+      "objectID": "41296"
+    },
+    "11-13": {
+      "name": "Dek",
+      "offering": "2 Bave Empoisonnée",
+      "bonusTitle": "Bonus : Challenges augmentés",
+      "bonusDescription": "Les bonus apportés par les challenges réussis sont augmentés de 200 % dans le donjon des Rats de Brâkmar.",
+      "objectID": "15133"
+    },
+    "11-14": {
+      "name": "Flouky",
+      "offering": "1 Aile de Dragodinde Rousse Sauvage",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 75 % sur les monstres Dragodindes.",
+      "objectID": "104592"
+    },
+    "11-15": {
+      "name": "Reniator",
+      "offering": "2 Leurnettes",
+      "bonusTitle": "Bonus : Quête répétable",
+      "bonusDescription": "Une quête répétable spéciale est disponible aujourd'hui près de la statue du dieu Sram à Astrub. Réalisable à partir du niveau 20, elle est indépendante de la quête d'offrande.",
+      "objectID": "5009"
+    },
+    "11-16": {
+      "name": "Mustasly",
+      "offering": "2 Peau de Chamane d'Égoutant",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 75 % sur les monstres des Égouts.",
+      "objectID": "59622"
+    },
+    "11-17": {
+      "name": "Messikriss",
+      "offering": "1 Chair de Mansot",
+      "bonusTitle": "Bonus : Gibier abondant",
+      "bonusDescription": "Les quantités de viande récupérées par les Chasseurs sur les créatures de Frigost qui vivent en dehors de la Bourgade sont augmentées de 150 %.",
+      "objectID": "63381"
+    },
+    "11-18": {
+      "name": "Annbonny",
+      "offering": "2 Patte de la Gardienne des Égouts",
+      "bonusTitle": "Bonus : Challenge supplémentaire",
+      "bonusDescription": "Un challenge supplémentaire est généré contre les monstres des Égouts.",
+      "objectID": "103034"
+    },
+    "11-19": {
+      "name": "Waro",
+      "offering": "3 Potion de Copeaux de Bois Solides",
+      "bonusTitle": "Bonus : Économie d'ingrédients",
+      "bonusDescription": "Les Bûcherons économisent 10 % de leurs ingrédients lorsqu'ils fabriquent des objets.",
+      "objectID": "26017"
+    },
+    "11-20": {
+      "name": "Julo",
+      "offering": "5 Patte de Corbac",
+      "bonusTitle": "Bonus : Apparition des étoiles",
+      "bonusDescription": "La vitesse d'apparition des étoiles sur les groupes de monstres est augmentée dans la zone de la bordure de Brâkmar : une étoile apparaît toutes les 10 minutes.",
+      "objectID": "103330"
+    },
+    "11-21": {
+      "name": "Mûnir",
+      "offering": "2 Cloaque du Poolay",
+      "bonusTitle": "Bonus : Challenges augmentés",
+      "bonusDescription": "Les bonus apportés par les challenges réussis sont augmentés de 150 % sur les monstres de l'Arbre Hakam.",
+      "objectID": "15021"
+    },
+    "11-22": {
+      "name": "Jeffarctor",
+      "offering": "7 Queue du Mulou",
+      "bonusTitle": "Bonus : Percepteurs avides",
+      "bonusDescription": "Le butin généré par les Percepteurs est augmenté de 300 % dans le donjon des Canidés.",
+      "objectID": "65105"
+    },
+    "11-23": {
+      "name": "Angy",
+      "offering": "2 Mâchoire du Chafer Draugr",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 100 % dans la zone du Cimetière des Torturés.",
+      "objectID": "47697"
+    },
+    "11-24": {
+      "name": "Fafah",
+      "offering": "20 Avoine",
+      "bonusTitle": "Bonus : Récolte abondante",
+      "bonusDescription": "Les quantités d'Avoine récupérées par les Paysans sont augmentées de 125 %.",
+      "objectID": "34154"
+    },
+    "11-25": {
+      "name": "Lateralus",
+      "offering": "2 Laine de Boufmouth légendaire",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 75 % sur les Boufmouths.",
+      "objectID": "57212"
+    },
+    "11-26": {
+      "name": "Uicuic",
+      "offering": "2 Tatouage de Mauvais Garçon",
+      "bonusTitle": "Bonus : Challenge supplémentaire",
+      "bonusDescription": "Un challenge supplémentaire est généré contre les monstres présents dans la zone du Passage vers Brâkmar.",
+      "objectID": "15132"
+    },
+    "11-27": {
+      "name": "Vanderivz",
+      "offering": "4 DragoViande",
+      "bonusTitle": "Bonus : Dragodindes Frénétiques",
+      "bonusDescription": "Les bonus apportés par les montures Dragodindes sont augmentés de 100 %.",
+      "objectID": "63371"
+    },
+    "11-28": {
+      "name": "Troyle",
+      "offering": "2 Coeur de Crapeur",
+      "bonusTitle": "Bonus : Apparition des étoiles",
+      "bonusDescription": "La vitesse d'apparition des étoiles sur les groupes de monstres est augmentée dans la zone des Larmes d'Ouronigride : une étoile apparaît toutes les 10 minutes.",
+      "objectID": "51472"
+    },
+    "11-29": {
+      "name": "Eltux",
+      "offering": "20 Kobalte",
+      "bonusTitle": "Bonus : Minerai abondant",
+      "bonusDescription": "Les quantités de Kobalte récupérées par les mineurs sont augmentées de 150 %.",
+      "objectID": "39077"
+    },
+    "11-30": {
+      "name": "Inooni",
+      "offering": "2 Oreille de Gobosteur",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 100 % dans la zone de la forêt Enneigée.",
+      "objectID": "106628"
+    },
+    "12-01": {
+      "name": "Ezimuos",
+      "offering": "9 Cuir de Bouftou",
+      "bonusTitle": "Bonus : Challenges augmentés",
+      "bonusDescription": "Les bonus apportés par les challenges réussis sont augmentés de 200 % dans le donjon des Bouftous.",
+      "objectID": "56016"
+    },
+    "12-02": {
+      "name": "Tiris",
+      "offering": "1 Clef du Donjon Ensablé",
+      "bonusTitle": "Bonus : Économie d'ingrédients",
+      "bonusDescription": "Les artisans et les récolteurs économisent 15 % de leurs ingrédients lorsqu'ils fabriquent des objets dans la zone de Sufokia.",
+      "objectID": "84237"
+    },
+    "12-03": {
+      "name": "Edacsak",
+      "offering": "2 Peau de Mansobèse",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 75 % sur les Mansots.",
+      "objectID": "59049"
+    },
+    "12-04": {
+      "name": "Eltruteht",
+      "offering": "1 Planche en Chêne",
+      "bonusTitle": "Bonus : Bois abondant",
+      "bonusDescription": "Les quantités de Bois récupérées par les Bûcherons de tous niveaux sont augmentées de 100 %.",
+      "objectID": "95002"
+    },
+    "12-05": {
+      "name": "Ologar",
+      "offering": "4 Oeuf de Dragoeuf Noir",
+      "bonusTitle": "Bonus : Challenges augmentés",
+      "bonusDescription": "Les bonus apportés par les challenges réussis sont augmentés de 200 % dans la zone des Souterrains des Dragoeufs.",
+      "objectID": "105206"
+    },
+    "12-06": {
+      "name": "Adam",
+      "offering": "1 Pelle de Rapage",
+      "bonusTitle": "Bonus : Kolizétons",
+      "bonusDescription": "La quantité de jetons gagnée en Kolizéum est augmentée de 100 %.",
+      "objectID": "8005"
+    },
+    "12-07": {
+      "name": "Kountar",
+      "offering": "2 Étoffe de Dok Alako",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 75 % sur les Koalaks.",
+      "objectID": "55720"
+    },
+    "12-08": {
+      "name": "Moko",
+      "offering": "2 Oeil de Sapeur",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 100 % dans les zones de la plaine de Sakaï et de la forêt Enneigée.",
+      "objectID": "109593"
+    },
+    "12-09": {
+      "name": "Ingmar",
+      "offering": "5 Perce-Neige",
+      "bonusTitle": "Bonus : Cueillette abondante",
+      "bonusDescription": "Les quantités de Perce-Neige récupérées par les Alchimistes sont augmentées de 175 %.",
+      "objectID": "35635"
+    },
+    "12-10": {
+      "name": "Foya",
+      "offering": "3 Dent de Dragodinde",
+      "bonusTitle": "Bonus : Élevage de Dragodindes",
+      "bonusDescription": "Toutes les variétés de Dragodindes Ivoire donnent naissance à un bébé supplémentaire.",
+      "objectID": "47419"
+    },
+    "12-11": {
+      "name": "Bovjouski",
+      "offering": "1 Sandales Tofuesques",
+      "bonusTitle": "Bonus : Économie d'ingrédients",
+      "bonusDescription": "Les Cordonniers économisent 10 % de leurs ingrédients lorsqu'ils fabriquent des objets.",
+      "objectID": "11004"
+    },
+    "12-12": {
+      "name": "Mig",
+      "offering": "3 Potion de cité : Brâkmar",
+      "bonusTitle": "Bonus : Quête répétable",
+      "bonusDescription": "Une quête répétable spéciale est disponible aujourd'hui près des portes de Brâkmar. Réalisable à partir du niveau 20, elle est indépendante de la quête d'offrande.",
+      "objectID": "12145"
+    },
+    "12-13": {
+      "name": "Sêpt",
+      "offering": "20 Cuivre",
+      "bonusTitle": "Bonus : Apparition des ressources",
+      "bonusDescription": "La vitesse d'apparition des minerais de tous types est augmentée de 100 %.",
+      "objectID": "39108"
+    },
+    "12-14": {
+      "name": "Jason",
+      "offering": "8 Babines d'Ouginak",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 125 % dans le donjon des Canidés.",
+      "objectID": "15463"
+    },
+    "12-15": {
+      "name": "Eboren",
+      "offering": "4 Cuir de Porkass",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 100 % dans la zone de la plaine des Porkass.",
+      "objectID": "56429"
+    },
+    "12-16": {
+      "name": "Lucyvan",
+      "offering": "2 Emballage de Nowel Écarlate",
+      "bonusTitle": "Bonus : Challenge supplémentaire",
+      "bonusDescription": "Un challenge supplémentaire est généré contre les monstres de Nowel.",
+      "objectID": "154000"
+    },
+    "12-17": {
+      "name": "Ryf",
+      "offering": "3 Kralamoure",
+      "bonusTitle": "Bonus : Pêche abondante",
+      "bonusDescription": "Les quantités de Gros poissons de mer récupérées par les Pêcheurs sont augmentées de 150 %.",
+      "objectID": "41309"
+    },
+    "12-18": {
+      "name": "Sebsokk",
+      "offering": "3 Grande Epée de Boisaille",
+      "bonusTitle": "Bonus : Challenges augmentés",
+      "bonusDescription": "Les bonus apportés par les challenges réussis sont augmentés de 200 % dans tous les donjons.",
+      "objectID": "6007"
+    },
+    "12-19": {
+      "name": "Reivax",
+      "offering": "2 Flocon de Neige",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 75 % sur les monstres de Nowel.",
+      "objectID": "153007"
+    },
+    "12-20": {
+      "name": "Benjak",
+      "offering": "1 Aluminite",
+      "bonusTitle": "Bonus : Économie d'ingrédients",
+      "bonusDescription": "Les artisans et les récolteurs économisent 15 % de leurs ingrédients lorsqu'ils fabriquent des objets dans la zone du territoire des Porcos.",
+      "objectID": "40660"
+    },
+    "12-21": {
+      "name": "Grüg",
+      "offering": "3 Dent Pointue",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 100 % dans la zone du Cimetière de Bonta.",
+      "objectID": "47432"
+    },
+    "12-22": {
+      "name": "Maxarès",
+      "offering": "2 Nœud de Marin",
+      "bonusTitle": "Bonus : Apparition des étoiles",
+      "bonusDescription": "La vitesse d'apparition des étoiles sur les groupes de monstres est augmentée dans les zones du Bateau Pirate et de l'île des Naufragés : une étoile apparaît toutes les 5 minutes.",
+      "objectID": "15129"
+    },
+    "12-23": {
+      "name": "Math",
+      "offering": "4 Viande d'Oiseau **",
+      "bonusTitle": "Bonus : Gibier abondant",
+      "bonusDescription": "Les quantités de Viande d'Oiseau récupérées par les Chasseurs sont augmentées de 125%. Ce bonus est valable pour toutes les qualités de Viande d'Oiseau.",
+      "objectID": "63349"
+    },
+    "12-24": {
+      "name": "Milivar",
+      "offering": "1 Traîneau en Pain d'Épices",
+      "bonusTitle": "Bonus : Challenges augmentés",
+      "bonusDescription": "Les bonus apportés par les challenges réussis sont augmentés de 150 % sur les monstres de Nowel.",
+      "objectID": "42164"
+    },
+    "12-25": {
+      "name": "Simsof",
+      "offering": "4 Cadeau de Nowel",
+      "bonusTitle": "Bonus : Cadeaux surprises",
+      "bonusDescription": "Des Cadeaux de Nowel ont été ajoutés aux butins des monstres. Lorsqu'ils sont utilisés, ils permettent d'obtenir des ressources ou d'autres objets aléatoires.",
+      "objectID": "89002"
+    },
+    "12-26": {
+      "name": "Fhenris",
+      "offering": "2 Poil de barbe du Shamansot",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 125 % dans le donjon de l'excavation du Mansot Royal.",
+      "objectID": "54674"
+    },
+    "12-27": {
+      "name": "Korri",
+      "offering": "1 Paquet Cadeau en Chocolat",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 75 % sur les monstres de Nowel.",
+      "objectID": "42158"
+    },
+    "12-28": {
+      "name": "Ediva",
+      "offering": "4 Cadeau de Nowel",
+      "bonusTitle": "Bonus : Apparition des étoiles",
+      "bonusDescription": "La vitesse d'apparition des étoiles sur les groupes de monstres est augmentée dans les zones du Havre, de la Terre et de la Taïga de Nowel : une étoile apparaît toutes les 15 minutes.",
+      "objectID": "89002"
+    },
+    "12-29": {
+      "name": "Cocoyuyu",
+      "offering": "20 Seigle",
+      "bonusTitle": "Bonus : Récolte abondante",
+      "bonusDescription": "Les quantités de Seigle et de Riz récupérées par les Paysans sont augmentées de 125 %.",
+      "objectID": "34082"
+    },
+    "12-30": {
+      "name": "Dari",
+      "offering": "2 Graine de l'Abrakleur sombre",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 100 % dans la zone de la jungle Obscure.",
+      "objectID": "58001"
+    },
+    "12-31": {
+      "name": "Aisk",
+      "offering": "8 Nuggets",
+      "bonusTitle": "Bonus : Expérience des métiers",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 50 % pour les métiers de fabrication de consommables (Boulanger, Boucher, Bricoleur et Poissonnier).",
+      "objectID": "69115"
+    },
+    "01-01": {
+      "name": "Mazic",
+      "offering": "4 Oeuf de Dragoeuf Doré",
+      "bonusTitle": "Bonus : Apparition des ressources et des Archimonstres",
+      "bonusDescription": "La vitesse d'apparition des Archimonstres est augmentée de 200 %. La vitesse d'apparition des ressources de tous types est augmentée de 100 %.",
+      "objectID": "105205"
+    },
+    "01-02": {
+      "name": "Arouz",
+      "offering": "10 Farine d'Avoine",
+      "bonusTitle": "Bonus : Économie d'ingrédients",
+      "bonusDescription": "Les Boulangers économisent 10 % de leurs ingrédients lorsqu'ils fabriquent des objets.",
+      "objectID": "52250"
+    },
+    "01-03": {
+      "name": "Orage",
+      "offering": "2 Foulard du Sparo",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 75 % sur les créatures de type Monstres de l'Arche d'Otomaï.",
+      "objectID": "15014"
+    },
+    "01-04": {
+      "name": "Thomahon",
+      "offering": "2 Queue de Wolvero",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 75 % sur les créatures de type Monstres des Crocs de Verre.",
+      "objectID": "65759"
+    },
+    "01-05": {
+      "name": "Ling",
+      "offering": "12 Bois d'If",
+      "bonusTitle": "Bonus : Bois abondant",
+      "bonusDescription": "Les quantités de Bois d'If et de Bois de Bambou récupérées par les Bûcherons sont augmentées de 150 %.",
+      "objectID": "38094"
+    },
+    "01-06": {
+      "name": "Sebklav",
+      "offering": "2 Poils de Wabbit",
+      "bonusTitle": "Bonus : Quête répétable",
+      "bonusDescription": "Une quête répétable spéciale est disponible aujourd'hui près de l'atelier des boulangers du village d'Amakna. Réalisable à partir du niveau 20, elle est indépendante de la quête d'offrande.",
+      "objectID": "54196"
+    },
+    "01-07": {
+      "name": "Yvad",
+      "offering": "7 Groin de Sanglier",
+      "bonusTitle": "Bonus : Challenges augmentés",
+      "bonusDescription": "Les bonus apportés par les challenges réussis sont augmentés de 150 % sur les créatures de type Animaux de la forêt.",
+      "objectID": "15058"
+    },
+    "01-08": {
+      "name": "Leszak",
+      "offering": "2 Serviette de Plage",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 125 % dans le donjon Ensablé.",
+      "objectID": "55130"
+    },
+    "01-09": {
+      "name": "Stun",
+      "offering": "2 Epée Sacrée",
+      "bonusTitle": "Bonus : Objets de qualité",
+      "bonusDescription": "La qualité des objets fabriqués dans la ville de Bonta est augmentée.",
+      "objectID": "6001"
+    },
+    "01-10": {
+      "name": "Trôma",
+      "offering": "2 Aile de Dragodinde Dorée",
+      "bonusTitle": "Bonus : Élevage de Dragodindes",
+      "bonusDescription": "Toutes les variétés de Dragodindes Emeraude donnent naissance à un bébé supplémentaire.",
+      "objectID": "104594"
+    },
+    "01-11": {
+      "name": "Ashvey",
+      "offering": "2 Miroir de Dopeul",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 100 % dans la zone d'Entraînement des Dopeuls.",
+      "objectID": "15092"
+    },
+    "01-12": {
+      "name": "Rojers",
+      "offering": "12 Argent",
+      "bonusTitle": "Bonus : Minerai abondant",
+      "bonusDescription": "Les quantités d'Argent récupérées par les Mineurs sont augmentées de 150 %.",
+      "objectID": "39028"
+    },
+    "01-13": {
+      "name": "Katlestyn",
+      "offering": "2 Plume du Timansot",
+      "bonusTitle": "Bonus : Apparition des étoiles",
+      "bonusDescription": "La vitesse d'apparition des étoiles sur les groupes de monstres est augmentée dans la zone du Lac Gelé : une étoile apparaît toutes les 15 minutes.",
+      "objectID": "53646"
+    },
+    "01-14": {
+      "name": "Guigui",
+      "offering": "2 Malléole de Yomi Givrefoux",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 100 % dans la zone de la Crevasse Perge.",
+      "objectID": "47678"
+    },
+    "01-15": {
+      "name": "Poupline",
+      "offering": "2 Bave de Ouassingue",
+      "bonusTitle": "Bonus : Challenges augmentés",
+      "bonusDescription": "Les bonus apportés par les challenges réussis sont augmentés de 200 % dans la zone de la Tourbière Nauséabonde.",
+      "objectID": "15093"
+    },
+    "01-16": {
+      "name": "Bubba",
+      "offering": "2 Relique Familiale",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 75 % sur les créatures de type Fantômes.",
+      "objectID": "15094"
+    },
+    "01-17": {
+      "name": "Kia",
+      "offering": "7 Patte d'Arakne",
+      "bonusTitle": "Bonus : Challenge supplémentaire",
+      "bonusDescription": "Un challenge supplémentaire est généré contre les créatures de type Araknes.",
+      "objectID": "103035"
+    },
+    "01-18": {
+      "name": "Yêcetu",
+      "offering": "2 Bar Rikain",
+      "bonusTitle": "Bonus : Pêche abondante",
+      "bonusDescription": "Les quantités de Gros poissons de rivière récupérées par les Pêcheurs sont augmentées de 150 %.",
+      "objectID": "41290"
+    },
+    "01-19": {
+      "name": "Eskarina",
+      "offering": "3 Poils de Pandore",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 75 % sur les créatures de type Pandissidans.",
+      "objectID": "54002"
+    },
+    "01-20": {
+      "name": "Inkola",
+      "offering": "2 Puces Sauteuses",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 125 % dans le donjon des Rats de Bonta.",
+      "objectID": "15095"
+    },
+    "01-21": {
+      "name": "Magikow",
+      "offering": "1 Bouteille de Gloutoburg",
+      "bonusTitle": "Bonus : Économie d'ingrédients",
+      "bonusDescription": "Les artisans économisent 15 % de leurs ingrédients lorsqu'ils fabriquent des objets dans la zone du Bord de la forêt Maléfique.",
+      "objectID": "79177"
+    },
+    "01-22": {
+      "name": "Danizzal",
+      "offering": "2 Bractée de Chiendent",
+      "bonusTitle": "Bonus : Apparition des étoiles",
+      "bonusDescription": "La vitesse d'apparition des étoiles sur les groupes de monstres est augmentée dans la zone de la Jungle Obscure : une étoile apparaît toutes les 10 minutes.",
+      "objectID": "36011"
+    },
+    "01-23": {
+      "name": "Kestra",
+      "offering": "5 Chair d'Insecte",
+      "bonusTitle": "Bonus : Gibier abondant",
+      "bonusDescription": "Les quantités de Chair d'insecte récupérées par les Chasseurs sont augmentées de 125%. Ce bonus est valable pour toutes les qualités de Chair d'Insecte.",
+      "objectID": "63370"
+    },
+    "01-24": {
+      "name": "Shiva",
+      "offering": "2 Bourgeon d'Abraknyde Sombre Irascible",
+      "bonusTitle": "Bonus : Percepteurs avides",
+      "bonusDescription": "Le butin généré par les Percepteurs est augmenté de 300 % dans le donjon du Chêne Mou.",
+      "objectID": "108230"
+    },
+    "01-25": {
+      "name": "Billfer",
+      "offering": "2 Tibia de Koalak Fossoyeur",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 100 % dans la zone du Cimetière Primitif.",
+      "objectID": "47640"
+    },
+    "01-26": {
+      "name": "Pierrock",
+      "offering": "3 Grand Marteau de Boisaille",
+      "bonusTitle": "Bonus : Économie d'ingrédients",
+      "bonusDescription": "Les Forgeurs d'armes (dagues, épées, marteaux, pelles et haches) économisent 10 % de leurs ingrédients lorsqu'ils fabriquent des objets.",
+      "objectID": "7001"
+    },
+    "01-27": {
+      "name": "Maribri",
+      "offering": "10 Frostiz",
+      "bonusTitle": "Bonus : Récolte abondante",
+      "bonusDescription": "Les quantités de Frostiz récupérées par les Paysans sont augmentées de 150 %.",
+      "objectID": "34552"
+    },
+    "01-28": {
+      "name": "Koppapi",
+      "offering": "2 Queue de Rat Pine",
+      "bonusTitle": "Bonus : Challenges augmentés",
+      "bonusDescription": "Les bonus apportés par les challenges réussis sont augmentés de 200 % dans le donjon des Rats du Château d'Amakna.",
+      "objectID": "65521"
+    },
+    "01-29": {
+      "name": "Krala",
+      "offering": "11 Laine de Bouftou",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 100 % dans la zone du Coin des Bouftous.",
+      "objectID": "57056"
+    },
+    "01-30": {
+      "name": "Lôrf",
+      "offering": "2 Sépale de Nerbe",
+      "bonusTitle": "Bonus : Challenge supplémentaire",
+      "bonusDescription": "Un challenge supplémentaire est généré contre les monstres présents dans la zone de la Jungle Obscure.",
+      "objectID": "36010"
+    },
+    "01-31": {
+      "name": "Teskirf",
+      "offering": "15 Feuille de Menthe Sauvage",
+      "bonusTitle": "Bonus : Cueillette abondante",
+      "bonusDescription": "Les quantités de Feuilles de Menthe Sauvage récupérées par les Alchimistes sont augmentées de 125 %.",
+      "objectID": "36052"
+    },
+    "02-01": {
+      "name": "Tolgnas",
+      "offering": "4 Potion de Mini Soin Supérieure",
+      "bonusTitle": "Bonus : Vitalité débordante",
+      "bonusDescription": "La régénération des Points de Vie est augmentée de 300 % (hors combat), et les soins par consommables sont augmentés de 100 %.",
+      "objectID": "12038"
+    },
+    "02-02": {
+      "name": "Ruevas",
+      "offering": "6 Cuisse de bouftou rôti",
+      "bonusTitle": "Bonus : Butin et XP sur tous les Bouftous",
+      "bonusDescription": "Les gains d'expérience et les chances d'obtenir du butin sont augmentés de 75 % sur toutes les créatures considérées comme des Bouftous, y compris les Boufmouths et les Boufcouls.",
+      "objectID": "69123"
+    },
+    "02-03": {
+      "name": "Marke",
+      "offering": "6 Goujon en tranche **",
+      "bonusTitle": "Bonus : Fabrication intensive",
+      "bonusDescription": "Pour chaque objet fabriqué, les Poissonniers ont 25 % de chances de créer un second objet.",
+      "objectID": "49083"
+    },
+    "02-04": {
+      "name": "Eritem",
+      "offering": "2 Molaire de Blérice",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 100 % dans la zone des Crocs de Verre.",
+      "objectID": "47681"
+    },
+    "02-05": {
+      "name": "Val",
+      "offering": "4 Peau de Cooleuvre",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 125 % dans le donjon de la Caverne des Bulbes.",
+      "objectID": "59041"
+    },
+    "02-06": {
+      "name": "Misdup",
+      "offering": "8 Petit Anneau de Sagesse",
+      "bonusTitle": "Bonus : Économie d'ingrédients",
+      "bonusDescription": "Les artisans économisent 15 % de leurs ingrédients lorsqu'ils fabriquent des objets dans la zone de la Plaine des Scarafeuilles.",
+      "objectID": "9007"
+    },
+    "02-07": {
+      "name": "Kimykay",
+      "offering": "2 Os de Fantôme Pandule",
+      "bonusTitle": "Bonus : Apparition des étoiles",
+      "bonusDescription": "La vitesse d'apparition des étoiles sur les groupes de monstres est augmentée dans la zone de l'île de Grobe : une étoile apparaît toutes les 5 minutes.",
+      "objectID": "47006"
+    },
+    "02-08": {
+      "name": "Eramas",
+      "offering": "30 Bois de Frêne",
+      "bonusTitle": "Bonus : Bois abondant",
+      "bonusDescription": "Les quantités de Bois de Frêne récupérées par les Bûcherons sont augmentées de 125 %.",
+      "objectID": "38017"
+    },
+    "02-09": {
+      "name": "Kilistin",
+      "offering": "4 Ongle de Kanigrou",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 150 % sur les Kanigrous.",
+      "objectID": "47559"
+    },
+    "02-10": {
+      "name": "Meash",
+      "offering": "5 Pic de Dragodinde Rousse Sauvage",
+      "bonusTitle": "Bonus : Élevage de Dragodindes",
+      "bonusDescription": "Toutes les variétés de Dragodindes Rousses donnent naissance à un bébé supplémentaire.",
+      "objectID": "47596"
+    },
+    "02-11": {
+      "name": "Bazûkana",
+      "offering": "2 Duvet de Mamansot",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 100 % dans la zone du Lac Gelé.",
+      "objectID": "54675"
+    },
+    "02-12": {
+      "name": "Karlita",
+      "offering": "7 Canine du Mulou",
+      "bonusTitle": "Bonus : Challenges augmentés",
+      "bonusDescription": "Les bonus apportés par les challenges réussis sont augmentés de 150 % sur les créatures de type Mulous.",
+      "objectID": "47106"
+    },
+    "02-13": {
+      "name": "Edyxo",
+      "offering": "20 Cuivre",
+      "bonusTitle": "Bonus : Minerai abondant",
+      "bonusDescription": "Les quantités de Cuivre récupérées par les Mineurs sont augmentées de 150 %.",
+      "objectID": "39108"
+    },
+    "02-14": {
+      "name": "Duf",
+      "offering": "5 Shigekax Passion",
+      "bonusTitle": "Bonus : Expérience amoureuse",
+      "bonusDescription": "Tous les personnages atteints par la Malédiction du Ballotin voient leurs gains d'expérience augmentés de 100 % lors des combats contre les monstres.",
+      "objectID": "42004"
+    },
+    "02-15": {
+      "name": "Güss",
+      "offering": "2 Feuille de Branche Soignante",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 125 % dans le donjon du Chêne Mou.",
+      "objectID": "36015"
+    },
+    "02-16": {
+      "name": "Tehego",
+      "offering": "3 Chair d'Insecte Conservée",
+      "bonusTitle": "Bonus : Économie d'ingrédients",
+      "bonusDescription": "Les Chasseurs économisent 10 % de leurs ingrédients lorsqu'ils fabriquent des objets.",
+      "objectID": "64384"
+    },
+    "02-17": {
+      "name": "Fitsef",
+      "offering": "8 Beignet de Greu-vette **",
+      "bonusTitle": "Bonus : Cadeaux surprises",
+      "bonusDescription": "Des Pochettes-Surprises ont été ajoutées aux butins des monstres. Lorsqu'elles sont utilisées, elles permettent d'obtenir des Beignets de Karnaval ou bien de se retrouver déguisé en Tofu Tout-Fou.",
+      "objectID": "49081"
+    },
+    "02-18": {
+      "name": "Amirniana",
+      "offering": "5 Bourgeon d'Abraknyde",
+      "bonusTitle": "Bonus : Challenges augmentés",
+      "bonusDescription": "Les bonus apportés par les challenges réussis sont augmentés de 200 % dans le donjon des Abraknydes.",
+      "objectID": "108104"
+    },
+    "02-19": {
+      "name": "Karat",
+      "offering": "5 Poisson-Chaton",
+      "bonusTitle": "Bonus : Pêche abondante",
+      "bonusDescription": "Les quantités de Poissons récupérées par les Pêcheurs de tous niveaux sont augmentées de 100 %.",
+      "objectID": "41277"
+    },
+    "02-20": {
+      "name": "Atog",
+      "offering": "2 Croupion du Bitouf aérien",
+      "bonusTitle": "Bonus : Challenge supplémentaire",
+      "bonusDescription": "Un challenge supplémentaire est généré contre les monstres présents dans la zone du Tronc de l'Arbre Hakam.",
+      "objectID": "15022"
+    },
+    "02-21": {
+      "name": "Bii",
+      "offering": "8 Bière de Bwork",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 100 % dans la zone de Gisgoul, le village dévasté.",
+      "objectID": "37001"
+    },
+    "02-22": {
+      "name": "Ludobel",
+      "offering": "2 Peau de Dragueuse",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 100 % dans la zone du Sanctuaire des Dragoeufs.",
+      "objectID": "59609"
+    },
+    "02-23": {
+      "name": "Rumo",
+      "offering": "20 Avoine",
+      "bonusTitle": "Bonus : Apparition des ressources",
+      "bonusDescription": "La vitesse d'apparition des ressources est augmentée de 150 % dans la zone des Champs de Cania.",
+      "objectID": "34154"
+    },
+    "02-24": {
+      "name": "Vinstyl",
+      "offering": "4 Bec du Tofu",
+      "bonusTitle": "Bonus : Apparition des étoiles",
+      "bonusDescription": "La vitesse d'apparition des étoiles sur les groupes de monstres est augmentée dans la zone des Souterrains profonds d'Astrub : une étoile apparaît toutes les 5 minutes.",
+      "objectID": "47037"
+    },
+    "02-25": {
+      "name": "Kanabal",
+      "offering": "2 Os de Fantôme Léopardo",
+      "bonusTitle": "Bonus : Challenges augmentés",
+      "bonusDescription": "Les bonus apportés par les challenges réussis sont augmentés de 200 % dans la zone de l'île de Grobe.",
+      "objectID": "47003"
+    },
+    "02-26": {
+      "name": "Krisdip",
+      "offering": "3 Peau de Minoskito",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 75 % sur les créatures de type Minos.",
+      "objectID": "59604"
+    },
+    "02-27": {
+      "name": "Tiko",
+      "offering": "3 Cuisse de Wabbit ***",
+      "bonusTitle": "Bonus : Gibier abondant",
+      "bonusDescription": "Les quantités de Cuisses de Wabbit récupérées par les Chasseurs sont augmentées de 125%. Ce bonus est valable pour toutes les qualités de Cuisses de Wabbit.",
+      "objectID": "63367"
+    },
+    "02-28": {
+      "name": "Tidihef",
+      "offering": "8 Noix de Kokoko",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 75 % sur les créatures de type Plantes de Moon et Tortues de Moon.",
+      "objectID": "46159"
+    },
+    "03-01": {
+      "name": "Jonat",
+      "offering": "1 Bâton Spirituel",
+      "bonusTitle": "Bonus : Économie d'ingrédients",
+      "bonusDescription": "Les artisans économisent 15 % de leurs ingrédients lorsqu'ils fabriquent des objets dans la zone de Brâkmar.",
+      "objectID": "4008"
+    },
+    "03-02": {
+      "name": "Meluze",
+      "offering": "2 Crâne d'Aventurier",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 100 % dans la zone de la Vallée de la Morh'Kitu.",
+      "objectID": "47031"
+    },
+    "03-03": {
+      "name": "Marifriss",
+      "offering": "3 Bois de Charme",
+      "bonusTitle": "Bonus : Bois abondant",
+      "bonusDescription": "Les quantités de Bois de Charme et de Bois de Bambou Sombre récupérées par les Bûcherons sont augmentées de 150 %.",
+      "objectID": "38138"
+    },
+    "03-04": {
+      "name": "Sylkauf",
+      "offering": "2 Volve de Fistulor",
+      "bonusTitle": "Bonus : Apparition des étoiles",
+      "bonusDescription": "La vitesse d'apparition des étoiles sur les groupes de monstres est augmentée dans la zone de la forêt Pétrifiée : une étoile apparaît toutes les 10 minutes.",
+      "objectID": "119002"
+    },
+    "03-05": {
+      "name": "Darkchy",
+      "offering": "2 Bandeau de Nakunbra",
+      "bonusTitle": "Bonus : Challenge supplémentaire",
+      "bonusDescription": "Un challenge supplémentaire est généré contre les créatures de type Pirates de Moon.",
+      "objectID": "15088"
+    },
+    "03-06": {
+      "name": "Marilez",
+      "offering": "2 Étoffe de Rat Bougri",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 100 % dans la zone de la Bourgade.",
+      "objectID": "55731"
+    },
+    "03-07": {
+      "name": "Tella",
+      "offering": "2 Griffe de Pandikaze Vertige",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 125 % dans le donjon du Repaire des Pandikazes.",
+      "objectID": "47664"
+    },
+    "03-08": {
+      "name": "Davkaz",
+      "offering": "7 Patte de Wabbit",
+      "bonusTitle": "Bonus : Challenges augmentés",
+      "bonusDescription": "Les bonus apportés par les challenges réussis sont augmentés de 150 % sur les créatures de type Wabbits.",
+      "objectID": "103440"
+    },
+    "03-09": {
+      "name": "Totot",
+      "offering": "20 Houblon",
+      "bonusTitle": "Bonus : Récolte abondante",
+      "bonusDescription": "Les quantités de Houblon récupérées par les Paysans sont augmentées de 125 %.",
+      "objectID": "34080"
+    },
+    "03-10": {
+      "name": "Inndo",
+      "offering": "2 Lait de Dragodinde",
+      "bonusTitle": "Bonus : Élevage de Dragodindes",
+      "bonusDescription": "Toutes les variétés de Dragodindes Indigo donnent naissance à un bébé supplémentaire.",
+      "objectID": "15424"
+    },
+    "03-11": {
+      "name": "Laetux",
+      "offering": "2 Dent de Bourbassingue",
+      "bonusTitle": "Bonus : Challenge supplémentaire",
+      "bonusDescription": "Un challenge supplémentaire est généré contre les monstres présents dans la zone de la Tourbière sans fond.",
+      "objectID": "47698"
+    },
+    "03-12": {
+      "name": "Tajonoo",
+      "offering": "4 Poisson pané vidé",
+      "bonusTitle": "Bonus : Économie d'ingrédients",
+      "bonusDescription": "Les Pêcheurs économisent 10 % de leurs ingrédients lorsqu'ils fabriquent des objets.",
+      "objectID": "62270"
+    },
+    "03-13": {
+      "name": "Maëmon",
+      "offering": "2 Bâton Kouyu",
+      "bonusTitle": "Bonus : Expérience Robillesque",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 100 % sur tous les gardiens de donjon.",
+      "objectID": "4003"
+    },
+    "03-14": {
+      "name": "Todobaï",
+      "offering": "15 Trèfle à 5 feuilles",
+      "bonusTitle": "Bonus : Cueillette abondante",
+      "bonusDescription": "Les quantités de Trèfles à 5 Feuilles récupérées par les Alchimistes sont augmentées de 125 %.",
+      "objectID": "36067"
+    },
+    "03-15": {
+      "name": "Cycloune",
+      "offering": "2 Groin de Sanglier des Plaines",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 150 % sur les Sangliers des Plaines.",
+      "objectID": "15540"
+    },
+    "03-16": {
+      "name": "Orété",
+      "offering": "2 Jouet de Gamine Zoth",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 100 % dans la zone du Village des Zoths.",
+      "objectID": "15099"
+    },
+    "03-17": {
+      "name": "Wish",
+      "offering": "1 Pierre d'Émeraude",
+      "bonusTitle": "Bonus : Bénédiction du Fin Patraque",
+      "bonusDescription": "Ayiri Chkofi attend les aventuriers qui veulent boire un petit coup près de la taverne du village d'Amakna. Sa bénédiction transforme temporairement en Bulbinouze (effet qui disparaît quand un combat est lancé) et en Pilier de Comptoir (bonus de 5 % + 10 sur toutes les résistances durant 15 combats).",
+      "objectID": "51145"
+    },
+    "03-18": {
+      "name": "Ninefi",
+      "offering": "1 Marteau Pickeur",
+      "bonusTitle": "Bonus : Expérience des métiers",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 50 % pour les métiers de fabrication d'armes et d'équipements (Forgeurs et Sculpteurs d'armes, Bijoutier, Cordonnier, Tailleur et Forgeur de Boucliers).",
+      "objectID": "7012"
+    },
+    "03-19": {
+      "name": "Icleen",
+      "offering": "15 Manganèse",
+      "bonusTitle": "Bonus : Minerai abondant",
+      "bonusDescription": "Les quantités de Manganèse récupérées par les Mineurs sont augmentées de 150 %.",
+      "objectID": "39397"
+    },
+    "03-20": {
+      "name": "Elosi",
+      "offering": "2 Pierre du Courtilieur",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 125 % dans le donjon de la mine abandonnée de Sakaï.",
+      "objectID": "51466"
+    },
+    "03-21": {
+      "name": "Cébeyon",
+      "offering": "6 Bave de Bouftou",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 150 % sur les Bouftous.",
+      "objectID": "15057"
+    },
+    "03-22": {
+      "name": "Konala",
+      "offering": "3 Fragment de Pierre Pointue",
+      "bonusTitle": "Bonus : Challenge supplémentaire",
+      "bonusDescription": "Un challenge supplémentaire est généré contre les Craqueleurs des Plaines.",
+      "objectID": "51455"
+    },
+    "03-23": {
+      "name": "Perviom",
+      "offering": "20 Bois de Châtaignier",
+      "bonusTitle": "Bonus : Apparition des ressources",
+      "bonusDescription": "La vitesse d'apparition des bois de tous types est augmentée de 100 %.",
+      "objectID": "38086"
+    },
+    "03-24": {
+      "name": "Socren",
+      "offering": "10 Farine d'Orge",
+      "bonusTitle": "Bonus : Économie d'ingrédients",
+      "bonusDescription": "Les artisans économisent 15 % de leurs ingrédients lorsqu'ils fabriquent des objets dans la zone des Champs de Cania.",
+      "objectID": "52256"
+    },
+    "03-25": {
+      "name": "Fala",
+      "offering": "2 Laine de Maho Givrefoux",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 100 % dans la zone des Cavernes Givrefoux.",
+      "objectID": "57657"
+    },
+    "03-26": {
+      "name": "Dees",
+      "offering": "2 Oreille d'Apériglours",
+      "bonusTitle": "Bonus : Challenges augmentés",
+      "bonusDescription": "Les bonus apportés par les challenges réussis sont augmentés de 200 % dans la zone de la Ruche des Gloursons.",
+      "objectID": "106634"
+    },
+    "03-27": {
+      "name": "Sha",
+      "offering": "4 Chair de Larve ***",
+      "bonusTitle": "Bonus : Gibier abondant",
+      "bonusDescription": "Les quantités de Chair de Larve récupérées par les Chasseurs sont augmentées de 125 %. Ce bonus est valable pour toutes les qualités de Chair de Larve.",
+      "objectID": "63354"
+    },
+    "03-28": {
+      "name": "Clynt",
+      "offering": "2 Corne de Boufmouth de guerre",
+      "bonusTitle": "Bonus : Challenge supplémentaire",
+      "bonusDescription": "Un challenge supplémentaire est généré contre les créatures de type Boufmouths.",
+      "objectID": "47661"
+    },
+    "03-29": {
+      "name": "Ocarian",
+      "offering": "2 Étoffe de Vigie Pirate",
+      "bonusTitle": "Bonus : Apparition des étoiles",
+      "bonusDescription": "La vitesse d'apparition des étoiles sur les groupes de monstres est augmentée dans la zone du Berceau d'Alma : une étoile apparaît toutes les 10 minutes.",
+      "objectID": "55733"
+    },
+    "03-30": {
+      "name": "Mahadine",
+      "offering": "5 Peau de Kitsou Nae",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 75 % sur les créatures de type Kitsous.",
+      "objectID": "59046"
+    },
+    "03-31": {
+      "name": "Kimbru",
+      "offering": "2 Dent de Larve Émeraude",
+      "bonusTitle": "Bonus : Challenges augmentés",
+      "bonusDescription": "Les bonus apportés par les challenges réussis sont augmentés de 200 % dans le donjon des Larves.",
+      "objectID": "47654"
+    },
+    "04-01": {
+      "name": "Azra",
+      "offering": "2 Fluide Glacial",
+      "bonusTitle": "Bonus : Butin et XP sur les créatures marines",
+      "bonusDescription": "Les gains d'expérience et les chances d'obtenir du butin sont augmentés de 75 % sur tous les monstres considérés comme des créatures marines (monstres des plages, crabes, corailleurs, crustorails, tortues de Moon, gélikan, Kralamoure Géant).",
+      "objectID": "15100"
+    },
+    "04-02": {
+      "name": "Yamato",
+      "offering": "4 Crabe Sourimi",
+      "bonusTitle": "Bonus : Pêche abondante",
+      "bonusDescription": "Les quantités de Petits poissons de rivière et de mer récupérées par les Pêcheurs sont augmentées de 125 %.",
+      "objectID": "41273"
+    },
+    "04-03": {
+      "name": "Jébédaï",
+      "offering": "2 Os de Fantôme Yokai Firefoux",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 100 % dans la zone de l'île de Grobe.",
+      "objectID": "47002"
+    },
+    "04-04": {
+      "name": "Typlanêt",
+      "offering": "2 Bouclier du Bouftou",
+      "bonusTitle": "Bonus : Économie d'ingrédients",
+      "bonusDescription": "Les Forgeurs de Boucliers économisent 10 % de leurs ingrédients lorsqu'ils fabriquent des objets.",
+      "objectID": "82020"
+    },
+    "04-05": {
+      "name": "Etnop",
+      "offering": "4 Oeuf de Dragoeuf Blanc",
+      "bonusTitle": "Bonus : Quête répétable",
+      "bonusDescription": "Une quête répétable spéciale est disponible aujourd'hui près du sanctuaire des Zobals. Réalisable à partir du niveau 20, elle est indépendante de la quête d'offrande.",
+      "objectID": "105648"
+    },
+    "04-06": {
+      "name": "Itourp",
+      "offering": "7 Poils du Mulou",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 100 % dans la zone du Bois de Litneg.",
+      "objectID": "54008"
+    },
+    "04-07": {
+      "name": "Bensom",
+      "offering": "20 Orge",
+      "bonusTitle": "Bonus : Récolte abondante",
+      "bonusDescription": "Les quantités d'Orge récupérées par les Paysans sont augmentées de 125 %.",
+      "objectID": "34082"
+    },
+    "04-08": {
+      "name": "Enaibi",
+      "offering": "3 Carapace Verte Vide",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 75 % sur les créatures de type Tortues de Moon et Plantes de Moon.",
+      "objectID": "107601"
+    },
+    "04-09": {
+      "name": "Mak",
+      "offering": "2 Carapace de Scaratos",
+      "bonusTitle": "Bonus : Challenges augmentés",
+      "bonusDescription": "Les bonus apportés par les challenges réussis sont augmentés de 200 % dans le donjon du Centre du Labyrinthe du Minotoror.",
+      "objectID": "107735"
+    },
+    "04-10": {
+      "name": "Nunu",
+      "offering": "1 Mangeoire en Frêne",
+      "bonusTitle": "Bonus : Élevage de Dragodindes",
+      "bonusDescription": "Toutes les variétés de Dragodindes Pourpres donnent naissance à un bébé supplémentaire.",
+      "objectID": "93002"
+    },
+    "04-11": {
+      "name": "Jay",
+      "offering": "9 Bout de Blop Coco",
+      "bonusTitle": "Bonus : Apparition des étoiles",
+      "bonusDescription": "La vitesse d'apparition des étoiles sur les groupes de monstres est augmentée dans la zone du Lac de Cania : une étoile apparaît toutes les 5 minutes.",
+      "objectID": "15281"
+    },
+    "04-12": {
+      "name": "Mobbib",
+      "offering": "2 Os de Fantôme Pandikaze",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 75 % sur les créatures de type Fantômes de Pandala.",
+      "objectID": "47004"
+    },
+    "04-13": {
+      "name": "Gorzarel",
+      "offering": "8 Bois de Kaliptus",
+      "bonusTitle": "Bonus : Bois abondant",
+      "bonusDescription": "Les quantités de Bois d'Ebène et de Bois de Kaliptus récupérées par les Bûcherons sont augmentées de 150 %.",
+      "objectID": "38001"
+    },
+    "04-14": {
+      "name": "Bûnty",
+      "offering": "2 Calumet Zoth",
+      "bonusTitle": "Bonus : Challenges augmentés",
+      "bonusDescription": "Les bonus apportés par les challenges réussis sont augmentés de 150 % sur les créatures de type Monstres du Village des Zoths.",
+      "objectID": "4062"
+    },
+    "04-15": {
+      "name": "Mascha",
+      "offering": "1 Baffeur en Frêne",
+      "bonusTitle": "Bonus : Fabrication intensive",
+      "bonusDescription": "Pour chaque objet fabriqué, les Bricoleurs ont 25 % de chances de créer un second objet.",
+      "objectID": "93005"
+    },
+    "04-16": {
+      "name": "Favarez",
+      "offering": "2 Kralamoure grillé **",
+      "bonusTitle": "Bonus : Économie d'ingrédients",
+      "bonusDescription": "Les artisans économisent 15 % de leurs ingrédients lorsqu'ils fabriquent des objets dans la zone d'Astrub, ainsi que dans les champs et la forêt d'Astrub.",
+      "objectID": "49090"
+    },
+    "04-17": {
+      "name": "Sehb",
+      "offering": "2 Gelée à la Fraise",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 100 % dans la zone de la péninsule des Gelées.",
+      "objectID": "110040"
+    },
+    "04-18": {
+      "name": "Duc",
+      "offering": "2 Queue de Meliglours",
+      "bonusTitle": "Bonus : Challenge supplémentaire",
+      "bonusDescription": "Un challenge supplémentaire est généré contre les créatures de type Gloursons.",
+      "objectID": "65762"
+    },
+    "04-19": {
+      "name": "Tchoub",
+      "offering": "10 Or",
+      "bonusTitle": "Bonus : Minerai abondant",
+      "bonusDescription": "Les quantités d'Or récupérées par les Mineurs sont augmentées de 150 %.",
+      "objectID": "39022"
+    },
+    "04-20": {
+      "name": "Viti",
+      "offering": "3 Poils de Maho Firefoux",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 100 % dans la zone de la Bordure de Feudala.",
+      "objectID": "54202"
+    },
+    "04-21": {
+      "name": "Scheik",
+      "offering": "2 Corne de Gamino",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 125 % dans le donjon du Centre du Labyrinthe du Minotoror.",
+      "objectID": "47699"
+    },
+    "04-22": {
+      "name": "Sylfaen",
+      "offering": "2 Carpe d'Iem",
+      "bonusTitle": "Bonus : Apparition des ressources",
+      "bonusDescription": "La vitesse d'apparition des ressources est augmentée de 150 % dans les zones de la Rivière Kawaii et du Port de Madrestam.",
+      "objectID": "41305"
+    },
+    "04-23": {
+      "name": "Katelruz",
+      "offering": "2 Bave de Ouassingue",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 75 % sur les créatures de type Monstres des Tourbières.",
+      "objectID": "15093"
+    },
+    "04-24": {
+      "name": "Lakha",
+      "offering": "2 Pierre du Craqueleur",
+      "bonusTitle": "Bonus : Challenges augmentés",
+      "bonusDescription": "Les bonus apportés par les challenges réussis sont augmentés de 200 % dans la zone de la montagne des Craqueleurs.",
+      "objectID": "51127"
+    },
+    "04-25": {
+      "name": "Rakreveï",
+      "offering": "3 Museau **",
+      "bonusTitle": "Bonus : Gibier abondant",
+      "bonusDescription": "Les quantités de Museaux récupérées par les Chasseurs sont augmentées de 125%. Ce bonus est valable pour toutes les qualités de Museaux.",
+      "objectID": "63373"
+    },
+    "04-26": {
+      "name": "Fako",
+      "offering": "2 Bourse Suspecte",
+      "bonusTitle": "Bonus : Quêtes et kamas",
+      "bonusDescription": "Les gains de kamas sont augmentés de 100 % pour toutes les quêtes.",
+      "objectID": "141010"
+    },
+    "04-27": {
+      "name": "Proff",
+      "offering": "3 Oreille de Kanigrou",
+      "bonusTitle": "Bonus : Apparition des étoiles",
+      "bonusDescription": "La vitesse d'apparition des étoiles sur les groupes de monstres est augmentée dans la zone de la Route de Brâkmar : une étoile apparaît toutes les 15 minutes.",
+      "objectID": "106562"
+    },
+    "04-28": {
+      "name": "Shinkarré",
+      "offering": "1 Cristal",
+      "bonusTitle": "Bonus : Économie d'ingrédients",
+      "bonusDescription": "Les Mineurs économisent 10 % de leurs ingrédients lorsqu'ils fabriquent des objets.",
+      "objectID": "50098"
+    },
+    "04-29": {
+      "name": "Mylka",
+      "offering": "4 Plume de Piou Rouge",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 75 % sur les créatures de type Pious.",
+      "objectID": "53117"
+    },
+    "04-30": {
+      "name": "Franek",
+      "offering": "20 Fleur de Chanvre",
+      "bonusTitle": "Bonus : Cueillette abondante",
+      "bonusDescription": "Les quantités de Plantes récupérées par les Alchimistes de tous niveaux sont augmentées de 100 %.",
+      "objectID": "35156"
+    },
+    "05-01": {
+      "name": "Esthoma",
+      "offering": "2 Capsule Explosive",
+      "bonusTitle": "Bonus : Fabrique Féérique",
+      "bonusDescription": "Pour chaque Fée d'Artifice fabriquée, les personnages ont 25 % de chances de créer une seconde Fée et 10 % de chances d'économiser des ingrédients. Ils peuvent aussi récupérer 2 fois plus de Capsules Explosives en combattant des Bworks Mages.",
+      "objectID": "15711"
+    },
+    "05-02": {
+      "name": "Gymcitro",
+      "offering": "1 Langue du Champodonte",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 125 % dans le donjon Fungus.",
+      "objectID": "15765"
+    },
+    "05-03": {
+      "name": "Rikku",
+      "offering": "2 Souche de l'Abrakleur clair",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 75 % sur les créatures de type Monstres de l'Arbre Hakam.",
+      "objectID": "38003"
+    },
+    "05-04": {
+      "name": "Malava",
+      "offering": "1 Sang d'Oni",
+      "bonusTitle": "Bonus : Challenges augmentés",
+      "bonusDescription": "Les bonus apportés par les challenges réussis sont augmentés de 250 % sur les Onis.",
+      "objectID": "15662"
+    },
+    "05-05": {
+      "name": "Bo",
+      "offering": "2 Moustache du Mufafah",
+      "bonusTitle": "Bonus : Challenge supplémentaire",
+      "bonusDescription": "Un challenge supplémentaire est généré contre les monstres présents dans la zone des Plaines Herbeuses.",
+      "objectID": "15015"
+    },
+    "05-06": {
+      "name": "Bipup",
+      "offering": "15 Bois d'Erable",
+      "bonusTitle": "Bonus : Bois abondant",
+      "bonusDescription": "Les quantités de Bombu, d'Oliviolet et d'Érable récupérées par les Bûcherons sont augmentées de 125 %.",
+      "objectID": "38153"
+    },
+    "05-07": {
+      "name": "Azkatraz",
+      "offering": "5 Boulettes d'Insecte",
+      "bonusTitle": "Bonus : Économie d'ingrédients",
+      "bonusDescription": "Les artisans ont 15 % de chances d'économiser des ingrédients lorsqu'ils fabriquent des objets dans la zone de la Bourgade, ainsi que dans les Champs de Glace.",
+      "objectID": "69110"
+    },
+    "05-08": {
+      "name": "Bigg",
+      "offering": "10 Pomme de Terre",
+      "bonusTitle": "Bonus : Quête répétable",
+      "bonusDescription": "Une quête répétable spéciale est disponible aujourd'hui près du château d'Amakna. Réalisable à partir du niveau 20, elle est indépendante de la quête d'offrande.",
+      "objectID": "68135"
+    },
+    "05-09": {
+      "name": "Bern",
+      "offering": "2 Pierre Médicinale",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 100 % dans la zone du Canyon Sauvage.",
+      "objectID": "51496"
+    },
+    "05-10": {
+      "name": "Loumi",
+      "offering": "3 Grande Pelle de Boisaille",
+      "bonusTitle": "Bonus : Élevage de Dragodindes",
+      "bonusDescription": "Toutes les variétés de Dragodindes Turquoise donnent naissance à un bébé supplémentaire.",
+      "objectID": "8001"
+    },
+    "05-11": {
+      "name": "Duanaf",
+      "offering": "1 Carapace de Scarafeuille Vert",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 100 % dans la zone de la Plaine des Scarafeuilles.",
+      "objectID": "107444"
+    },
+    "05-12": {
+      "name": "Zebdara",
+      "offering": "20 Malt",
+      "bonusTitle": "Bonus : Récolte abondante",
+      "bonusDescription": "Les quantités de Malt récupérées par les Paysans sont augmentées de 125 %.",
+      "objectID": "34083"
+    },
+    "05-13": {
+      "name": "Todeb",
+      "offering": "1 Dédicace de Skeunk pour Émeraude",
+      "bonusTitle": "Bonus : Challenges augmentés",
+      "bonusDescription": "Les bonus apportés par les challenges réussis sont augmentés de 200 % dans le donjon du Repaire de Skeunk.",
+      "objectID": "15804"
+    },
+    "05-14": {
+      "name": "Alikindoy",
+      "offering": "1 Sac du Petit Récolteur",
+      "bonusTitle": "Bonus : Gardiens de la nature",
+      "bonusDescription": "Les protecteurs de ressources ont 5 fois plus de chances d'apparaître pendant les activités de récolte.",
+      "objectID": "81026"
+    },
+    "05-15": {
+      "name": "Nell",
+      "offering": "11 Laine de Bouftou",
+      "bonusTitle": "Bonus : Cadeaux Surprises",
+      "bonusDescription": "Des Boufballes Surprises ont été ajoutées aux butins des monstres. Lorsqu'elles sont utilisées, elles permettent d'obtenir des Bouf'gommes de différents parfums.",
+      "objectID": "57056"
+    },
+    "05-16": {
+      "name": "Ku",
+      "offering": "40 Fleur de Lin",
+      "bonusTitle": "Bonus : Apparition des ressources",
+      "bonusDescription": "La vitesse d'apparition des plantes cueillies par les Alchimistes est augmentée de 100 %.",
+      "objectID": "35117"
+    },
+    "05-17": {
+      "name": "Khâm",
+      "offering": "2 Étoffe du Roissingue",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 150 % sur les Roissingues.",
+      "objectID": "55019"
+    },
+    "05-18": {
+      "name": "Kevlatahmu",
+      "offering": "3 Fleur de Bulbiflore",
+      "bonusTitle": "Bonus : Apparition des étoiles",
+      "bonusDescription": "La vitesse d'apparition des étoiles sur les groupes de monstres est augmentée dans la zone de la forêt de Pandala : une étoile apparaît toutes les 5 minutes.",
+      "objectID": "35119"
+    },
+    "05-19": {
+      "name": "Tyrben",
+      "offering": "12 Etain",
+      "bonusTitle": "Bonus : Minerai abondant",
+      "bonusDescription": "Les quantités d'Étain et de Silicate récupérées par les Mineurs sont augmentées de 150 %.",
+      "objectID": "39078"
+    },
+    "05-20": {
+      "name": "Jember",
+      "offering": "2 Papier Charbon",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 75 % sur les créatures de type Dopeuls de temple.",
+      "objectID": "15816"
+    },
+    "05-21": {
+      "name": "Ntamak",
+      "offering": "1 Capouze des Champs",
+      "bonusTitle": "Bonus : Économie d'ingrédients",
+      "bonusDescription": "Les Tailleurs ont 10 % de chances d'économiser des ingrédients lorsqu'ils fabriquent des objets.",
+      "objectID": "17065"
+    },
+    "05-22": {
+      "name": "Krisegis",
+      "offering": "2 Laine de Yokaï Givrefoux",
+      "bonusTitle": "Bonus : Challenge supplémentaire",
+      "bonusDescription": "Un challenge supplémentaire est généré contre les monstres présents dans la zone des Cavernes des Givrefoux.",
+      "objectID": "57658"
+    },
+    "05-23": {
+      "name": "Osebo",
+      "offering": "2 Perche",
+      "bonusTitle": "Bonus : Pêche abondante",
+      "bonusDescription": "Les quantités de Poissons de rivière géants récupérées par les Pêcheurs sont augmentées de 150 %.",
+      "objectID": "41313"
+    },
+    "05-24": {
+      "name": "Daza",
+      "offering": "3 Graine de Tournesol Sauvage",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 125 % dans le donjon des Champs.",
+      "objectID": "58006"
+    },
+    "05-25": {
+      "name": "Toun",
+      "offering": "1 Cawotte",
+      "bonusTitle": "Bonus : Quête répétable",
+      "bonusDescription": "Une quête répétable spéciale est disponible aujourd'hui à l'est de l'atelier des bûcherons de la forêt d'Amakna. Réalisable à partir du niveau 20, elle est indépendante de la quête d'offrande.",
+      "objectID": "68031"
+    },
+    "05-26": {
+      "name": "Taelstrom",
+      "offering": "6 Corne de Bouftou",
+      "bonusTitle": "Bonus : Challenges augmentés",
+      "bonusDescription": "Les bonus apportés par les challenges réussis sont augmentés de 200 % dans la zone de l'Élevage de Bouftous du Château d'Amakna.",
+      "objectID": "47055"
+    },
+    "05-27": {
+      "name": "Milidès",
+      "offering": "10 Pain Consistant",
+      "bonusTitle": "Bonus : Fabrication intensive",
+      "bonusDescription": "Pour chaque objet fabriqué, les Boulangers ont 25 % de chances de créer un second objet.",
+      "objectID": "33012"
+    },
+    "05-28": {
+      "name": "Izmar",
+      "offering": "2 Viande de Chachachovage",
+      "bonusTitle": "Bonus : Gibier abondant",
+      "bonusDescription": "Les quantités de viande récupérées par les Chasseurs sur les créatures de Frigost qui vivent dans la Bourgade sont augmentées de 125 %.",
+      "objectID": "63385"
+    },
+    "05-29": {
+      "name": "Ani",
+      "offering": "2 Poils de Koalak Forestier",
+      "bonusTitle": "Bonus : Apparition des étoiles",
+      "bonusDescription": "La vitesse d'apparition des étoiles sur les groupes de monstres est augmentée dans la zone de la forêt de Kaliptus : une étoile apparaît toutes les 5 minutes.",
+      "objectID": "54004"
+    },
+    "05-30": {
+      "name": "Xandra",
+      "offering": "7 Coquille de Dragoeuf Doré",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 75 % sur les créatures de type Dragoeufs.",
+      "objectID": "111202"
+    },
+    "05-31": {
+      "name": "Tiny",
+      "offering": "2 Lamelle de Dramanite",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 100 % dans la zone de la forêt Pétrifiée.",
+      "objectID": "119001"
+    },
+    "06-01": {
+      "name": "Namyknof",
+      "offering": "5 Pince du Crabe",
+      "bonusTitle": "Bonus : Challenge supplémentaire",
+      "bonusDescription": "Un challenge supplémentaire est généré contre les créatures de type Monstres des plages.",
+      "objectID": "47051"
+    },
+    "06-02": {
+      "name": "Elgero",
+      "offering": "3 Sardine Brillante vidée",
+      "bonusTitle": "Bonus : Économie d'ingrédients",
+      "bonusDescription": "Les artisans ont 15 % de chances d'économiser des ingrédients lorsqu'ils fabriquent des objets dans la zone du port de Madrestam.",
+      "objectID": "62318"
+    },
+    "06-03": {
+      "name": "Mikart",
+      "offering": "2 Graine de la Discorde",
+      "bonusTitle": "Bonus : Challenges augmentés",
+      "bonusDescription": "Les bonus apportés par les challenges réussis sont augmentés de 200 % dans le donjon des Forgerons.",
+      "objectID": "58472"
+    },
+    "06-04": {
+      "name": "Martero",
+      "offering": "2 Sceau Royal Contrefait",
+      "bonusTitle": "Bonus : Percepteurs zélés",
+      "bonusDescription": "Le butin généré par les Percepteurs est augmenté de 200 % dans toutes les zones.",
+      "objectID": "15131"
+    },
+    "06-05": {
+      "name": "Aris",
+      "offering": "1 Lingot d'Or",
+      "bonusTitle": "Bonus : Minerai abondant",
+      "bonusDescription": "Les quantités de minerai récupérées par les Mineurs de tous niveaux sont augmentées de 100 %.",
+      "objectID": "40241"
+    },
+    "06-06": {
+      "name": "Mendelia",
+      "offering": "2 Oeil de Harrogant",
+      "bonusTitle": "Bonus : Butin frigostien",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 75 % sur le Comte Harebourg et ses 4 lieutenants, ainsi que sur leurs créatures.",
+      "objectID": "109602"
+    },
+    "06-07": {
+      "name": "Halden",
+      "offering": "2 Incisive de Kami Givrefoux",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 75 % sur les créatures de type Givrefoux.",
+      "objectID": "47685"
+    },
+    "06-08": {
+      "name": "Tigibon",
+      "offering": "2 Pousses de Bulbambou",
+      "bonusTitle": "Bonus : Challenges augmentés",
+      "bonusDescription": "Les bonus apportés par les challenges réussis sont augmentés de 200 % dans la zone de la forêt de Pandala.",
+      "objectID": "36056"
+    },
+    "06-09": {
+      "name": "Verôl",
+      "offering": "10 Orchidée Freyesque",
+      "bonusTitle": "Bonus : Cueillette abondante",
+      "bonusDescription": "Les quantités d'Orchidée Freyesque récupérées par les Alchimistes sont augmentées de 150 %.",
+      "objectID": "35192"
+    },
+    "06-10": {
+      "name": "Jibejan",
+      "offering": "5 Pic de Dragodinde",
+      "bonusTitle": "Bonus : Élevage de Dragodindes",
+      "bonusDescription": "Toutes les variétés de Dragodindes Amande donnent naissance à un bébé supplémentaire.",
+      "objectID": "47597"
+    },
+    "06-11": {
+      "name": "Teluomaj",
+      "offering": "2 Kokopaille",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 100 % dans la zone de la plage de Moon.",
+      "objectID": "15433"
+    },
+    "06-12": {
+      "name": "Aazimar",
+      "offering": "2 Baguette de Glace",
+      "bonusTitle": "Bonus : Objets de qualité",
+      "bonusDescription": "La qualité des objets fabriqués dans la ville de la Bourgade est augmentée.",
+      "objectID": "3002"
+    },
+    "06-13": {
+      "name": "Blou",
+      "offering": "1 Bave de Champ à Gnons",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 100 % dans la zone de la Caverne des Fungus.",
+      "objectID": "15045"
+    },
+    "06-14": {
+      "name": "Yaka",
+      "offering": "1 Clef des Champs",
+      "bonusTitle": "Bonus : Économie d'ingrédients",
+      "bonusDescription": "Les Bricoleurs ont 10 % de chances d'économiser des ingrédients lorsqu'ils fabriquent des objets.",
+      "objectID": "84013"
+    },
+    "06-15": {
+      "name": "Bek",
+      "offering": "12 Bois de Merisier",
+      "bonusTitle": "Bonus : Bois abondant",
+      "bonusDescription": "Les quantités de Merisier récupérées par les Bûcherons sont augmentées de 125 %.",
+      "objectID": "38139"
+    },
+    "06-16": {
+      "name": "Pytch",
+      "offering": "7 Coquille de Dragoeuf Saphir",
+      "bonusTitle": "Bonus : Challenge supplémentaire",
+      "bonusDescription": "Un challenge supplémentaire est généré contre les monstres présents dans la zone du Village des Dragoeufs.",
+      "objectID": "111211"
+    },
+    "06-17": {
+      "name": "Seyroth",
+      "offering": "2 Racine de Bulbig",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 150 % sur les Bulbigs. Le Bulbig Brozeur n'est pas concerné par ce bonus.",
+      "objectID": "98144"
+    },
+    "06-18": {
+      "name": "Redfis",
+      "offering": "2 Peau de Dragoeuf Volant",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 125 % dans le donjon des Dragoeufs.",
+      "objectID": "59610"
+    },
+    "06-19": {
+      "name": "Lim",
+      "offering": "5 Peau de Kitsou Nufeu",
+      "bonusTitle": "Bonus : Challenges augmentés",
+      "bonusDescription": "Les bonus apportés par les challenges réussis sont augmentés de 250 % sur les Kitsous Nufeus.",
+      "objectID": "59044"
+    },
+    "06-20": {
+      "name": "Grut",
+      "offering": "40 Blé",
+      "bonusTitle": "Bonus : Récolte abondante",
+      "bonusDescription": "Les quantités de Blé récupérées par les Paysans sont augmentées de 125 %.",
+      "objectID": "34009"
+    },
+    "06-21": {
+      "name": "Atsu",
+      "offering": "2 Conque Marine",
+      "bonusTitle": "Bonus : Tarif réduit",
+      "bonusDescription": "Le coût d’utilisation des Zaaps, les frais bancaires et les taxes des Hôtels de vente bénéficient d’une réduction de 50 %.",
+      "objectID": "15813"
+    },
+    "06-22": {
+      "name": "Gnat",
+      "offering": "2 Pince de Crustorail",
+      "bonusTitle": "Bonus : Apparition des étoiles",
+      "bonusDescription": "La vitesse d'apparition des étoiles sur les groupes de monstres est augmentée dans la zone de la Plage de Corail : une étoile apparaît toutes les 15 minutes.",
+      "objectID": "47017"
+    },
+    "06-23": {
+      "name": "Hellmut",
+      "offering": "2 Bave du Kaskargo",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 100 % dans la zone du Feuillage de l'Arbre Hakam.",
+      "objectID": "15006"
+    },
+    "06-24": {
+      "name": "Azrou",
+      "offering": "4 Langue du Pissenlit Diabolique",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 75 % sur les créatures de type Plantes des Champs.",
+      "objectID": "36555"
+    },
+    "06-25": {
+      "name": "Oopah",
+      "offering": "40 Fer",
+      "bonusTitle": "Bonus : Apparition des ressources",
+      "bonusDescription": "La vitesse d'apparition des ressources est augmentée de 150 % dans la zone des Landes de Sidimote.",
+      "objectID": "39024"
+    },
+    "06-26": {
+      "name": "Bouliks",
+      "offering": "1 Bouclier du Bûcheron",
+      "bonusTitle": "Bonus : Économie d'ingrédients",
+      "bonusDescription": "Les artisans ont 15 % de chances d'économiser des ingrédients lorsqu'ils fabriquent des objets dans la zone du village de Pandala et ses faubourgs.",
+      "objectID": "82004"
+    },
+    "06-27": {
+      "name": "Ansôh",
+      "offering": "2 Vieille Ventouse de Kralamoure",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 125 % dans le donjon de l'Antre du Kralamoure Géant.",
+      "objectID": "15817"
+    },
+    "06-28": {
+      "name": "Ikoan",
+      "offering": "7 Racine d'Abraknyde",
+      "bonusTitle": "Bonus : Apparition des étoiles",
+      "bonusDescription": "La vitesse d'apparition des étoiles sur les groupes de monstres est augmentée dans la zone du Bois des Arak-haï : une étoile apparaît toutes les 10 minutes.",
+      "objectID": "98102"
+    },
+    "06-29": {
+      "name": "Poch",
+      "offering": "4 Cuisse de Bouftou",
+      "bonusTitle": "Bonus : Gibier abondant",
+      "bonusDescription": "Les quantités de Viande de Bouftou récupérées par les Chasseurs sont augmentées de 125%.",
+      "objectID": "63336"
+    },
+    "06-30": {
+      "name": "Lamarilu",
+      "offering": "3 Peau de Mandrine",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 100 % dans la zone de l'île du Minotoror.",
+      "objectID": "59602"
+    },
+    "07-01": {
+      "name": "Rems",
+      "offering": "4 Écaille de Chef Crocodaille",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 150 % sur les Chefs Crocodailles.",
+      "objectID": "59547"
+    },
+    "07-02": {
+      "name": "Yanouchk",
+      "offering": "6 Défense du Sanglier",
+      "bonusTitle": "Bonus : Challenge supplémentaire",
+      "bonusDescription": "Un challenge supplémentaire est généré contre les monstres présents dans la zone de la forêt d'Amakna.",
+      "objectID": "47059"
+    },
+    "07-03": {
+      "name": "Sirdal",
+      "offering": "7 Potion de Mini Soin",
+      "bonusTitle": "Bonus : Économie d'ingrédients",
+      "bonusDescription": "Les Alchimistes ont 10 % de chances d'économiser des ingrédients lorsqu'ils fabriquent des objets.",
+      "objectID": "12016"
+    },
+    "07-04": {
+      "name": "Eiwech",
+      "offering": "2 Dés de Joue de Rat d'Amakna",
+      "bonusTitle": "Bonus : Objets de qualité",
+      "bonusDescription": "La qualité des objets fabriqués dans le village et la forêt d'Amakna est augmentée.",
+      "objectID": "69831"
+    },
+    "07-05": {
+      "name": "Alaokit",
+      "offering": "1 Poils de Kitsou Nakwa",
+      "bonusTitle": "Bonus : Challenges augmentés",
+      "bonusDescription": "Les bonus apportés par les challenges réussis sont augmentés de 200 % dans le donjon des Kitsounes.",
+      "objectID": "54559"
+    },
+    "07-06": {
+      "name": "Poupik",
+      "offering": "8 Truite",
+      "bonusTitle": "Bonus : Pêche abondante",
+      "bonusDescription": "Les quantités de Poissons de rivière de taille moyenne récupérées par les Pêcheurs sont augmentées de 150 %.",
+      "objectID": "41394"
+    },
+    "07-07": {
+      "name": "Lazura",
+      "offering": "2 Résidu de Solfataré",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 100 % dans la zone des Larmes d'Ouronigride.",
+      "objectID": "51471"
+    },
+    "07-08": {
+      "name": "Unkn",
+      "offering": "8 Laine du Boufcoul",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 200 % sur les Boufcouls et les Bouftous des Cavernes.",
+      "objectID": "57001"
+    },
+    "07-09": {
+      "name": "Blid",
+      "offering": "20 Bois de Frêne",
+      "bonusTitle": "Bonus : Expérience des métiers",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 50 % pour les métiers de récolte.",
+      "objectID": "38017"
+    },
+    "07-10": {
+      "name": "Jihelair",
+      "offering": "1 Arc Ecologique",
+      "bonusTitle": "Bonus : Élevage de Dragodindes",
+      "bonusDescription": "Toutes les variétés de Dragodindes Prune donnent naissance à un bébé supplémentaire.",
+      "objectID": "2020"
+    },
+    "07-11": {
+      "name": "Oskerine",
+      "offering": "10 Bauxite",
+      "bonusTitle": "Bonus : Minerai abondant",
+      "bonusDescription": "Les quantités de Bauxite récupérées par les Mineurs sont augmentées de 150 %.",
+      "objectID": "39076"
+    },
+    "07-12": {
+      "name": "Pasquéoz",
+      "offering": "2 Laine de Boufmouth",
+      "bonusTitle": "Bonus : Challenges augmentés",
+      "bonusDescription": "Les bonus apportés par les challenges réussis sont augmentés de 200 % dans la zone des Champs de Glace.",
+      "objectID": "57211"
+    },
+    "07-13": {
+      "name": "Klernodie",
+      "offering": "2 Pierre d'Atomystique",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 100 % dans la zone des Larmes d'Ouronigride.",
+      "objectID": "51469"
+    },
+    "07-14": {
+      "name": "Zuart",
+      "offering": "2 Chaînes Brisées",
+      "bonusTitle": "Bonus : Expérience du Kolizéum",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 100 % lors des combats du Kolizéum.",
+      "objectID": "15245"
+    },
+    "07-15": {
+      "name": "Bouilli",
+      "offering": "3 Dragosviande",
+      "bonusTitle": "Bonus : Gibier abondant",
+      "bonusDescription": "Les quantités de Viande de Dragodinde et de Dragoeuf récupérées par les Chasseurs sont augmentées de 125%.",
+      "objectID": "63371"
+    },
+    "07-16": {
+      "name": "Okajin",
+      "offering": "2 Boue Vénérable",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 75 % sur les créatures de type Monstres de Vulkania.",
+      "objectID": "15793"
+    },
+    "07-17": {
+      "name": "Luzbel",
+      "offering": "4 Fleur de Pissenlit Diabolique",
+      "bonusTitle": "Bonus : Apparition des étoiles",
+      "bonusDescription": "La vitesse d'apparition des étoiles sur les groupes de monstres est augmentée dans la zone des Prairies d'Astrub : une étoile apparaît toutes les 10 minutes.",
+      "objectID": "35018"
+    },
+    "07-18": {
+      "name": "Titi",
+      "offering": "5 Substrat de buisson",
+      "bonusTitle": "Bonus : Économie d'ingrédients",
+      "bonusDescription": "Les artisans ont 15 % de chances d'économiser des ingrédients lorsqu'ils fabriquent des objets dans la zone du Coin des Bouftous.",
+      "objectID": "26016"
+    },
+    "07-19": {
+      "name": "Alucard",
+      "offering": "2 Coccyx du Corailleur",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 125 % dans le donjon de la Grotte Hesque.",
+      "objectID": "47012"
+    },
+    "07-20": {
+      "name": "Gurvamon",
+      "offering": "1 Huile de Tournesol Sauvage",
+      "bonusTitle": "Bonus : Apparition des ressources",
+      "bonusDescription": "La vitesse d'apparition des céréales récoltées par les Paysans est augmentée de 100 %.",
+      "objectID": "60061"
+    },
+    "07-21": {
+      "name": "Alhera",
+      "offering": "2 Pierre Précieuse Zoth",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 100 % dans la zone du Village des Zoths.",
+      "objectID": "50716"
+    },
+    "07-22": {
+      "name": "Tholank",
+      "offering": "2 Plume de Gélikan",
+      "bonusTitle": "Bonus : Challenge supplémentaire",
+      "bonusDescription": "Un challenge supplémentaire est généré contre les créatures de type Monstres de la Bourgade.",
+      "objectID": "53648"
+    },
+    "07-23": {
+      "name": "Kaoly",
+      "offering": "10 Greuvette",
+      "bonusTitle": "Bonus : Familiers Frénétiques",
+      "bonusDescription": "Les bonus apportés par les familiers et les montiliers sont augmentés de 100 %.",
+      "objectID": "41292"
+    },
+    "07-24": {
+      "name": "Xan",
+      "offering": "1 Bois d'Orme",
+      "bonusTitle": "Bonus : Bois abondant",
+      "bonusDescription": "Les quantités de Tremble, de Bambou Sacré et d'Orme récupérées par les Bûcherons sont augmentées de 200 %.",
+      "objectID": "38140"
+    },
+    "07-25": {
+      "name": "Anulideven",
+      "offering": "1 Peau de Don Duss Ang",
+      "bonusTitle": "Bonus : Challenges augmentés",
+      "bonusDescription": "Les bonus apportés par les challenges réussis sont augmentés de 150 % sur les créatures de type Cochons.",
+      "objectID": "59618"
+    },
+    "07-26": {
+      "name": "Lokhaan",
+      "offering": "2 Queue d'Ecumouth",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 100 % dans la zone de la forêt des Pins Perdus.",
+      "objectID": "65754"
+    },
+    "07-27": {
+      "name": "Benka",
+      "offering": "8 Larve Croque-sel",
+      "bonusTitle": "Bonus : Économie d'ingrédients",
+      "bonusDescription": "Les Chasseurs ont 10 % de chances d'économiser des ingrédients lorsqu'ils fabriquent des objets.",
+      "objectID": "69113"
+    },
+    "07-28": {
+      "name": "Nobozil",
+      "offering": "2 Péroné du Marôdeur",
+      "bonusTitle": "Bonus : Apparition des étoiles",
+      "bonusDescription": "La vitesse d'apparition des étoiles sur les groupes de monstres est augmentée dans les zones de la forêt Enneigée et de la plaine de Sakaï : une étoile apparaît toutes les 5 minutes.",
+      "objectID": "47670"
+    },
+    "07-29": {
+      "name": "Olileb",
+      "offering": "5 Peau de Kitsou Nere",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 125 % dans le donjon du Repaire de Daïgoro.",
+      "objectID": "59045"
+    },
+    "07-30": {
+      "name": "Aleb",
+      "offering": "4 Sang du Vampire",
+      "bonusTitle": "Bonus : Butin et XP dans la Maison Fantôme",
+      "bonusDescription": "Les gains d'expérience et les chances d'obtenir du butin sont augmentés de 125 % dans le donjon de la Maison Fantôme.",
+      "objectID": "15089"
+    },
+    "07-31": {
+      "name": "Krisdanh",
+      "offering": "2 Poudre Novice",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 75 % sur les créatures de type Monstres de Vulkania.",
+      "objectID": "48281"
+    },
+    "08-01": {
+      "name": "Jycêdus",
+      "offering": "10 Edelweiss",
+      "bonusTitle": "Bonus : Cueillette abondante",
+      "bonusDescription": "Les quantités d'Edelweiss et de Graines de Pandouille récupérées par les Alchimistes sont augmentées de 175 %.",
+      "objectID": "35191"
+    },
+    "08-02": {
+      "name": "Pô",
+      "offering": "5 Oeuf de Tofu",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 75 % sur les créatures de type Tofus.",
+      "objectID": "105038"
+    },
+    "08-03": {
+      "name": "Puliblak",
+      "offering": "3 Potion de cité : Bonta",
+      "bonusTitle": "Bonus : Quête répétable",
+      "bonusDescription": "Une quête répétable spéciale est disponible aujourd'hui au sud des portes de Bonta. Réalisable à partir du niveau 20, elle est indépendante de la quête d'offrande.",
+      "objectID": "12144"
+    },
+    "08-04": {
+      "name": "Anshâ",
+      "offering": "2 Cendres Matures",
+      "bonusTitle": "Bonus : Challenge supplémentaire",
+      "bonusDescription": "Un challenge supplémentaire est généré contre les créatures de type Monstres de Vulkania.",
+      "objectID": "48282"
+    },
+    "08-05": {
+      "name": "Meda",
+      "offering": "3 Poisskaille",
+      "bonusTitle": "Bonus : Pêche abondante",
+      "bonusDescription": "Les quantités de Poissons de Frigost récupérées par les Pêcheurs sont augmentées de 150 %.",
+      "objectID": "41403"
+    },
+    "08-06": {
+      "name": "Jü",
+      "offering": "2 Crème à bronzer",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 100 % dans la zone des Calanques d'Astrub.",
+      "objectID": "15814"
+    },
+    "08-07": {
+      "name": "Dramon",
+      "offering": "2 Racine de Tronkoblop",
+      "bonusTitle": "Bonus : Challenges augmentés",
+      "bonusDescription": "Les bonus apportés par les challenges réussis sont augmentés de 200 % dans le donjon de l'Antre du Blop Multicolore Royal.",
+      "objectID": "98001"
+    },
+    "08-08": {
+      "name": "Zeg",
+      "offering": "4 Bottes du Chat Buté",
+      "bonusTitle": "Bonus : Économie d'ingrédients",
+      "bonusDescription": "Les artisans ont 15 % de chances d'économiser des ingrédients lorsqu'ils fabriquent des objets dans la zone de Bonta.",
+      "objectID": "11003"
+    },
+    "08-09": {
+      "name": "Tix",
+      "offering": "40 Blé",
+      "bonusTitle": "Bonus : Récolte abondante",
+      "bonusDescription": "Les quantités de céréales récupérées par les Paysans de tous niveaux sont augmentées de 100 %.",
+      "objectID": "34009"
+    },
+    "08-10": {
+      "name": "Rigamix",
+      "offering": "2 Pic de Dragodinde Dorée",
+      "bonusTitle": "Bonus : Élevage de Dragodindes",
+      "bonusDescription": "Toutes les variétés de Dragodindes capables de se reproduire donnent naissance à un bébé supplémentaire.",
+      "objectID": "47598"
+    },
+    "08-11": {
+      "name": "Matgap",
+      "offering": "2 Os de Fantôme Soryo Firefoux",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 100 % dans la zone de l'île de Grobe.",
+      "objectID": "47007"
+    },
+    "08-12": {
+      "name": "Sab",
+      "offering": "2 Pointe de Javelot de Jav",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 75 % sur les créatures de type Kannibouls de l'île de Moon.",
+      "objectID": "15246"
+    },
+    "08-13": {
+      "name": "Ouchim",
+      "offering": "2 Flaque Juvénile",
+      "bonusTitle": "Bonus : Challenges augmentés",
+      "bonusDescription": "Les bonus apportés par les challenges réussis sont augmentés de 150 % sur les créatures de type Monstres de Vulkania.",
+      "objectID": "15794"
+    },
+    "08-14": {
+      "name": "Margarou",
+      "offering": "15 Menthe Sauvage",
+      "bonusTitle": "Bonus : Apparition des ressources",
+      "bonusDescription": "La vitesse d'apparition des ressources est augmentée de 150 % dans la zone de la forêt d'Amakna.",
+      "objectID": "36052"
+    },
+    "08-15": {
+      "name": "Orreip",
+      "offering": "2 Paupière d'Étoile",
+      "bonusTitle": "Bonus : Étoiles défilantes",
+      "bonusDescription": "La vitesse d'apparition des étoiles sur les groupes de monstres est augmentée pour toutes les zones : une étoile apparaît toutes les 30 minutes.",
+      "objectID": "15815"
+    },
+    "08-16": {
+      "name": "Lortecaps",
+      "offering": "2 Brassard de Braconnier",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 100 % dans la zone du Pichon Frétillant.",
+      "objectID": "15797"
+    },
+    "08-17": {
+      "name": "Marjul",
+      "offering": "20 Bronze",
+      "bonusTitle": "Bonus : Minerai abondant",
+      "bonusDescription": "Les quantités de Bronze récupérées par les Mineurs sont augmentées de 150 %.",
+      "objectID": "39109"
+    },
+    "08-18": {
+      "name": "Ynniw",
+      "offering": "2 Corne de Gamino",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 75 % sur les créatures de type Minos.",
+      "objectID": "47699"
+    },
+    "08-19": {
+      "name": "Pilserpus",
+      "offering": "20 Houblon",
+      "bonusTitle": "Bonus : Économie d'ingrédients",
+      "bonusDescription": "Les Paysans ont 10 % de chances d'économiser des ingrédients lorsqu'ils fabriquent des objets.",
+      "objectID": "34080"
+    },
+    "08-20": {
+      "name": "Gridoo",
+      "offering": "3 Cuir du Cochon de Lait",
+      "bonusTitle": "Bonus : Challenges augmentés",
+      "bonusDescription": "Les bonus apportés par les challenges réussis sont augmentés de 200 % dans la zone de la plaine des Porkass.",
+      "objectID": "56141"
+    },
+    "08-21": {
+      "name": "Theomak",
+      "offering": "2 Fumée Juvénile",
+      "bonusTitle": "Bonus : Apparition des étoiles",
+      "bonusDescription": "La vitesse d'apparition des étoiles sur les groupes de monstres est augmentée dans les zones des forêts de Vulkania : une étoile apparaît toutes les 10 minutes.",
+      "objectID": "15795"
+    },
+    "08-22": {
+      "name": "Pierdem",
+      "offering": "4 Échine de Porc",
+      "bonusTitle": "Bonus : Gibier abondant",
+      "bonusDescription": "Les quantités de Viande de Porc récupérées par les Chasseurs sont augmentées de 125%.",
+      "objectID": "63331"
+    },
+    "08-23": {
+      "name": "Guiboun",
+      "offering": "2 Poils de Boulglours",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 100 % dans la zone du Mont Torrideau.",
+      "objectID": "54682"
+    },
+    "08-24": {
+      "name": "Mikala",
+      "offering": "2 Furoncle de la Mama Bwork",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 125 % dans le donjon du Bworker.",
+      "objectID": "15819"
+    },
+    "08-25": {
+      "name": "Lolzeolf",
+      "offering": "3 Pétale de Tournesol Sauvage",
+      "bonusTitle": "Bonus : Challenge supplémentaire",
+      "bonusDescription": "Un challenge supplémentaire est généré contre les monstres présents dans la zone du champ des Ingalsses.",
+      "objectID": "35632"
+    },
+    "08-26": {
+      "name": "Fizzi",
+      "offering": "2 Peau de Dragueuse",
+      "bonusTitle": "Bonus : Percepteurs avides",
+      "bonusDescription": "Le butin généré par les Percepteurs est augmenté de 300 % dans le donjon des Dragoeufs.",
+      "objectID": "59609"
+    },
+    "08-27": {
+      "name": "Talentyre",
+      "offering": "2 Écaille de Harpirate",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 75 % sur les créatures de type Monstres du Berceau d'Alma.",
+      "objectID": "59631"
+    },
+    "08-28": {
+      "name": "Noon",
+      "offering": "20 Bois de Noyer",
+      "bonusTitle": "Bonus : Bois abondant",
+      "bonusDescription": "Les quantités de Noyer récupérées par les Bûcherons sont augmentées de 150 %.",
+      "objectID": "38095"
+    },
+    "08-29": {
+      "name": "Dyw",
+      "offering": "2 Fleur de Blopignon",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 125 % dans le donjon des Blops.",
+      "objectID": "35008"
+    },
+    "08-30": {
+      "name": "So",
+      "offering": "1 Peau de Don Dorgan",
+      "bonusTitle": "Bonus : Apparition des étoiles",
+      "bonusDescription": "La vitesse d'apparition des étoiles sur les groupes de monstres est augmentée dans la zone du Labyrinthe du Dragon Cochon : une étoile apparaît toutes les 5 minutes.",
+      "objectID": "59617"
+    },
+    "08-31": {
+      "name": "Bitkyo",
+      "offering": "3 Michette",
+      "bonusTitle": "Bonus : Économie d'ingrédients",
+      "bonusDescription": "Les artisans ont 15 % de chances d'économiser des ingrédients lorsqu'ils fabriquent des objets dans la zone de la forêt d'Amakna.",
+      "objectID": "33011"
+    },
+    "09-01": {
+      "name": "Manoush",
+      "offering": "2 Os de Pékeualak",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 100 % dans la zone des Lacs Enchantés.",
+      "objectID": "47010"
+    },
+    "09-02": {
+      "name": "Ancestrotek",
+      "offering": "4 Potion de Vieillesse",
+      "bonusTitle": "Bonus : Expérience des métiers",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 50 % pour tous les métiers.",
+      "objectID": "12002"
+    },
+    "09-03": {
+      "name": "Vikotoru",
+      "offering": "40 Ortie",
+      "bonusTitle": "Bonus : Cueillette abondante",
+      "bonusDescription": "Les quantités d'Ortie récupérées par les Alchimistes sont augmentées de 125 %.",
+      "objectID": "36642"
+    },
+    "09-04": {
+      "name": "Lorko",
+      "offering": "2 Griffe de Blérauve",
+      "bonusTitle": "Bonus : Challenges augmentés",
+      "bonusDescription": "Les bonus apportés par les challenges réussis sont augmentés de 150 % sur les monstres des Crocs de verre.",
+      "objectID": "47680"
+    },
+    "09-05": {
+      "name": "Lucimay",
+      "offering": "4 Feuille de Bambouto",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 100 % dans la zone de Pandala Neutre.",
+      "objectID": "36069"
+    },
+    "09-06": {
+      "name": "Zouzo",
+      "offering": "1 Poil de Renarbo",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 125 % dans la Bibliothèque du Maître Corbac.",
+      "objectID": "54005"
+    },
+    "09-07": {
+      "name": "Cherop",
+      "offering": "2 Pierre de Mofette",
+      "bonusTitle": "Bonus : Challenge supplémentaire",
+      "bonusDescription": "Un challenge supplémentaire est généré contre les monstres des Larmes d'Ouronigride.",
+      "objectID": "51474"
+    },
+    "09-08": {
+      "name": "Davut",
+      "offering": "3 Sardine Brillante",
+      "bonusTitle": "Bonus : Pêche abondante",
+      "bonusDescription": "Les quantités de Poisson Pané, de Sardine Brillante, de Kralamoure et de Dorade Grise récupérées par les Pêcheurs sont augmentées de 150 %.",
+      "objectID": "41317"
+    },
+    "09-09": {
+      "name": "Mud",
+      "offering": "2 Trident Cassé",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 150 % sur les Bergers Porkass.",
+      "objectID": "15512"
+    },
+    "09-10": {
+      "name": "Mau",
+      "offering": "1 Aile de Dragodinde",
+      "bonusTitle": "Bonus : Élevage de Dragodindes",
+      "bonusDescription": "Toutes les variétés de Dragodindes Ebène donnent naissance à un bébé supplémentaire.",
+      "objectID": "104593"
+    },
+    "09-11": {
+      "name": "Xa",
+      "offering": "2 Peau de Dragoeuf Guerrier",
+      "bonusTitle": "Bonus : Apparition des étoiles",
+      "bonusDescription": "La vitesse d'apparition des étoiles sur les groupes de monstres est augmentée dans la zone du Sanctuaire des Dragoeufs : une étoile apparaît toutes les 10 minutes.",
+      "objectID": "59611"
+    },
+    "09-12": {
+      "name": "Grugin",
+      "offering": "2 Flamme Spectrale",
+      "bonusTitle": "Bonus : Bonta et Brâkmar",
+      "bonusDescription": "Les récompenses en points d'expérience des quêtes d'alignement et des quêtes des Ordres des cités sont augmentées de 100 %. De plus, une quête répétable spéciale est disponible aujourd'hui à l'intérieur des milices de Bonta ou de Brâkmar. Réalisable à partir du niveau 20 par les personnages alignés, elle est indépendante de la quête d'offrande.",
+      "objectID": "15247"
+    },
+    "09-13": {
+      "name": "Yukin",
+      "offering": "20 Lin",
+      "bonusTitle": "Bonus : Récolte abondante",
+      "bonusDescription": "Les quantités de Lin récupérées par les Paysans sont augmentées de 125 %.",
+      "objectID": "34122"
+    },
+    "09-14": {
+      "name": "Farod",
+      "offering": "2 Écorce d'Abrazif",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 75 % sur les monstres de la forêt Pétrifiée.",
+      "objectID": "96668"
+    },
+    "09-15": {
+      "name": "Makss",
+      "offering": "3 Collier de l'Arc en Ciel",
+      "bonusTitle": "Bonus : Économie d'ingrédients",
+      "bonusDescription": "Les Bijoutiers économisent 10 % de leurs ingrédients lorsqu'ils fabriquent des objets.",
+      "objectID": "1011"
+    },
+    "09-16": {
+      "name": "Latürb",
+      "offering": "2 Oreille de Bouftonmouth",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 100 % dans la zone des Champs de Glace.",
+      "objectID": "106624"
+    },
+    "09-17": {
+      "name": "Nosruo",
+      "offering": "7 Épine du Champ Champ",
+      "bonusTitle": "Bonus : Points d'expérience",
+      "bonusDescription": "Les gains d'expérience sont augmentés de 100 % dans la zone de la Clairière de Brouce Boulgoure.",
+      "objectID": "15049"
+    },
+    "09-18": {
+      "name": "Guidys",
+      "offering": "4 Os de Chafer",
+      "bonusTitle": "Bonus : Challenges augmentés",
+      "bonusDescription": "Les bonus apportés par les challenges réussis sont augmentés de 200 % dans le donjon des Squelettes.",
+      "objectID": "47015"
+    },
+    "09-19": {
+      "name": "Olvido",
+      "offering": "20 Bois de Noyer",
+      "bonusTitle": "Bonus : Butin et XP sur les pirates",
+      "bonusDescription": "Les gains d'expérience et les chances d'obtenir du butin sont augmentés de 75 % sur tous les monstres considérés comme des pirates.",
+      "objectID": "38095"
+    },
+    "09-20": {
+      "name": "Nido",
+      "offering": "3 Viande Fraîche",
+      "bonusTitle": "Bonus : Gibier abondant",
+      "bonusDescription": "Les quantités de Viande Fraîche récupérées par les Chasseurs sont augmentées de 125%.",
+      "objectID": "63441"
+    },
+    "09-21": {
+      "name": "Bodirom",
+      "offering": "2 Hache Vôr'Om",
+      "bonusTitle": "Bonus : Objets de qualité",
+      "bonusDescription": "La qualité des objets fabriqués dans la ville de Brâkmar est augmentée.",
+      "objectID": "19013"
+    },
+    "09-22": {
+      "name": "Djuuma",
+      "offering": "3 Poils de Léopardo",
+      "bonusTitle": "Bonus : Challenges augmentés",
+      "bonusDescription": "Les bonus apportés par les challenges réussis sont augmentés de 200 % dans la zone de la Bordure de Feudala.",
+      "objectID": "54205"
+    },
+    "09-23": {
+      "name": "Foluk",
+      "offering": "2 Duvet du Kilibriss",
+      "bonusTitle": "Bonus : Butin",
+      "bonusDescription": "Les chances d'obtenir du butin sont augmentées de 75 % sur les monstres des Plaines Herbeuses.",
+      "objectID": "54012"
+    },
+    "09-24": {
+      "name": "Emp",
+      "offering": "4 Hachette de Bûcheron",
+      "bonusTitle": "Bonus : Économie d'ingrédients",
+      "bonusDescription": "Les artisans économisent 15 % de leurs ingrédients lorsqu'ils fabriquent des objets dans la zone de la Campagne.",
+      "objectID": "19006"
+    }
+  }
+}

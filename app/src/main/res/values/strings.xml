@@ -6,4 +6,11 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+
+    <string name="bonus">Bonus</string>
+    <string name="date">Date</string>
+    <string name="bonustitle">Bonus Title</string>
+    <string name="bonusdesc">Bonus Description</string>
+    <string name="name">Name</string>
+    <string name="offering">Offering</string>
 </resources>

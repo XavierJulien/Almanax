@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="#bacc47">
+
+    <ImageView
+        android:id="@+id/boss"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_weight="2"
+        android:layout_margin="5dp"
+        android:src="@drawable/logo_dofus" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="8"
+        android:layout_margin="5dp"
+        android:background="@drawable/shape_middle"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/bonus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.25"
+            android:paddingLeft="10dp"
+            android:background="#daec6b"
+            android:text="@string/bonus"
+            android:fontFamily="@font/dofus_font"
+            android:textSize="15dp"/>
+
+        <TextView
+            android:id="@+id/bonustitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.25"
+            android:background="#daec6b"
+            android:text="@string/bonustitle"
+            android:fontFamily="@font/dofus_font"
+            android:textSize="15dp"/>
+
+        <TextView
+            android:id="@+id/bonusdesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.25"
+            android:background="#daec6b"
+            android:text="@string/bonusdesc"
+            android:fontFamily="@font/dofus_font"
+            android:textSize="11dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="6.25"
+            android:orientation="vertical"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/shape_inner">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.25"
+                android:layout_marginLeft="5dp"
+                android:text="@string/name"
+                android:fontFamily="@font/dofus_font"
+                android:textSize="11dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5"
+                android:layout_marginLeft="5dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/objectid"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:src="@drawable/logo_dofus"/>
+                <TextView
+                    android:id="@+id/offering"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="7"
+                    android:text="@string/offering"
+                    android:fontFamily="@font/dofus_font"
+                    android:padding="5dp"
+                    android:textSize="11dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

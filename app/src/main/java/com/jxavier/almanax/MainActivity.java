@@ -1,10 +1,15 @@
 package com.jxavier.almanax;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
 
 import com.android.volley.Request;
@@ -14,12 +19,16 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.bitmap.CenterCrop;
+import com.bumptech.glide.load.DataSource;
+import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
+import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.RequestOptions;
+import com.bumptech.glide.request.target.Target;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import android.os.Handler;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.RelativeSizeSpan;
@@ -28,6 +37,9 @@ import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.annotation.MainThread;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -38,7 +50,10 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -49,6 +64,7 @@ import java.util.Calendar;
 import static android.Manifest.permission.ACCESS_NETWORK_STATE;
 import static android.Manifest.permission.INTERNET;
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
+import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private Context context = MainActivity.this;
@@ -96,26 +112,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //-----------------------------------------------
         final ImageView objectIDView = findViewById(R.id.objectid);
         final ImageView bossView = findViewById(R.id.boss);
+        final ImageView monthView = findViewById(R.id.month);
+        final ImageView zodiacView = findViewById(R.id.zodiac);
         final TextView nameView = findViewById(R.id.name);
         final TextView offeringView = findViewById(R.id.offering);
         final TextView bonusTitleView = findViewById(R.id.bonustitle);
         final TextView bonusDescView = findViewById(R.id.bonusdesc);
-        final ImageView monthView = findViewById(R.id.month);
-        final ImageView zodiacView = findViewById(R.id.zodiac);
-        Glide.with(context)
-                .load("https://staticns.ankama.com/krosmoz/img/uploads/month/7/all_128_128.png")
-                .into(monthView);
-        Glide.with(context)
-                .load("https://staticns.ankama.com/krosmoz/img/uploads/zodiac/14/all_128_128.png")
-                .apply(RequestOptions.bitmapTransform(new RoundedCorners(14)))
-                .into(zodiacView);
 
-        String s= "18 Descendre";
-        SpannableString ss1=  new SpannableString(s);
-        ss1.setSpan(new RelativeSizeSpan(2f), 0,2, 0); // set size
-        ss1.setSpan(new ForegroundColorSpan(Color.parseColor("#efbf31")), 0, s.length(),0);// set color
-        TextView tv= (TextView) findViewById(R.id.date_text);
-        tv.setText(ss1);
+
+        //-----------------------------------------------
+        // Images MàJ
+        //-----------------------------------------------
+        final ProgressBar progressBar1 = (ProgressBar) findViewById(R.id.progress1);
+        final ProgressBar progressBar2 = (ProgressBar) findViewById(R.id.progress2);
 
         //-----------------------------------------------
         // Update image
@@ -123,7 +132,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
         if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
            connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
-            setTodayAlmanax(bossView,objectIDView,nameView,offeringView,bonusTitleView,bonusDescView);
+            setTodayAlmanax(progressBar1,progressBar2,bossView,objectIDView,nameView,offeringView,bonusTitleView,bonusDescView);
         }else{
             Glide.with(context)
                     .load(R.drawable.picto_asset_dofus)
@@ -131,9 +140,31 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Glide.with(context)
                     .load(R.drawable.picto_asset_dofus)
                     .into(objectIDView);
-            nameView.setText("Not Connected. Turn on Wifi");
+            bossView.setVisibility(View.VISIBLE);
+            objectIDView.setVisibility(View.VISIBLE);
+            bossView.setVisibility(View.VISIBLE);
+            progressBar1.setVisibility(View.GONE);
+            progressBar2.setVisibility(View.GONE);
+            Toast.makeText(this,"Not Connected to Internet, please turn on wifi or data",Toast.LENGTH_LONG).show();
+            final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Wifi not enabled");
+            builder.setMessage("go to parameters ?");
+
+            builder
+                    .setNegativeButton("restart", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            triggerRebirth();
+                        }})
+                    .setPositiveButton("paramètres", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            startActivity(new Intent(WifiManager.ACTION_PICK_WIFI_NETWORK));
+                        }}).show();
         }
-        setDateBackground();
+
+        //-----------------------------------------------
+        // Update background
+        //-----------------------------------------------
+        setBackground();
 
     }
 
@@ -169,7 +200,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
@@ -203,13 +233,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-    private void setTodayAlmanax(final ImageView bossView,
+    private void setTodayAlmanax(final ProgressBar progressBar1,
+                                 final ProgressBar progressBar2,
+                                 final ImageView bossView,
                                  final ImageView objectIDView,
                                  final TextView nameView,
                                  final TextView offeringView,
                                  final TextView bonusTitleView,
                                  final TextView bonusDescView){
-            String url = "https://api.jsonbin.io/b/5def81331c19843d88e9a4ca/1";
+        Calendar calendar = Calendar.getInstance();
+        final int dayOfYear = calendar.get(Calendar.DAY_OF_YEAR);
+        Log.d("DAYOFYEAR",""+dayOfYear);
+        String url = "https://api.jsonbin.io/b/5e15bb148d761771cc8d3206";
             // Instantiate the RequestQueue.
             RequestQueue queue = Volley.newRequestQueue(this);
             JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
@@ -220,12 +255,40 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                 JSONObject dofus = response.getJSONObject("dofus");
                                 JSONObject day = dofus.getJSONObject(date);
                                 Glide.with(context)
-                                        .load("https://static.ankama.com/dofus/www/game/items/200/"+day.getString("objectID")+".png")
-                                        .into(objectIDView);
-                                Glide.with(context)
-                                        .load("https://staticns.ankama.com/krosmoz/img/uploads/event/136/boss_all_96_128.png")
+                                        .load("https://staticns.ankama.com/krosmoz/img/uploads/event/"+(160+dayOfYear)+"/boss_all_96_128.png")
                                         .error(R.drawable.picto_asset_dofus)
+                                        .listener(new RequestListener<Drawable>() {
+                                            @Override
+                                            public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+                                                progressBar1.setVisibility(View.GONE);
+                                                return false;
+                                            }
+
+                                            @Override
+                                            public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+                                                progressBar1.setVisibility(View.GONE);
+                                                return false;
+                                            }
+                                        })
                                         .into(bossView);
+                                bossView.setVisibility(View.VISIBLE);
+                                Glide.with(context)
+                                        .load("https://static.ankama.com/dofus/www/game/items/200/"+day.getString("objectID")+".png")
+                                        .listener(new RequestListener<Drawable>() {
+                                            @Override
+                                            public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+                                                progressBar2.setVisibility(View.GONE);
+                                                return false;
+                                            }
+
+                                            @Override
+                                            public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+                                                progressBar2.setVisibility(View.GONE);
+                                                return false;
+                                            }
+                                        })
+                                        .into(objectIDView);
+                                objectIDView.setVisibility(View.VISIBLE);
                                 nameView.setText("Quête : Offrande à "+day.getString("name"));
                                 offeringView.setText("Récupérer "+day.getString("offering")+" et rapporter l'offrande à Théodoran Ax");
                                 bonusTitleView.setText(day.getString("bonusTitle"));
@@ -246,86 +309,347 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             queue.add(request);
     }
 
-    private void setDateBackground(){
-        //final ConstraintLayout background = findViewById(R.id.background);
+    private void setBackground(){
+        //-----------------------------------------------
+        // Date MàJ
+        //-----------------------------------------------
+        String date_text= ""+Integer.valueOf(date.substring(3))+"\n"+ Utils.monthConversion.get(date.substring(0,2));
+        SpannableString ss1=  new SpannableString(date_text);
+        ss1.setSpan(new RelativeSizeSpan(2f), 0,2, 0); // set size
+        ss1.setSpan(new ForegroundColorSpan(Color.parseColor("#efbf31")), 0, date_text.length(),0);// set color
+        TextView tv= (TextView) findViewById(R.id.date_text);
+        tv.setText(ss1);
+
+        //-----------------------------------------------
+        // Background MàJ
+        //-----------------------------------------------
+        //Date
         SimpleDateFormat sdf = new SimpleDateFormat("MM");
         final String  month = sdf.format(calendar.getTime());
-        Log.d("Date", month);
+
+        //References
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         View hView =  navigationView.getHeaderView(0);
         TextView almanax_season = hView.findViewById(R.id.almanax_season);
         ImageView almanax_icon = hView.findViewById(R.id.almanax_icon);
+        RelativeLayout backgroundView = findViewById(R.id.background);
+        RelativeLayout clockView = findViewById(R.id.clock);
+        ImageView zodiacView = findViewById(R.id.zodiac);
+        ImageView monthView = findViewById(R.id.month);
+
         switch(month){
             case "01": {
-                almanax_season.setText("Winter");
-                almanax_icon.setImageResource(R.drawable.winter_season);
+                setBackgroundWithSeason("winter");
+                Glide.with(context)
+                        .load("https://staticns.ankama.com/krosmoz/img/uploads/month/9/all_128_128.png")
+                        .into(monthView);
+                setZodiaque(1);
                 break;
             }
             case "02": {
-                almanax_season.setText("Winter");
-                almanax_icon.setImageResource(R.drawable.winter_season);
+                setBackgroundWithSeason("winter");
+                Glide.with(context)
+                        .load("https://staticns.ankama.com/krosmoz/img/uploads/month/10/all_128_128.png")
+                        .into(monthView);
+                setZodiaque(1);
                 break;
             }
             case "03": {
-                almanax_season.setText("Spring");
-                almanax_icon.setImageResource(R.drawable.spring_season);
-
+                setBackgroundWithSeason("spring");
+                Glide.with(context)
+                        .load("https://staticns.ankama.com/krosmoz/img/uploads/month/11/all_128_128.png")
+                        .into(monthView);
+                setZodiaque(1);
                 break;
             }
             case "04": {
-                almanax_season.setText("Spring");
-                almanax_icon.setImageResource(R.drawable.spring_season);
-
+                setBackgroundWithSeason("spring");
+                Glide.with(context)
+                        .load("https://staticns.ankama.com/krosmoz/img/uploads/month/12/all_128_128.png")
+                        .into(monthView);
+                setZodiaque(1);
                 break;
             }
             case "05": {
-                almanax_season.setText("Spring");
-                almanax_icon.setImageResource(R.drawable.spring_season);
-
+                setBackgroundWithSeason("spring");
+                Glide.with(context)
+                        .load("https://staticns.ankama.com/krosmoz/img/uploads/month/13/all_128_128.png")
+                        .into(monthView);
+                setZodiaque(1);
                 break;
             }
             case "06": {
-                almanax_season.setText("Summer");
-                almanax_icon.setImageResource(R.drawable.summer_season);
-
+                setBackgroundWithSeason("summer");
+                Glide.with(context)
+                        .load("https://staticns.ankama.com/krosmoz/img/uploads/month/14/all_128_128.png")
+                        .into(monthView);
+                setZodiaque(1);
                 break;
             }
             case "07": {
-                almanax_season.setText("Summer");
-                almanax_icon.setImageResource(R.drawable.summer_season);
-
+                setBackgroundWithSeason("summer");
+                Glide.with(context)
+                        .load("https://staticns.ankama.com/krosmoz/img/uploads/month/15/all_128_128.png")
+                        .into(monthView);
+                setZodiaque(1);
                 break;
             }
             case "08": {
-                almanax_season.setText("Summer");
-                almanax_icon.setImageResource(R.drawable.summer_season);
-
+                setBackgroundWithSeason("summer");
+                Glide.with(context)
+                        .load("https://staticns.ankama.com/krosmoz/img/uploads/month/8/all_128_128.png")
+                        .into(monthView);
+                setZodiaque(1);
                 break;
             }
             case "09": {
-                almanax_season.setText("Autumn");
-                almanax_icon.setImageResource(R.drawable.autumn_season);
-
+                setBackgroundWithSeason("autumn");
+                Glide.with(context)
+                        .load("https://staticns.ankama.com/krosmoz/img/uploads/month/4/all_128_128.png")
+                        .into(monthView);
+                setZodiaque(1);
                 break;
             }
             case "10": {
-                almanax_season.setText("Autumn");
-                almanax_icon.setImageResource(R.drawable.autumn_season);
-
+                setBackgroundWithSeason("autumn");
+                Glide.with(context)
+                        .load("https://staticns.ankama.com/krosmoz/img/uploads/month/5/all_128_128.png")
+                        .into(monthView);
+                setZodiaque(1);
                 break;
             }
             case "11": {
-                almanax_season.setText("Autumn");
-                almanax_icon.setImageResource(R.drawable.autumn_season);
-
+                setBackgroundWithSeason("autumn");
+                Glide.with(context)
+                        .load("https://staticns.ankama.com/krosmoz/img/uploads/month/6/all_128_128.png")
+                        .into(monthView);
+                setZodiaque(1);
                 break;
             }
             case "12": {
-                almanax_season.setText("Winter");
-                almanax_icon.setImageResource(R.drawable.winter_season);
+                setBackgroundWithSeason("winter");
+                Glide.with(context)
+                        .load("https://staticns.ankama.com/krosmoz/img/uploads/month/7/all_128_128.png")
+                        .into(monthView);
+                setZodiaque(1);
                 break;
             }
             default: throw new Error("Bug check date.");
         }
+    }
+
+    private void setBackgroundWithSeason(String season){
+        //References
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        View hView =  navigationView.getHeaderView(0);
+        TextView almanax_season = hView.findViewById(R.id.almanax_season);
+        ImageView almanax_icon = hView.findViewById(R.id.almanax_icon);
+        RelativeLayout backgroundView = findViewById(R.id.background);
+        RelativeLayout clockView = findViewById(R.id.clock);
+        ImageView seasonView = findViewById(R.id.season);
+
+        if(season.equals("winter")){
+            seasonView.setBackgroundResource(R.drawable.winter_season);
+            clockView.setBackgroundResource(R.drawable.winter_clock);
+            backgroundView.setBackgroundResource(R.drawable.winter_bg_almanax);
+            almanax_season.setText("Winter");
+            almanax_icon.setImageResource(R.drawable.winter_season);
+        }
+        if(season.equals("autumn")){
+            seasonView.setBackgroundResource(R.drawable.autumn_season);
+            clockView.setBackgroundResource(R.drawable.autumn_clock);
+            backgroundView.setBackgroundResource(R.drawable.autumn_bg_almanax);
+            almanax_season.setText("Autumn");
+            almanax_icon.setImageResource(R.drawable.autumn_season);
+        }
+        if(season.equals("summer")){
+            seasonView.setBackgroundResource(R.drawable.summer_season);
+            clockView.setBackgroundResource(R.drawable.summer_clock);
+            backgroundView.setBackgroundResource(R.drawable.summer_bg_almanax);
+            almanax_season.setText("Summer");
+            almanax_icon.setImageResource(R.drawable.summer_season);
+        }
+        if(season.equals("spring")){
+            seasonView.setBackgroundResource(R.drawable.spring_season);
+            clockView.setBackgroundResource(R.drawable.spring_clock);
+            backgroundView.setBackgroundResource(R.drawable.spring_bg_almanax);
+            almanax_season.setText("Spring");
+            almanax_icon.setImageResource(R.drawable.spring_season);
+        }
+    }
+
+    private void setZodiaque(int month){
+        ImageView zodiacView = findViewById(R.id.zodiac);
+        int day = Integer.valueOf(date.substring(4));
+        switch(month) {
+            case 1: {
+                if(day <=20){
+                    Glide.with(context)
+                            .load("https://staticns.ankama.com/krosmoz/img/uploads/zodiac/15/all_128_128.png")
+                            .into(zodiacView);
+                    break;
+                }else{
+                    Glide.with(context)
+                            .load("https://staticns.ankama.com/krosmoz/img/uploads/zodiac/16/all_128_128.png")
+                            .into(zodiacView);
+                    break;
+                }
+            }
+            case 2:{
+                if(day <=18){
+                    Glide.with(context)
+                            .load("https://staticns.ankama.com/krosmoz/img/uploads/zodiac/16/all_128_128.png")
+                            .into(zodiacView);
+                    break;
+                }else{
+                    Glide.with(context)
+                            .load("https://staticns.ankama.com/krosmoz/img/uploads/zodiac/17/all_128_128.png")
+                            .into(zodiacView);
+                    break;
+                }
+            }
+            case 3:{
+                if(day <=20){
+                    Glide.with(context)
+                            .load("https://staticns.ankama.com/krosmoz/img/uploads/zodiac/17/all_128_128.png")
+                            .into(zodiacView);
+                    break;
+                }else{
+                    Glide.with(context)
+                            .load("https://staticns.ankama.com/krosmoz/img/uploads/zodiac/18/all_128_128.png")
+                            .into(zodiacView);
+                    break;
+                }
+            }
+            case 4:{
+                if(day <=20){
+                    Glide.with(context)
+                            .load("https://staticns.ankama.com/krosmoz/img/uploads/zodiac/18/all_128_128.png")
+                            .into(zodiacView);
+                    break;
+                }else{
+                    Glide.with(context)
+                            .load("https://staticns.ankama.com/krosmoz/img/uploads/zodiac/19/all_128_128.png")
+                            .into(zodiacView);
+                    break;
+                }
+            }
+            case 5:{
+                if(day <=20){
+                    Glide.with(context)
+                            .load("https://staticns.ankama.com/krosmoz/img/uploads/zodiac/19/all_128_128.png")
+                            .into(zodiacView);
+                    break;
+                }else{
+                    Glide.with(context)
+                            .load("https://staticns.ankama.com/krosmoz/img/uploads/zodiac/20/all_128_128.png")
+                            .into(zodiacView);
+                    break;
+                }
+            }
+            case 6:{
+                if(day <=21){
+                    Glide.with(context)
+                            .load("https://staticns.ankama.com/krosmoz/img/uploads/zodiac/20/all_128_128.png")
+                            .into(zodiacView);
+                    break;
+                }else{
+                    Glide.with(context)
+                            .load("https://staticns.ankama.com/krosmoz/img/uploads/zodiac/21/all_128_128.png")
+                            .into(zodiacView);
+                    break;
+                }
+            }
+            case 7:{
+                if(day <=22){
+                    Glide.with(context)
+                            .load("https://staticns.ankama.com/krosmoz/img/uploads/zodiac/21/all_128_128.png")
+                            .into(zodiacView);
+                    break;
+                }else{
+                    Glide.with(context)
+                            .load("https://staticns.ankama.com/krosmoz/img/uploads/zodiac/22/all_128_128.png")
+                            .into(zodiacView);
+                    break;
+                }
+            }
+            case 8:{
+                if(day <=22){
+                    Glide.with(context)
+                            .load("https://staticns.ankama.com/krosmoz/img/uploads/zodiac/22/all_128_128.png")
+                            .into(zodiacView);
+                    break;
+                }else{
+                    Glide.with(context)
+                            .load("https://staticns.ankama.com/krosmoz/img/uploads/zodiac/10/all_128_128.png")
+                            .into(zodiacView);
+                    break;
+                }
+            }
+            case 9:{
+                if(day <=22){
+                    Glide.with(context)
+                            .load("https://staticns.ankama.com/krosmoz/img/uploads/zodiac/10/all_128_128.png")
+                            .into(zodiacView);
+                    break;
+                }else{
+                    Glide.with(context)
+                            .load("https://staticns.ankama.com/krosmoz/img/uploads/zodiac/11/all_128_128.png")
+                            .into(zodiacView);
+                    break;
+                }
+            }
+            case 10:{
+                if(day <=22){
+                    Glide.with(context)
+                            .load("https://staticns.ankama.com/krosmoz/img/uploads/zodiac/11/all_128_128.png")
+                            .into(zodiacView);
+                    break;
+                }else{
+                    Glide.with(context)
+                            .load("https://staticns.ankama.com/krosmoz/img/uploads/zodiac/12/all_128_128.png")
+                            .into(zodiacView);
+                    break;
+                }
+            }
+            case 11:{
+                if(day <=22){//sagittaire
+                    Glide.with(context)
+                            .load("https://staticns.ankama.com/krosmoz/img/uploads/zodiac/12/all_128_128.png")
+                            .into(zodiacView);
+                    break;
+                }else{
+                    Glide.with(context)
+                            .load("https://staticns.ankama.com/krosmoz/img/uploads/zodiac/14/all_128_128.png")
+                            .into(zodiacView);
+                    break;
+                }
+            }
+            case 12:{
+                if(day <=21){
+                    Glide.with(context)
+                            .load("https://staticns.ankama.com/krosmoz/img/uploads/zodiac/14/all_128_128.png")
+                            .into(zodiacView);
+                    break;
+                }else{
+                    Glide.with(context)
+                            .load("https://staticns.ankama.com/krosmoz/img/uploads/zodiac/15/all_128_128.png")
+                            .into(zodiacView);
+                    break;
+                }
+            }
+            default: throw new Error("Bug check date.");
+        }
+    }
+
+    private void triggerRebirth() {
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.addFlags(FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        if (this instanceof Activity) {
+            ((Activity) this).finish();
+        }
+
+        Runtime.getRuntime().exit(0);
     }
 }

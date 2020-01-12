@@ -11,7 +11,14 @@
         android:layout_height="100dp"
         android:layout_weight="2"
         android:layout_margin="5dp"
-        android:src="@drawable/logo_dofus" />
+        android:visibility="gone"/>
+    <ProgressBar
+        android:id="@+id/progress1"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_weight="2"
+        android:layout_margin="5dp"
+        android:visibility="visible" />
 
     <LinearLayout
         android:layout_width="0dp"
@@ -69,7 +76,8 @@
                 android:layout_marginLeft="5dp"
                 android:text="@string/name"
                 android:fontFamily="@font/dofus_font"
-                android:textSize="11dp"/>
+                android:textSize="11dp"
+                android:textColor="#ffffff"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -82,7 +90,13 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:src="@drawable/logo_dofus"/>
+                    android:visibility="gone"/>
+                <ProgressBar
+                    android:id="@+id/progress2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:visibility="visible" />
                 <TextView
                     android:id="@+id/offering"
                     android:layout_width="0dp"
@@ -91,7 +105,8 @@
                     android:text="@string/offering"
                     android:fontFamily="@font/dofus_font"
                     android:padding="5dp"
-                    android:textSize="11dp"/>
+                    android:textSize="11dp"
+                    android:textColor="#ffffff"/>
             </LinearLayout>
         </LinearLayout>
 

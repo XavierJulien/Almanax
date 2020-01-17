@@ -3,8 +3,6 @@
     xmlns:dist="http://schemas.android.com/apk/distribution"
     package="com.jxavier.almanax">
 
-    <dist:module dist:instant="true" />
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -30,6 +28,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <receiver android:name=".notification.AlarmReceiver"/>
     </application>
 
 </manifest>

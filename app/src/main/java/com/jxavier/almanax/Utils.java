@@ -3,6 +3,8 @@ package com.jxavier.almanax;
 import java.util.HashMap;
 
 public class Utils {
+    public static final String CHANNEL_ID = "my_channel_id";
+    static final String PREFS_NAME = "preferences";
     static HashMap<String, String> monthConversion = new HashMap<String,String>(){{
         put("12", "Descendre");
         put("11", "Novamaire");

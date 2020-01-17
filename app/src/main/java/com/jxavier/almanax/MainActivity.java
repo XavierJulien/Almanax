@@ -80,34 +80,35 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     SimpleDateFormat sdf = new SimpleDateFormat("MM-dd");
     final String  date = sdf.format(calendar.getTime());
 
+    public boolean onCreateDone;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //calendar.set(Calendar.HOUR_OF_DAY,22);
-        calendar.add(Calendar.SECOND,15);
-
-        Intent intent = new Intent("test.DISPLAY_NOTIFICATION");
-
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),100,intent,PendingIntent.FLAG_UPDATE_CURRENT);
-
-        AlarmManager alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),alarmManager.INTERVAL_DAY,pendingIntent);
-
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        boolean progressDone = Preferences.getPrefsBoolean(date,context);
+
         final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        if(progressDone){
+            fab.setImageResource(R.drawable.ic_star_fill);
+        }else{
+            fab.setImageResource(R.drawable.ic_star_border);
+        }
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Progression mise à jour !", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-                fab.setImageResource(R.drawable.ic_star_fill);
-
-
+                Snackbar.make(view, "Progression mise à jour !", Snackbar.LENGTH_LONG).show();
+                boolean progress = Preferences.getPrefsBoolean(date,context);
+                if(!progress) {
+                    fab.setImageResource(R.drawable.ic_star_fill);
+                    Preferences.setPrefs(date,true,context);
+                }else{
+                    fab.setImageResource(R.drawable.ic_star_border);
+                    Preferences.setPrefs(date,false,context);
+                }
             }
         });
 
@@ -152,6 +153,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
            connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
             setTodayAlmanax(progressBar1,progressBar2,bossView,objectIDView,nameView,offeringView,bonusTitleView,bonusDescView);
+            onCreateDone = true;
         }else{
             Glide.with(context)
                     .load(R.drawable.picto_asset_dofus)
@@ -165,10 +167,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             progressBar1.setVisibility(View.GONE);
             progressBar2.setVisibility(View.GONE);
             Toast.makeText(this,"Not Connected to Internet, please turn on wifi or data",Toast.LENGTH_LONG).show();
+
+            //ALERT DIALOG
             final AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Wifi not enabled");
             builder.setMessage("go to parameters ?");
-
             builder
                     .setNegativeButton("restart", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
@@ -178,8 +181,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         public void onClick(DialogInterface dialog, int id) {
                             startActivity(new Intent(WifiManager.ACTION_PICK_WIFI_NETWORK));
                         }}).show();
-
-
+            onCreateDone = false;
         }
 
         //-----------------------------------------------
@@ -187,6 +189,68 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //-----------------------------------------------
         setBackground();
 
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+
+        //-----------------------------------------------
+        // References
+        //-----------------------------------------------
+        final ImageView objectIDView = findViewById(R.id.objectid);
+        final ImageView bossView = findViewById(R.id.boss);
+        final ImageView monthView = findViewById(R.id.month);
+        final ImageView zodiacView = findViewById(R.id.zodiac);
+        final TextView nameView = findViewById(R.id.name);
+        final TextView offeringView = findViewById(R.id.offering);
+        final TextView bonusTitleView = findViewById(R.id.bonustitle);
+        final TextView bonusDescView = findViewById(R.id.bonusdesc);
+
+
+        //-----------------------------------------------
+        // Images MàJ
+        //-----------------------------------------------
+        final ProgressBar progressBar1 = (ProgressBar) findViewById(R.id.progress1);
+        final ProgressBar progressBar2 = (ProgressBar) findViewById(R.id.progress2);
+
+        //-----------------------------------------------
+        // Update image
+        //-----------------------------------------------
+        if(!onCreateDone){
+            ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+            if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
+                    connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
+                setTodayAlmanax(progressBar1,progressBar2,bossView,objectIDView,nameView,offeringView,bonusTitleView,bonusDescView);
+            }else{
+                Glide.with(context)
+                        .load(R.drawable.picto_asset_dofus)
+                        .into(bossView);
+                Glide.with(context)
+                        .load(R.drawable.picto_asset_dofus)
+                        .into(objectIDView);
+                bossView.setVisibility(View.VISIBLE);
+                objectIDView.setVisibility(View.VISIBLE);
+                bossView.setVisibility(View.VISIBLE);
+                progressBar1.setVisibility(View.GONE);
+                progressBar2.setVisibility(View.GONE);
+                Toast.makeText(this,"Not Connected to Internet, please turn on wifi or data",Toast.LENGTH_LONG).show();
+
+                //ALERT DIALOG
+                final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle("Wifi not enabled");
+                builder.setMessage("go to parameters ?");
+                builder
+                        .setNegativeButton("restart", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                triggerRebirth();
+                            }})
+                        .setPositiveButton("paramètres", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                startActivity(new Intent(WifiManager.ACTION_PICK_WIFI_NETWORK));
+                            }}).show();
+            }
+        }
     }
 
     @Override
@@ -241,7 +305,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_send) {
 
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
@@ -279,14 +342,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                 JSONObject day = dofus.getJSONObject(date);
                                 Glide.with(context)
                                         .load("https://staticns.ankama.com/krosmoz/img/uploads/event/"+(160+dayOfYear)+"/boss_all_96_128.png")
-                                        .error(R.drawable.picto_asset_dofus)
                                         .listener(new RequestListener<Drawable>() {
                                             @Override
                                             public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
                                                 progressBar1.setVisibility(View.GONE);
                                                 return false;
                                             }
-
                                             @Override
                                             public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
                                                 progressBar1.setVisibility(View.GONE);
@@ -294,7 +355,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                             }
                                         })
                                         .into(bossView);
-                                bossView.setVisibility(View.VISIBLE);
                                 Glide.with(context)
                                         .load("https://static.ankama.com/dofus/www/game/items/200/"+day.getString("objectID")+".png")
                                         .listener(new RequestListener<Drawable>() {
@@ -303,7 +363,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                                 progressBar2.setVisibility(View.GONE);
                                                 return false;
                                             }
-
                                             @Override
                                             public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
                                                 progressBar2.setVisibility(View.GONE);
@@ -311,6 +370,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                             }
                                         })
                                         .into(objectIDView);
+
+                                bossView.setVisibility(View.VISIBLE);
                                 objectIDView.setVisibility(View.VISIBLE);
                                 nameView.setText("Quête : Offrande à "+day.getString("name"));
                                 offeringView.setText("Récupérer "+day.getString("offering")+" et rapporter l'offrande à Théodoran Ax");
@@ -319,13 +380,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
-
                         }
                     },
                     new Response.ErrorListener() {
                         @Override
                         public void onErrorResponse(VolleyError error) {
-                            Log.d("HEERRE", "error");
                             error.printStackTrace();
                         }
                     });
@@ -672,7 +731,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (this instanceof Activity) {
             ((Activity) this).finish();
         }
-
         Runtime.getRuntime().exit(0);
     }
 }

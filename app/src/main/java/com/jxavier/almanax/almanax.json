@@ -842,10 +842,10 @@
     },
     "01-23": {
       "name": "Kestra",
-      "offering": "5 Chair d'Insecte",
+      "offering": "5 Viande Hachée",
       "bonusTitle": "Gibier abondant",
-      "bonusDescription": "Les quantités de Chair d'insecte récupérées par les Chasseurs sont augmentées de 125%. Ce bonus est valable pour toutes les qualités de Chair d'Insecte.",
-      "objectID": "63370"
+      "bonusDescription": "Les quantités de Viande Hachée récupérées par les Chasseurs sont augmentées de 125%.",
+      "objectID": "175008"
     },
     "01-24": {
       "name": "Shiva",

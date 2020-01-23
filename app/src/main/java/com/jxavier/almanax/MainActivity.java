@@ -1,9 +1,6 @@
 package com.jxavier.almanax;
 
 import android.app.Activity;
-import android.app.AlarmManager;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -24,14 +21,11 @@ import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
-import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestListener;
-import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.Target;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
-import android.os.Handler;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.RelativeSizeSpan;
@@ -39,18 +33,18 @@ import android.util.Log;
 import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
+import com.roomorama.caldroid.CaldroidFragment;
 
-import androidx.annotation.MainThread;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.Menu;
 import android.view.MenuItem;
@@ -79,19 +73,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     Calendar calendar = Calendar.getInstance();
     SimpleDateFormat sdf = new SimpleDateFormat("MM-dd");
     final String  date = sdf.format(calendar.getTime());
-
+    Fragment fragment = null;
     public boolean onCreateDone;
+    FloatingActionButton fab;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        setTitle("Almanax du jour");
 
+
+        //------------------------------------------------------------------------------------------
+        // PROGRESSION
+        //------------------------------------------------------------------------------------------
         boolean progressDone = Preferences.getPrefsBoolean(date,context);
-
-        final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab = (FloatingActionButton) findViewById(R.id.fab);
         if(progressDone){
             fab.setImageResource(R.drawable.ic_star_fill);
         }else{
@@ -112,6 +110,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
+        //------------------------------------------------------------------------------------------
+        // DRAWER INIT
+        //------------------------------------------------------------------------------------------
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -121,15 +122,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        Menu menuNav=navigationView.getMenu();
+        MenuItem nav_item2 = menuNav.findItem(R.id.nav_today);
+        nav_item2.setChecked(true);
 
-        //-----------------------------------------------
+
+        //------------------------------------------------------------------------------------------
         // Permissions
-        //-----------------------------------------------
+        //------------------------------------------------------------------------------------------
         requestStoragePermission();
 
-        //-----------------------------------------------
+        //------------------------------------------------------------------------------------------
         // References
-        //-----------------------------------------------
+        //------------------------------------------------------------------------------------------
         final ImageView objectIDView = findViewById(R.id.objectid);
         final ImageView bossView = findViewById(R.id.boss);
         final ImageView monthView = findViewById(R.id.month);
@@ -140,15 +145,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         final TextView bonusDescView = findViewById(R.id.bonusdesc);
 
 
-        //-----------------------------------------------
+        //------------------------------------------------------------------------------------------
         // Images MàJ
-        //-----------------------------------------------
+        //------------------------------------------------------------------------------------------
         final ProgressBar progressBar1 = (ProgressBar) findViewById(R.id.progress1);
         final ProgressBar progressBar2 = (ProgressBar) findViewById(R.id.progress2);
 
-        //-----------------------------------------------
+        //------------------------------------------------------------------------------------------
         // Update image
-        //-----------------------------------------------
+        //------------------------------------------------------------------------------------------
         ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
         if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
            connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
@@ -184,9 +189,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             onCreateDone = false;
         }
 
-        //-----------------------------------------------
+        //------------------------------------------------------------------------------------------
         // Update background
-        //-----------------------------------------------
+        //------------------------------------------------------------------------------------------
         setBackground();
 
     }
@@ -290,21 +295,54 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_camera) {
-
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        if(item.isChecked()){
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            drawer.closeDrawer(GravityCompat.START);
+            return true;
         }
+        int id = item.getItemId();
+        //creating fragment object
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        switch (id){
+            case R.id.nav_today : {
+                setTitle("Almanax du jour");
+                fragment = new Fragment();
+                fab.setEnabled(true);
+                fab.setClickable(true);
+                fab.setAlpha(1f);
+                break;
+            }
+            case R.id.nav_week : {
+                fragment = new SemaineFragment();
+                fab.setEnabled(false);
+                fab.setClickable(false);
+                fab.setAlpha(0f);
+                break;
+            }
+            case R.id.nav_calendar : {
+                fragment = new ProgressionFragment();
+                break;
+            }
+            case R.id.nav_search : {
+                //fragment = new Fragment();
+                break;
+            }
+            case R.id.nav_medals : {
+                //fragment = new Fragment();
+                break;
+            }
+            case R.id.nav_progress : {
+                //fragment = new Fragment();
+                break;
+            }
+        }
+
+        //replacing the fragment
+        if (fragment != null) {
+            ft.replace(R.id.fragment, fragment);
+            ft.commit();
+        }
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
@@ -329,8 +367,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                  final TextView bonusDescView){
         Calendar calendar = Calendar.getInstance();
         final int dayOfYear = calendar.get(Calendar.DAY_OF_YEAR);
-        Log.d("DAYOFYEAR",""+dayOfYear);
-        String url = "https://api.jsonbin.io/b/5e15bb148d761771cc8d3206";
+        String url = Utils.URL;
             // Instantiate the RequestQueue.
             RequestQueue queue = Volley.newRequestQueue(this);
             JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
@@ -433,7 +470,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Glide.with(context)
                         .load("https://staticns.ankama.com/krosmoz/img/uploads/month/10/all_128_128.png")
                         .into(monthView);
-                setZodiaque(1);
+                setZodiaque(2);
                 break;
             }
             case "03": {
@@ -441,7 +478,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Glide.with(context)
                         .load("https://staticns.ankama.com/krosmoz/img/uploads/month/11/all_128_128.png")
                         .into(monthView);
-                setZodiaque(1);
+                setZodiaque(3);
                 break;
             }
             case "04": {
@@ -449,7 +486,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Glide.with(context)
                         .load("https://staticns.ankama.com/krosmoz/img/uploads/month/12/all_128_128.png")
                         .into(monthView);
-                setZodiaque(1);
+                setZodiaque(4);
                 break;
             }
             case "05": {
@@ -457,7 +494,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Glide.with(context)
                         .load("https://staticns.ankama.com/krosmoz/img/uploads/month/13/all_128_128.png")
                         .into(monthView);
-                setZodiaque(1);
+                setZodiaque(5);
                 break;
             }
             case "06": {
@@ -465,7 +502,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Glide.with(context)
                         .load("https://staticns.ankama.com/krosmoz/img/uploads/month/14/all_128_128.png")
                         .into(monthView);
-                setZodiaque(1);
+                setZodiaque(6);
                 break;
             }
             case "07": {
@@ -473,7 +510,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Glide.with(context)
                         .load("https://staticns.ankama.com/krosmoz/img/uploads/month/15/all_128_128.png")
                         .into(monthView);
-                setZodiaque(1);
+                setZodiaque(7);
                 break;
             }
             case "08": {
@@ -481,7 +518,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Glide.with(context)
                         .load("https://staticns.ankama.com/krosmoz/img/uploads/month/8/all_128_128.png")
                         .into(monthView);
-                setZodiaque(1);
+                setZodiaque(8);
                 break;
             }
             case "09": {
@@ -489,7 +526,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Glide.with(context)
                         .load("https://staticns.ankama.com/krosmoz/img/uploads/month/4/all_128_128.png")
                         .into(monthView);
-                setZodiaque(1);
+                setZodiaque(9);
                 break;
             }
             case "10": {
@@ -497,7 +534,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Glide.with(context)
                         .load("https://staticns.ankama.com/krosmoz/img/uploads/month/5/all_128_128.png")
                         .into(monthView);
-                setZodiaque(1);
+                setZodiaque(10);
                 break;
             }
             case "11": {
@@ -505,7 +542,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Glide.with(context)
                         .load("https://staticns.ankama.com/krosmoz/img/uploads/month/6/all_128_128.png")
                         .into(monthView);
-                setZodiaque(1);
+                setZodiaque(11);
                 break;
             }
             case "12": {
@@ -513,7 +550,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Glide.with(context)
                         .load("https://staticns.ankama.com/krosmoz/img/uploads/month/7/all_128_128.png")
                         .into(monthView);
-                setZodiaque(1);
+                setZodiaque(12);
                 break;
             }
             default: throw new Error("Bug check date.");
@@ -562,7 +599,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void setZodiaque(int month){
         ImageView zodiacView = findViewById(R.id.zodiac);
-        int day = Integer.valueOf(date.substring(4));
+        int day = Integer.valueOf(date.substring(3));
         switch(month) {
             case 1: {
                 if(day <=20){

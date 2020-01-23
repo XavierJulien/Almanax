@@ -19,5 +19,5 @@ public class Utils {
         put("02", "Flovor");
         put("01", "Javian");
     }};
-
+    static String URL = "https://api.jsonbin.io/b/5e2824785df640720839f2e3";
 }

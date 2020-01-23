@@ -5,33 +5,33 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:id="@+id/nav_today"
+            android:icon="@drawable/today"
+            android:title="Aujourd'hui" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:id="@+id/nav_week"
+            android:icon="@drawable/week"
+            android:title="Semaine" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:id="@+id/nav_calendar"
+            android:icon="@drawable/calendar"
+            android:title="Calendrier" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/nav_search"
+            android:icon="@drawable/search"
+            android:title="Recherche" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Achievements">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:id="@+id/nav_progress"
+                android:icon="@drawable/progress"
+                android:title="Progression" />
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:id="@+id/nav_medals"
+                android:icon="@drawable/medals"
+                android:title="Médailles" />
         </menu>
     </item>
 

@@ -118,7 +118,8 @@ public class SemaineFragment extends Fragment {
                                     try{
                                         final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                                         builder.setTitle(""+Integer.valueOf(date.substring(3))+"\n"+ Utils.monthConversion.get(date.substring(0,2)));
-                                        builder.setMessage("Bonus : "+day.getString("bonusTitle")+"\n "+day.getString("bonusDescription")).show();
+                                        builder.setMessage("Bonus : "+day.getString("bonusTitle")+
+                                                "\n "+day.getString("bonusDescription")).show();
                                     }catch (JSONException e){
                                         e.printStackTrace();
                                     }

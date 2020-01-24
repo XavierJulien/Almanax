@@ -58,6 +58,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 import static android.Manifest.permission.ACCESS_NETWORK_STATE;
@@ -102,10 +103,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 boolean progress = Preferences.getPrefsBoolean(date,context);
                 if(!progress) {
                     fab.setImageResource(R.drawable.ic_star_fill);
+                    ArrayList<String> done_almanax = Preferences.getArrayPrefs("done",getApplicationContext());
+                    if(!done_almanax.contains(date)) done_almanax.add(date);
+                    Preferences.setArrayPrefs("done",done_almanax,context);
                     Preferences.setPrefs(date,true,context);
                 }else{
-                    fab.setImageResource(R.drawable.ic_star_border);
                     Preferences.setPrefs(date,false,context);
+                    ArrayList<String> done_almanax = Preferences.getArrayPrefs("done",getApplicationContext());
+                    done_almanax.remove(date);
+                    fab.setImageResource(R.drawable.ic_star_border);
+                    Preferences.setArrayPrefs("done",done_almanax,context);
                 }
             }
         });
@@ -321,6 +328,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
             case R.id.nav_calendar : {
                 fragment = new ProgressionFragment();
+                fab.setEnabled(false);
+                fab.setClickable(false);
+                fab.setAlpha(0f);
                 break;
             }
             case R.id.nav_search : {

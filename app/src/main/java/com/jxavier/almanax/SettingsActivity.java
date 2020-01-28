@@ -6,13 +6,11 @@ import android.app.TimePickerDialog;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
-import android.preference.Preference;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
-import android.widget.EditText;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.TimePicker;
 
 import com.jxavier.almanax.notification.NotificationHelper;
@@ -26,10 +24,12 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
 
 
     Button setdate,valider;
-    EditText dest;
-    Switch switch_settings;
+    TextView dest;
+    Switch switch_settings,switch_lang;
+    TextView tv_lang;
     private int mHour, mMinute;
     private Context context;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,14 +37,40 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
         context = getApplicationContext();
 
         setdate =  findViewById(R.id.button_setdate);
-        dest = findViewById(R.id.dest);
+        dest = findViewById(R.id.date_result_picker);
         switch_settings = findViewById(R.id.switch_settings);
+        switch_lang = findViewById(R.id.switch_lang);
         valider = findViewById(R.id.valider);
-
+        tv_lang = findViewById(R.id.lang_text);
+        if(Preferences.getPrefs("Lang mode",context).equals("EN")){
+            switch_lang.setChecked(true);
+            tv_lang.setText("Langue : Anglais");
+        }else{
+            switch_lang.setChecked(false);
+            tv_lang.setText("Langue : Français");
+        }
         switch_settings.setChecked(Boolean.valueOf(Preferences.getPrefs("Notification mode",context)));
         setdate.setEnabled(Boolean.valueOf(Preferences.getPrefs("Notification mode",context)));
         dest.setEnabled(Boolean.valueOf(Preferences.getPrefs("Notification mode",context)));
+        dest.setText("");
         valider.setEnabled(Boolean.valueOf(Preferences.getPrefs("Notification mode",context)));
+
+        switch_lang.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                //enable notif
+                if (!isChecked) {
+                    Preferences.setPrefs("Lang mode", "FR",context);
+                    Preferences.setPrefs("lang",false,context);
+                    tv_lang.setText("Langue : Français");
+                } else {
+                    Preferences.setPrefs("Lang mode", "EN",context);
+                    Preferences.setPrefs("lang",true,context);
+                    tv_lang.setText("Langue : Anglais");
+                }
+
+            }
+        });
 
         switch_settings.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -60,7 +86,6 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
                     dest.setEnabled(false);
                     valider.setEnabled(false);
                     Preferences.setPrefs("Notification mode", "false",context);
-                    NotificationHelper.cancelAlarmRTC();
                 }
 
             }
@@ -69,7 +94,12 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
             @Override
             public void onClick(View v) {
                 createNotificationChannel();
-                NotificationHelper.scheduleRepeatingRTCNotification(context,""+mHour,""+mMinute);
+                if(switch_settings.isChecked()){
+                    NotificationHelper.scheduleRepeatingRTCNotification(context,mHour,mMinute);
+                }else{
+                    NotificationHelper.cancelAlarmRTC();
+                }
+                finish();
             }
         });
         setdate.setOnClickListener(this);
@@ -104,6 +134,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
                                               int minute) {
 
                             dest.setText(hourOfDay + ":" + minute);
+                            mMinute = minute;
                         }
                     }, mHour, mMinute, true);
             timePickerDialog.show();

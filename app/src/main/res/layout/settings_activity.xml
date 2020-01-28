@@ -2,29 +2,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
-
+    android:orientation="vertical"
+    android:background="@drawable/bg">
 
     <LinearLayout
-        android:id="@+id/layout_toggle"
+        android:id="@+id/layout_toggle_lang"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="100dp"
-        android:orientation="horizontal">
+        android:layout_margin="20dp"
+        android:orientation="horizontal"
+        android:background="@drawable/shape_outer">
         <TextView
+            android:id="@+id/lang_text"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:textAlignment="center"
             android:gravity="center"
             android:layout_weight="4"
-            android:text="Toggle Notification : Disabled"/>
+            android:text="Langue : Français "/>
         <View
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_weight="1"/>
         <Switch
-            android:id="@+id/switch_settings"
+            android:id="@+id/switch_lang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal" />
@@ -33,45 +35,81 @@
             android:layout_height="0dp"
             android:layout_weight="1"/>
     </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layout_setdate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/layout_toggle"
-        android:orientation="horizontal">
-    <Button
-        android:id="@+id/button_setdate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button_setdate"
-        android:layout_weight="1"
-        android:enabled="false"/>
-    <EditText
-        android:id="@+id/dest"
-        android:layout_width="wrap_content"
-        android:layout_weight="2"
-        android:layout_height="wrap_content"/>
-    </LinearLayout>
-    <Button
-    android:id="@+id/valider"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/layout_setdate"
-    android:text="@string/valider"
-    android:enabled="false"/>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="50dp"
-        android:layout_gravity="bottom">
-
-        <TextView
+        app:layout_constraintTop_toBottomOf="@id/layout_toggle_lang"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+        android:background="@drawable/shape_outer">
+        <LinearLayout
+            android:id="@+id/layout_toggle"
+            app:layout_constraintTop_toBottomOf="@id/layout_toggle_lang"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="@string/a_propos"/>
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:layout_weight="4"
+                android:text="Toggle Notification "/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+            <Switch
+                android:id="@+id/switch_settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_setdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/layout_toggle"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/button_setdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/button_setdate"
+                android:layout_weight="1"
+                android:enabled="false"/>
+            <TextView
+                android:id="@+id/date_result_picker"
+                android:layout_width="wrap_content"
+                android:layout_weight="2"
+                android:layout_marginStart="20dp"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <Button
+            android:id="@+id/valider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/layout_setdate"
+            android:text="@string/valider"
+            android:enabled="false"/>
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        android:textColor="@color/caldroid_white"
+        android:text="@string/a_propos"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

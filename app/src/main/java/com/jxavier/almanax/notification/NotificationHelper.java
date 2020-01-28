@@ -5,6 +5,8 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
+
 import java.util.Calendar;
 
 import static android.content.Context.ALARM_SERVICE;
@@ -14,20 +16,16 @@ public class NotificationHelper {
     private static AlarmManager alarmManagerRTC;
     private static PendingIntent alarmIntentRTC;
 
-    public static void scheduleRepeatingRTCNotification(Context context, String hour, String min) {
+    public static void scheduleRepeatingRTCNotification(Context context, int hour, int min) {
 
         Calendar calendar = Calendar.getInstance();
-        calendar.setTimeInMillis(System.currentTimeMillis());
-        calendar.set(Calendar.HOUR_OF_DAY,
-                Integer.getInteger(hour, 8),
-                Integer.getInteger(min, 0));
+        calendar.set(Calendar.HOUR_OF_DAY,hour);
+        calendar.set(Calendar.MINUTE,min);
 
         Intent intent = new Intent(context, AlarmReceiver.class);
 
         alarmIntentRTC = PendingIntent.getBroadcast(context, ALARM_TYPE_RTC, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-
         alarmManagerRTC = (AlarmManager) context.getSystemService(ALARM_SERVICE);
-
         alarmManagerRTC.setRepeating(AlarmManager.RTC_WAKEUP,
                 calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, alarmIntentRTC);
     }

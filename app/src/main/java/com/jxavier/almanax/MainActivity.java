@@ -29,11 +29,12 @@ import com.google.android.material.snackbar.Snackbar;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.RelativeSizeSpan;
-import android.util.Log;
 import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
-import com.roomorama.caldroid.CaldroidFragment;
+import com.jxavier.almanax.nav_bar.ProgressionFragment;
+import com.jxavier.almanax.nav_bar.SearchFragment;
+import com.jxavier.almanax.nav_bar.SemaineFragment;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
@@ -75,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     SimpleDateFormat sdf = new SimpleDateFormat("MM-dd");
     final String  date = sdf.format(calendar.getTime());
     Fragment fragment = null;
-    public boolean onCreateDone;
+    public boolean lang;
     FloatingActionButton fab;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -165,7 +166,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
            connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
             setTodayAlmanax(progressBar1,progressBar2,bossView,objectIDView,nameView,offeringView,bonusTitleView,bonusDescView);
-            onCreateDone = true;
         }else{
             Glide.with(context)
                     .load(R.drawable.picto_asset_dofus)
@@ -193,20 +193,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         public void onClick(DialogInterface dialog, int id) {
                             startActivity(new Intent(WifiManager.ACTION_PICK_WIFI_NETWORK));
                         }}).show();
-            onCreateDone = false;
         }
 
         //------------------------------------------------------------------------------------------
         // Update background
         //------------------------------------------------------------------------------------------
         setBackground();
-
+        if(Preferences.getPrefsBoolean("lang",context)){
+            lang = true;
+        }else{
+            lang = false;
+        }
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-
         //-----------------------------------------------
         // References
         //-----------------------------------------------
@@ -229,7 +231,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //-----------------------------------------------
         // Update image
         //-----------------------------------------------
-        if(!onCreateDone){
+        if(lang != Preferences.getPrefsBoolean("lang",context)){
+            lang = Preferences.getPrefsBoolean("lang",context);
             ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
             if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
                     connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
@@ -380,7 +383,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                  final TextView bonusDescView){
         Calendar calendar = Calendar.getInstance();
         final int dayOfYear = calendar.get(Calendar.DAY_OF_YEAR);
-        String url = Utils.URL;
+        String url;
+        if(Preferences.getPrefs("Lang mode",context).equals("FR")){
+            url = Utils.URL_FR;
+        }else{
+            url = Utils.URL_EN;
+        }
             // Instantiate the RequestQueue.
             RequestQueue queue = Volley.newRequestQueue(this);
             JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,

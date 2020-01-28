@@ -1,9 +1,12 @@
-package com.jxavier.almanax;
+package com.jxavier.almanax.nav_bar;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.RelativeSizeSpan;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,8 +27,12 @@ import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
+import com.jxavier.almanax.Preferences;
+import com.jxavier.almanax.R;
+import com.jxavier.almanax.Utils;
 import com.roomorama.caldroid.CaldroidFragment;
 import com.roomorama.caldroid.CaldroidListener;
+import com.roomorama.caldroid.CalendarHelper;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -39,6 +46,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+
+import hirondelle.date4j.DateTime;
 
 /**
  * Created by Belal on 18/09/16.
@@ -64,6 +73,7 @@ public class ProgressionFragment extends Fragment {
         FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
         Bundle args = new Bundle();
         Calendar cal = Calendar.getInstance();
+        args.putInt(CaldroidFragment.START_DAY_OF_WEEK, CaldroidFragment.MONDAY);
         args.putInt(CaldroidFragment.MONTH, cal.get(Calendar.MONTH) + 1);
         args.putInt(CaldroidFragment.YEAR, cal.get(Calendar.YEAR));
         caldroidFragment.setArguments(args);
@@ -104,8 +114,13 @@ public class ProgressionFragment extends Fragment {
         final ProgressBar progressBar1 = (ProgressBar) item.findViewById(R.id.progress1);
         final ProgressBar progressBar2 = (ProgressBar) item.findViewById(R.id.progress2);
         item.setVisibility(View.GONE);
-
-
+        ArrayList<String> done_almanax = Preferences.getArrayPrefs("done",getContext());
+        String date_text= done_almanax.size()+"/365";
+        SpannableString ss1=  new SpannableString(date_text);
+        ss1.setSpan(new RelativeSizeSpan(1.5f), 1,ss1.length(), 0); // set size
+        ss1.setSpan(new ForegroundColorSpan(Color.parseColor("#efbf31")), 0, date_text.length(),0);// set color
+        TextView tv= (TextView) getView().findViewById(R.id.objectif_text);
+        tv.setText(ss1);
         setAlmanaxDone(caldroidFragment);
         CaldroidListener listener = createListener(progressBar1,progressBar2,bossView,objectIDView,nameView,offeringView,bonusTitleView,bonusDescView);
         caldroidFragment.setCaldroidListener(listener);
@@ -123,14 +138,19 @@ public class ProgressionFragment extends Fragment {
 
             @Override
             public void onSelectDate(Date date_selected, View view) {
+                caldroidFragment.setTextColorForDate(R.color.caldroid_light_red, date_selected);
                 final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                Log.d("TEST", date_selected.toString());
                 SimpleDateFormat sdf_month = new SimpleDateFormat("MM");
                 SimpleDateFormat sdf_day= new SimpleDateFormat("dd");
                 final String day = sdf_day.format(date_selected.getTime());
                 final String month = sdf_month.format(date_selected.getTime());
                 final String date_almanax = sdf.format(date_selected.getTime());
-                String url = Utils.URL;
+                String url;
+                if(Preferences.getPrefs("Lang mode",getContext()).equals("FR")){
+                    url = Utils.URL_FR;
+                }else{
+                    url = Utils.URL_EN;
+                }
                 Calendar cal = Calendar.getInstance();
                 cal.setTime(date_selected);
                 final int dayOfYear = cal.get(Calendar.DAY_OF_YEAR);

@@ -1,4 +1,4 @@
-package com.jxavier.almanax;
+package com.jxavier.almanax.nav_bar;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -9,10 +9,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
-import androidx.fragment.app.Fragment;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -25,6 +21,9 @@ import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
+import com.jxavier.almanax.Preferences;
+import com.jxavier.almanax.R;
+import com.jxavier.almanax.Utils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -32,8 +31,12 @@ import org.json.JSONObject;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
 
-public class SearchFragment extends Fragment {
+
+public class SemaineFragment extends Fragment {
 
     Calendar calendar = Calendar.getInstance();
     SimpleDateFormat sdf = new SimpleDateFormat("MM-dd");
@@ -43,7 +46,7 @@ public class SearchFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        v = inflater.inflate(R.layout.fragment_search, container, false);
+        v = inflater.inflate(R.layout.fragment_semaine, container, false);
         calendar.add(Calendar.DATE,-1);
         LinearLayout ll = (LinearLayout)v.findViewById(R.id.listView);
         fillInfo((LinearLayout)v.findViewById(R.id.item1));
@@ -56,6 +59,13 @@ public class SearchFragment extends Fragment {
         return v;
     }
 
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        //you can set the title for your toolbar here for different fragments different titles
+        getActivity().setTitle("Semaine");
+    }
+
     public void fillInfo(LinearLayout ll){
         calendar.add(Calendar.DATE,1);
         String date = sdf.format(calendar.getTime());
@@ -66,20 +76,18 @@ public class SearchFragment extends Fragment {
         setDayAlmanax(ll,progressBar2,objectIDView,nameView,offeringView,date);
     }
 
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        //you can set the title for your toolbar here for different fragments different titles
-        getActivity().setTitle("Semaine");
-    }
-
     private void setDayAlmanax(final LinearLayout ll,
                                final ProgressBar progressBar2,
                                final ImageView objectIDView,
                                final TextView nameView,
                                final TextView offeringView,
                                final String date){
-        String url = Utils.URL;
+        String url;
+        if(Preferences.getPrefs("Lang mode",getContext()).equals("FR")){
+            url = Utils.URL_FR;
+        }else{
+            url = Utils.URL_EN;
+        }
         // Instantiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(getActivity());
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,

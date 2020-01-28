@@ -10,6 +10,10 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
+
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -28,12 +32,8 @@ import org.json.JSONObject;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
-import androidx.fragment.app.Fragment;
 
-
-public class SemaineFragment extends Fragment {
+public class SearchFragment extends Fragment {
 
     Calendar calendar = Calendar.getInstance();
     SimpleDateFormat sdf = new SimpleDateFormat("MM-dd");
@@ -43,7 +43,7 @@ public class SemaineFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        v = inflater.inflate(R.layout.fragment_semaine, container, false);
+        v = inflater.inflate(R.layout.fragment_search, container, false);
         calendar.add(Calendar.DATE,-1);
         LinearLayout ll = (LinearLayout)v.findViewById(R.id.listView);
         fillInfo((LinearLayout)v.findViewById(R.id.item1));

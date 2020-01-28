@@ -195,5 +195,4 @@ public class ProgressionFragment extends Fragment {
         };
         return listener;
     }
-
 }

@@ -334,7 +334,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             }
             case R.id.nav_search : {
-                //fragment = new Fragment();
+                fragment = new SearchFragment();
+                fab.setEnabled(false);
+                fab.setClickable(false);
+                fab.setAlpha(0f);
                 break;
             }
             case R.id.nav_medals : {

@@ -89,10 +89,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
 
         if(!Preferences.getPrefsBoolean("lang",context)){
-            lang = true;
+            lang = false;
             setTitle("Almanax du jour");
         }else{
-            lang = false;
+            lang = true;
             setTitle("Almanax of the day");
         }
         //------------------------------------------------------------------------------------------
@@ -232,8 +232,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         MenuItem nav_week = menuNav.findItem(R.id.nav_week);
         MenuItem nav_calendar = menuNav.findItem(R.id.nav_calendar);
         MenuItem nav_search = menuNav.findItem(R.id.nav_search);
-        if(!Preferences.getPrefsBoolean("lang",context)){
-            lang = true;
+        if(Preferences.getPrefs("Lang mode",context).equals("FR")){
+            lang = false;
             if(fragment instanceof Fragment){
                 setTitle("Almanax du jour");
                 nav_today.setChecked(true);
@@ -251,7 +251,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 setTitle("7 prochains jours");
             }
         }else{
-            lang = false;
+            lang = true;
             if(fragment instanceof Fragment){
                 nav_today.setChecked(true);
                 setTitle("Almanax of the day");
@@ -269,7 +269,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 setTitle("Next 7 days");
             }
         }
-        if(!Preferences.getPrefsBoolean("lang",context)){
+        if(Preferences.getPrefs("Lang mode",context).equals("FR")){
             nav_today.setTitle("Aujourd'hui");
             nav_week.setTitle("Semaine");
             nav_calendar.setTitle("Calendrier");
@@ -297,40 +297,37 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //-----------------------------------------------
         // Update image
         //-----------------------------------------------
-        if(lang != Preferences.getPrefsBoolean("lang",context)){
-            lang = Preferences.getPrefsBoolean("lang",context);
-            ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
-            if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
-                    connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
-                Utils.setTodayAlmanax(progressBar1,progressBar2,bossView,objectIDView,nameView,offeringView,bonusTitleView,bonusDescView,date,context,lang);
-            }else{
-                Glide.with(context)
-                        .load(R.drawable.picto_asset_dofus)
-                        .into(bossView);
-                Glide.with(context)
-                        .load(R.drawable.picto_asset_dofus)
-                        .into(objectIDView);
-                bossView.setVisibility(View.VISIBLE);
-                objectIDView.setVisibility(View.VISIBLE);
-                bossView.setVisibility(View.VISIBLE);
-                progressBar1.setVisibility(View.GONE);
-                progressBar2.setVisibility(View.GONE);
-                Toast.makeText(this,"Not Connected to Internet, please turn on wifi or data",Toast.LENGTH_LONG).show();
+        ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
+                connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
+            Utils.setTodayAlmanax(progressBar1,progressBar2,bossView,objectIDView,nameView,offeringView,bonusTitleView,bonusDescView,date,context,lang);
+        }else{
+            Glide.with(context)
+                    .load(R.drawable.picto_asset_dofus)
+                    .into(bossView);
+            Glide.with(context)
+                    .load(R.drawable.picto_asset_dofus)
+                    .into(objectIDView);
+            bossView.setVisibility(View.VISIBLE);
+            objectIDView.setVisibility(View.VISIBLE);
+            bossView.setVisibility(View.VISIBLE);
+            progressBar1.setVisibility(View.GONE);
+            progressBar2.setVisibility(View.GONE);
+            Toast.makeText(this,"Not Connected to Internet, please turn on wifi or data",Toast.LENGTH_LONG).show();
 
-                //ALERT DIALOG
-                final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setTitle("Wifi not enabled");
-                builder.setMessage("go to parameters ?");
-                builder
-                        .setNegativeButton("restart", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                triggerRebirth();
-                            }})
-                        .setPositiveButton("paramètres", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                startActivity(new Intent(WifiManager.ACTION_PICK_WIFI_NETWORK));
-                            }}).show();
-            }
+            //ALERT DIALOG
+            final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Wifi not enabled");
+            builder.setMessage("go to parameters ?");
+            builder
+                    .setNegativeButton("restart", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            triggerRebirth();
+                        }})
+                    .setPositiveButton("paramètres", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            startActivity(new Intent(WifiManager.ACTION_PICK_WIFI_NETWORK));
+                        }}).show();
         }
         setBackground();
     }
@@ -375,11 +372,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         switch (id){
             case R.id.nav_today : {
-                if(Preferences.getPrefsBoolean("lang",context)){
-                    lang = true;
+                if(Preferences.getPrefs("Lang mode",context).equals("FR")){
                     setTitle("Almanax du jour");
                 }else{
-                    lang = false;
                     setTitle("Almanax of the day");
                 }
                 fragment = new Fragment();

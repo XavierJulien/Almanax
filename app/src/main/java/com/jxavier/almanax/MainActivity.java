@@ -29,6 +29,7 @@ import com.google.android.material.snackbar.Snackbar;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.RelativeSizeSpan;
+import android.util.Log;
 import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
@@ -68,25 +69,32 @@ import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    private Context context = MainActivity.this;
     //-----------------------------------------------
     // Date
     //-----------------------------------------------
     Calendar calendar = Calendar.getInstance();
-    SimpleDateFormat sdf = new SimpleDateFormat("MM-dd");
-    final String  date = sdf.format(calendar.getTime());
-    Fragment fragment = null;
+    final String  date = new SimpleDateFormat("MM-dd").format(calendar.getTime());
+
+    private Context context = MainActivity.this;
     public boolean lang;
     FloatingActionButton fab;
+    Fragment fragment = null;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        setTitle("Almanax du jour");
 
-
+        if(!Preferences.getPrefsBoolean("lang",context)){
+            lang = true;
+            setTitle("Almanax du jour");
+        }else{
+            lang = false;
+            setTitle("Almanax of the day");
+        }
         //------------------------------------------------------------------------------------------
         // PROGRESSION
         //------------------------------------------------------------------------------------------
@@ -131,9 +139,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
 
         Menu menuNav=navigationView.getMenu();
-        MenuItem nav_item2 = menuNav.findItem(R.id.nav_today);
-        nav_item2.setChecked(true);
-
+        MenuItem nav_today = menuNav.findItem(R.id.nav_today);
+        nav_today.setChecked(true);
+        MenuItem nav_week = menuNav.findItem(R.id.nav_week);
+        MenuItem nav_calendar = menuNav.findItem(R.id.nav_calendar);
+        MenuItem nav_search = menuNav.findItem(R.id.nav_search);
+        if(!Preferences.getPrefsBoolean("lang",context)){
+            nav_today.setTitle("Aujourd'hui");
+            nav_week.setTitle("Semaine");
+            nav_calendar.setTitle("Calendrier");
+            nav_search.setTitle("Recherche");
+        }else{
+            nav_today.setTitle("Today");
+            nav_week.setTitle("Week");
+            nav_calendar.setTitle("Calendar");
+            nav_search.setTitle("Search");
+        }
 
         //------------------------------------------------------------------------------------------
         // Permissions
@@ -151,13 +172,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         final TextView offeringView = findViewById(R.id.offering);
         final TextView bonusTitleView = findViewById(R.id.bonustitle);
         final TextView bonusDescView = findViewById(R.id.bonusdesc);
-
-
-        //------------------------------------------------------------------------------------------
-        // Images MàJ
-        //------------------------------------------------------------------------------------------
         final ProgressBar progressBar1 = (ProgressBar) findViewById(R.id.progress1);
         final ProgressBar progressBar2 = (ProgressBar) findViewById(R.id.progress2);
+
+
+        //------------------------------------------------------------------------------------------
+        // Check Lang
+        //------------------------------------------------------------------------------------------
 
         //------------------------------------------------------------------------------------------
         // Update image
@@ -165,7 +186,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
         if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
            connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
-            setTodayAlmanax(progressBar1,progressBar2,bossView,objectIDView,nameView,offeringView,bonusTitleView,bonusDescView);
+            Utils.setTodayAlmanax(progressBar1,progressBar2,bossView,objectIDView,nameView,offeringView,bonusTitleView,bonusDescView,date,context,lang);
         }else{
             Glide.with(context)
                     .load(R.drawable.picto_asset_dofus)
@@ -194,21 +215,71 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             startActivity(new Intent(WifiManager.ACTION_PICK_WIFI_NETWORK));
                         }}).show();
         }
-
         //------------------------------------------------------------------------------------------
         // Update background
         //------------------------------------------------------------------------------------------
         setBackground();
-        if(Preferences.getPrefsBoolean("lang",context)){
-            lang = true;
-        }else{
-            lang = false;
-        }
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        Menu menuNav=navigationView.getMenu();
+        MenuItem nav_today = menuNav.findItem(R.id.nav_today);
+        MenuItem nav_week = menuNav.findItem(R.id.nav_week);
+        MenuItem nav_calendar = menuNav.findItem(R.id.nav_calendar);
+        MenuItem nav_search = menuNav.findItem(R.id.nav_search);
+        if(!Preferences.getPrefsBoolean("lang",context)){
+            lang = true;
+            if(fragment instanceof Fragment){
+                setTitle("Almanax du jour");
+                nav_today.setChecked(true);
+            }
+            if(fragment instanceof ProgressionFragment){
+                nav_calendar.setChecked(true);
+                setTitle("Calendrier");
+            }
+            if(fragment instanceof SearchFragment){
+                nav_search.setChecked(true);
+                setTitle("Recherche");
+            }
+            if(fragment instanceof SemaineFragment){
+                nav_week.setChecked(true);
+                setTitle("7 prochains jours");
+            }
+        }else{
+            lang = false;
+            if(fragment instanceof Fragment){
+                nav_today.setChecked(true);
+                setTitle("Almanax of the day");
+            }
+            if(fragment instanceof ProgressionFragment){
+                nav_calendar.setChecked(true);
+                setTitle("Calendar");
+            }
+            if(fragment instanceof SearchFragment){
+                nav_search.setChecked(true);
+                setTitle("Search");
+            }
+            if(fragment instanceof SemaineFragment){
+                nav_week.setChecked(true);
+                setTitle("Next 7 days");
+            }
+        }
+        if(!Preferences.getPrefsBoolean("lang",context)){
+            nav_today.setTitle("Aujourd'hui");
+            nav_week.setTitle("Semaine");
+            nav_calendar.setTitle("Calendrier");
+            nav_search.setTitle("Recherche");
+        }else{
+            nav_today.setTitle("Today");
+            nav_week.setTitle("Week");
+            nav_calendar.setTitle("Calendar");
+            nav_search.setTitle("Search");
+        }
         //-----------------------------------------------
         // References
         //-----------------------------------------------
@@ -220,11 +291,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         final TextView offeringView = findViewById(R.id.offering);
         final TextView bonusTitleView = findViewById(R.id.bonustitle);
         final TextView bonusDescView = findViewById(R.id.bonusdesc);
-
-
-        //-----------------------------------------------
-        // Images MàJ
-        //-----------------------------------------------
         final ProgressBar progressBar1 = (ProgressBar) findViewById(R.id.progress1);
         final ProgressBar progressBar2 = (ProgressBar) findViewById(R.id.progress2);
 
@@ -236,7 +302,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
             if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
                     connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
-                setTodayAlmanax(progressBar1,progressBar2,bossView,objectIDView,nameView,offeringView,bonusTitleView,bonusDescView);
+                Utils.setTodayAlmanax(progressBar1,progressBar2,bossView,objectIDView,nameView,offeringView,bonusTitleView,bonusDescView,date,context,lang);
             }else{
                 Glide.with(context)
                         .load(R.drawable.picto_asset_dofus)
@@ -266,6 +332,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             }}).show();
             }
         }
+        setBackground();
     }
 
     @Override
@@ -287,12 +354,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             Intent intent = new Intent(this, SettingsActivity.class);
             startActivity(intent);
@@ -304,18 +366,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
         if(item.isChecked()){
             DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
             drawer.closeDrawer(GravityCompat.START);
             return true;
         }
         int id = item.getItemId();
-        //creating fragment object
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         switch (id){
             case R.id.nav_today : {
-                setTitle("Almanax du jour");
+                if(Preferences.getPrefsBoolean("lang",context)){
+                    lang = true;
+                    setTitle("Almanax du jour");
+                }else{
+                    lang = false;
+                    setTitle("Almanax of the day");
+                }
                 fragment = new Fragment();
                 fab.setEnabled(true);
                 fab.setClickable(true);
@@ -343,14 +409,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 fab.setAlpha(0f);
                 break;
             }
-            case R.id.nav_medals : {
-                //fragment = new Fragment();
-                break;
-            }
-            case R.id.nav_progress : {
-                //fragment = new Fragment();
-                break;
-            }
         }
 
         //replacing the fragment
@@ -364,89 +422,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
-
-
     private void requestStoragePermission() {
         if(!(ActivityCompat.checkSelfPermission(this,READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) ||
            !(ActivityCompat.checkSelfPermission(this,ACCESS_NETWORK_STATE) == PackageManager.PERMISSION_GRANTED)){
             ActivityCompat.requestPermissions(this,new String[]{INTERNET,ACCESS_NETWORK_STATE,READ_EXTERNAL_STORAGE}, 100);
         }
-    }
-
-    private void setTodayAlmanax(final ProgressBar progressBar1,
-                                 final ProgressBar progressBar2,
-                                 final ImageView bossView,
-                                 final ImageView objectIDView,
-                                 final TextView nameView,
-                                 final TextView offeringView,
-                                 final TextView bonusTitleView,
-                                 final TextView bonusDescView){
-        Calendar calendar = Calendar.getInstance();
-        final int dayOfYear = calendar.get(Calendar.DAY_OF_YEAR);
-        String url;
-        if(Preferences.getPrefs("Lang mode",context).equals("FR")){
-            url = Utils.URL_FR;
-        }else{
-            url = Utils.URL_EN;
-        }
-            // Instantiate the RequestQueue.
-            RequestQueue queue = Volley.newRequestQueue(this);
-            JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
-                    new Response.Listener<JSONObject>() {
-                        @Override
-                        public void onResponse(JSONObject response) {
-                            try {
-                                JSONObject dofus = response.getJSONObject("dofus");
-                                JSONObject day = dofus.getJSONObject(date);
-                                Glide.with(context)
-                                        .load("https://staticns.ankama.com/krosmoz/img/uploads/event/"+(160+dayOfYear)+"/boss_all_96_128.png")
-                                        .listener(new RequestListener<Drawable>() {
-                                            @Override
-                                            public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
-                                                progressBar1.setVisibility(View.GONE);
-                                                return false;
-                                            }
-                                            @Override
-                                            public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
-                                                progressBar1.setVisibility(View.GONE);
-                                                return false;
-                                            }
-                                        })
-                                        .into(bossView);
-                                Glide.with(context)
-                                        .load("https://static.ankama.com/dofus/www/game/items/200/"+day.getString("objectID")+".png")
-                                        .listener(new RequestListener<Drawable>() {
-                                            @Override
-                                            public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
-                                                progressBar2.setVisibility(View.GONE);
-                                                return false;
-                                            }
-                                            @Override
-                                            public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
-                                                progressBar2.setVisibility(View.GONE);
-                                                return false;
-                                            }
-                                        })
-                                        .into(objectIDView);
-
-                                bossView.setVisibility(View.VISIBLE);
-                                objectIDView.setVisibility(View.VISIBLE);
-                                nameView.setText("Quête : Offrande à "+day.getString("name"));
-                                offeringView.setText("Récupérer "+day.getString("offering")+" et rapporter l'offrande à Théodoran Ax");
-                                bonusTitleView.setText(day.getString("bonusTitle"));
-                                bonusDescView.setText(day.getString("bonusDescription"));
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    },
-                    new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-                            error.printStackTrace();
-                        }
-                    });
-            queue.add(request);
     }
 
     private void setBackground(){
@@ -592,28 +572,44 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             seasonView.setBackgroundResource(R.drawable.winter_season);
             clockView.setBackgroundResource(R.drawable.winter_clock);
             backgroundView.setBackgroundResource(R.drawable.winter_bg_almanax);
-            almanax_season.setText("Winter");
+            if(lang){
+                almanax_season.setText("Hiver");
+            }else{
+                almanax_season.setText("Winter");
+            }
             almanax_icon.setImageResource(R.drawable.winter_season);
         }
         if(season.equals("autumn")){
             seasonView.setBackgroundResource(R.drawable.autumn_season);
             clockView.setBackgroundResource(R.drawable.autumn_clock);
             backgroundView.setBackgroundResource(R.drawable.autumn_bg_almanax);
-            almanax_season.setText("Autumn");
+            if(lang){
+                almanax_season.setText("Automne");
+            }else{
+                almanax_season.setText("Autumn");
+            }
             almanax_icon.setImageResource(R.drawable.autumn_season);
         }
         if(season.equals("summer")){
             seasonView.setBackgroundResource(R.drawable.summer_season);
             clockView.setBackgroundResource(R.drawable.summer_clock);
             backgroundView.setBackgroundResource(R.drawable.summer_bg_almanax);
-            almanax_season.setText("Summer");
+            if(lang){
+                almanax_season.setText("Été");
+            }else{
+                almanax_season.setText("Summer");
+            }
             almanax_icon.setImageResource(R.drawable.summer_season);
         }
         if(season.equals("spring")){
             seasonView.setBackgroundResource(R.drawable.spring_season);
             clockView.setBackgroundResource(R.drawable.spring_clock);
             backgroundView.setBackgroundResource(R.drawable.spring_bg_almanax);
-            almanax_season.setText("Spring");
+            if(lang){
+                almanax_season.setText("Printemps");
+            }else{
+                almanax_season.setText("Spring");
+            }
             almanax_icon.setImageResource(R.drawable.spring_season);
         }
     }

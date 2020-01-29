@@ -21,18 +21,4 @@
             android:icon="@drawable/search"
             android:title="Recherche" />
     </group>
-
-    <item android:title="Achievements">
-        <menu>
-            <item
-                android:id="@+id/nav_progress"
-                android:icon="@drawable/progress"
-                android:title="Progression" />
-            <item
-                android:id="@+id/nav_medals"
-                android:icon="@drawable/medals"
-                android:title="Médailles" />
-        </menu>
-    </item>
-
 </menu>

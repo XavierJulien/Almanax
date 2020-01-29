@@ -32,7 +32,6 @@ import com.jxavier.almanax.R;
 import com.jxavier.almanax.Utils;
 import com.roomorama.caldroid.CaldroidFragment;
 import com.roomorama.caldroid.CaldroidListener;
-import com.roomorama.caldroid.CalendarHelper;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -47,18 +46,11 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import hirondelle.date4j.DateTime;
-
-/**
- * Created by Belal on 18/09/16.
- */
-
 
 public class ProgressionFragment extends Fragment {
 
     Calendar calendar = Calendar.getInstance();
-    SimpleDateFormat sdf = new SimpleDateFormat("MM-dd");
-    final String date = sdf.format(calendar.getTime());
+    final String date = new SimpleDateFormat("MM-dd").format(calendar.getTime());
     final CaldroidFragment caldroidFragment = new CaldroidFragment();
     private View v;
     LinearLayout item;
@@ -67,8 +59,6 @@ public class ProgressionFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        //returning our layout file
-        //change R.layout.yourlayoutfilename for each of your fragments
         v = inflater.inflate(R.layout.fragment_month, container, false);
         FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
         Bundle args = new Bundle();
@@ -100,7 +90,11 @@ public class ProgressionFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        getActivity().setTitle("Progression");
+        if(!Preferences.getPrefsBoolean("lang",getContext())){
+            getActivity().setTitle("Calendrier");
+        }else{
+            getActivity().setTitle("Calendar");
+        }
         //References
         item =(LinearLayout) getView().findViewById(R.id.affichage);
         final ImageView objectIDView = item.findViewById(R.id.objectid);
@@ -144,73 +138,133 @@ public class ProgressionFragment extends Fragment {
                 SimpleDateFormat sdf_day= new SimpleDateFormat("dd");
                 final String day = sdf_day.format(date_selected.getTime());
                 final String month = sdf_month.format(date_selected.getTime());
-                final String date_almanax = sdf.format(date_selected.getTime());
-                String url;
-                if(Preferences.getPrefs("Lang mode",getContext()).equals("FR")){
-                    url = Utils.URL_FR;
-                }else{
-                    url = Utils.URL_EN;
-                }
+                final String date_almanax = new SimpleDateFormat("MM-dd").format(date_selected.getTime());
                 Calendar cal = Calendar.getInstance();
                 cal.setTime(date_selected);
                 final int dayOfYear = cal.get(Calendar.DAY_OF_YEAR);
-                RequestQueue queue = Volley.newRequestQueue(getActivity());
-                JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
-                        new Response.Listener<JSONObject>() {
-                            @Override
-                            public void onResponse(JSONObject response) {
-                                try {
-                                    JSONObject dofus = response.getJSONObject("dofus");
-                                    final JSONObject objectif = dofus.getJSONObject(""+month+"-"+day);
-                                    Glide.with(getContext())
-                                            .load("https://staticns.ankama.com/krosmoz/img/uploads/event/"+(160+dayOfYear)+"/boss_all_96_128.png")
-                                            .listener(new RequestListener<Drawable>() {
-                                                @Override
-                                                public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
-                                                    progressBar1.setVisibility(View.GONE);
-                                                    return false;
-                                                }
-                                                @Override
-                                                public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
-                                                    progressBar1.setVisibility(View.GONE);
-                                                    return false;
-                                                }
-                                            })
-                                            .into(bossView);
-                                    Glide.with(getContext())
-                                            .load("https://static.ankama.com/dofus/www/game/items/200/"+objectif.getString("objectID")+".png")
-                                            .listener(new RequestListener<Drawable>() {
-                                                @Override
-                                                public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
-                                                    progressBar2.setVisibility(View.GONE);
-                                                    return false;
-                                                }
-                                                @Override
-                                                public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
-                                                    progressBar2.setVisibility(View.GONE);
-                                                    return false;
-                                                }
-                                            })
-                                            .into(objectIDView);
-                                    bossView.setVisibility(View.VISIBLE);
-                                    objectIDView.setVisibility(View.VISIBLE);
-                                    nameView.setText("Quête : Offrande à "+objectif.getString("name"));
-                                    offeringView.setText("Récupérer "+objectif.getString("offering")+" et rapporter l'offrande à Théodoran Ax");
-                                    bonusTitleView.setText(objectif.getString("bonusTitle"));
-                                    bonusDescView.setText(objectif.getString("bonusDescription"));
-                                    item.setVisibility(View.VISIBLE);
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
+
+                String url;
+                if(Preferences.getPrefs("Lang mode",getContext()).equals("FR")){
+                    url = Utils.URL_FR;
+                    RequestQueue queue = Volley.newRequestQueue(getActivity());
+                    JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
+                            new Response.Listener<JSONObject>() {
+                                @Override
+                                public void onResponse(JSONObject response) {
+                                    try {
+                                        JSONObject dofus = response.getJSONObject("dofus");
+                                        final JSONObject objectif = dofus.getJSONObject(""+month+"-"+day);
+                                        Glide.with(getContext())
+                                                .load("https://staticns.ankama.com/krosmoz/img/uploads/event/"+(160+dayOfYear)+"/boss_all_96_128.png")
+                                                .listener(new RequestListener<Drawable>() {
+                                                    @Override
+                                                    public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+                                                        progressBar1.setVisibility(View.GONE);
+                                                        return false;
+                                                    }
+                                                    @Override
+                                                    public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+                                                        progressBar1.setVisibility(View.GONE);
+                                                        return false;
+                                                    }
+                                                })
+                                                .into(bossView);
+                                        Glide.with(getContext())
+                                                .load("https://static.ankama.com/dofus/www/game/items/200/"+objectif.getString("objectID")+".png")
+                                                .listener(new RequestListener<Drawable>() {
+                                                    @Override
+                                                    public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+                                                        progressBar2.setVisibility(View.GONE);
+                                                        return false;
+                                                    }
+                                                    @Override
+                                                    public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+                                                        progressBar2.setVisibility(View.GONE);
+                                                        return false;
+                                                    }
+                                                })
+                                                .into(objectIDView);
+                                        bossView.setVisibility(View.VISIBLE);
+                                        objectIDView.setVisibility(View.VISIBLE);
+                                        nameView.setText("Quête : Offrande à "+objectif.getString("name"));
+                                        offeringView.setText("Récupérer "+objectif.getString("offering")+" et rapporter l'offrande à Théodoran Ax");
+                                        bonusTitleView.setText(objectif.getString("bonusTitle"));
+                                        bonusDescView.setText(objectif.getString("bonusDescription"));
+                                        item.setVisibility(View.VISIBLE);
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
                                 }
-                            }
-                        },
-                        new Response.ErrorListener() {
-                            @Override
-                            public void onErrorResponse(VolleyError error) {
-                                error.printStackTrace();
-                            }
-                        });
-                queue.add(request);
+                            },
+                            new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                    error.printStackTrace();
+                                }
+                            });
+                    queue.add(request);
+                }else {
+                    url = Utils.URL_EN;
+                    RequestQueue queue = Volley.newRequestQueue(getActivity());
+                    JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
+                            new Response.Listener<JSONObject>() {
+                                @Override
+                                public void onResponse(JSONObject response) {
+                                    try {
+                                        JSONObject dofus = response.getJSONObject("dofus");
+                                        final JSONObject objectif = dofus.getJSONObject("" + month + "-" + day);
+                                        Glide.with(getContext())
+                                                .load("https://staticns.ankama.com/krosmoz/img/uploads/event/" + (160 + dayOfYear) + "/boss_all_96_128.png")
+                                                .listener(new RequestListener<Drawable>() {
+                                                    @Override
+                                                    public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+                                                        progressBar1.setVisibility(View.GONE);
+                                                        return false;
+                                                    }
+
+                                                    @Override
+                                                    public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+                                                        progressBar1.setVisibility(View.GONE);
+                                                        return false;
+                                                    }
+                                                })
+                                                .into(bossView);
+                                        Glide.with(getContext())
+                                                .load("https://static.ankama.com/dofus/www/game/items/200/" + objectif.getString("objectID") + ".png")
+                                                .listener(new RequestListener<Drawable>() {
+                                                    @Override
+                                                    public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+                                                        progressBar2.setVisibility(View.GONE);
+                                                        return false;
+                                                    }
+
+                                                    @Override
+                                                    public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+                                                        progressBar2.setVisibility(View.GONE);
+                                                        return false;
+                                                    }
+                                                })
+                                                .into(objectIDView);
+                                        bossView.setVisibility(View.VISIBLE);
+                                        objectIDView.setVisibility(View.VISIBLE);
+                                        nameView.setText("Quest: Offering for "+ objectif.getString("name"));
+                                        offeringView.setText("Find "+ objectif.getString("offering") + " and take the offering to Antyklime Ax");
+                                        bonusTitleView.setText(objectif.getString("bonusTitle"));
+                                        bonusDescView.setText(objectif.getString("bonusDescription"));
+                                        item.setVisibility(View.VISIBLE);
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            },
+                            new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                    error.printStackTrace();
+                                }
+                            });
+                    queue.add(request);
+                }
             }
         };
         return listener;

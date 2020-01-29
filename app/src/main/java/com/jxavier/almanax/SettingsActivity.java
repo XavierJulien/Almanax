@@ -6,6 +6,9 @@ import android.app.TimePickerDialog;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -13,20 +16,22 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import com.google.android.material.navigation.NavigationView;
 import com.jxavier.almanax.notification.NotificationHelper;
 
 import java.util.Calendar;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 public class SettingsActivity extends AppCompatActivity implements View.OnClickListener {
 
 
 
     Button setdate,valider;
-    TextView dest;
+    TextView dest,tv_lang;
     Switch switch_settings,switch_lang;
-    TextView tv_lang;
     private int mHour, mMinute;
     private Context context;
 
@@ -50,10 +55,18 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
             tv_lang.setText("Langue : Français");
         }
         switch_settings.setChecked(Boolean.valueOf(Preferences.getPrefs("Notification mode",context)));
-        setdate.setEnabled(Boolean.valueOf(Preferences.getPrefs("Notification mode",context)));
-        dest.setEnabled(Boolean.valueOf(Preferences.getPrefs("Notification mode",context)));
-        dest.setText("");
-        valider.setEnabled(Boolean.valueOf(Preferences.getPrefs("Notification mode",context)));
+        if (switch_settings.isChecked()) {
+            setdate.setVisibility(View.VISIBLE);
+            dest.setVisibility(View.VISIBLE);
+            if(!Preferences.getPrefs("time_set_notif",context).equals("notfound")){
+                dest.setText(Preferences.getPrefs("time_set_notif",context));
+            }
+            valider.setVisibility(View.VISIBLE);
+        } else {
+            setdate.setVisibility(View.GONE);
+            dest.setVisibility(View.GONE);
+            valider.setVisibility(View.GONE);
+        }
 
         switch_lang.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -77,14 +90,14 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 //enable notif
                 if (isChecked) {
-                    setdate.setEnabled(true);
-                    dest.setEnabled(true);
-                    valider.setEnabled(true);
+                    setdate.setVisibility(View.VISIBLE);
+                    dest.setVisibility(View.VISIBLE);
+                    valider.setVisibility(View.VISIBLE);
                     Preferences.setPrefs("Notification mode", "true",context);
                 } else {
-                    setdate.setEnabled(false);
-                    dest.setEnabled(false);
-                    valider.setEnabled(false);
+                    setdate.setVisibility(View.GONE);
+                    dest.setVisibility(View.GONE);
+                    valider.setVisibility(View.GONE);
                     Preferences.setPrefs("Notification mode", "false",context);
                 }
 
@@ -95,6 +108,7 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
             public void onClick(View v) {
                 createNotificationChannel();
                 if(switch_settings.isChecked()){
+                    Preferences.setPrefs("time_set_notif",mHour+":"+mMinute,context);
                     NotificationHelper.scheduleRepeatingRTCNotification(context,mHour,mMinute);
                 }else{
                     NotificationHelper.cancelAlarmRTC();
@@ -140,4 +154,5 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
             timePickerDialog.show();
         }
     }
+
 }

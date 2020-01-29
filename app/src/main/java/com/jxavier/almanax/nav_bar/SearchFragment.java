@@ -74,41 +74,77 @@ public class SearchFragment extends Fragment {
         String url;
         if(Preferences.getPrefs("Lang mode",getContext()).equals("FR")){
             url = Utils.URL_FR;
+            RequestQueue queue = Volley.newRequestQueue(getActivity());
+            JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
+                    new Response.Listener<JSONObject>() {
+                        @Override
+                        public void onResponse(JSONObject response) {
+                            try {
+                                JSONObject dofus = response.getJSONObject("dofus");
+                                Iterator<String> iterator = dofus.keys();
+                                while(iterator.hasNext()){
+                                    String next = iterator.next();
+                                    JSONObject item = dofus.getJSONObject(next);
+                                    bonus.add(item.getString("bonusTitle"));
+                                }
+
+                                List<String> list_bonus = new ArrayList<String>(bonus);
+                                Collections.sort(list_bonus);
+                                ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_item, list_bonus);
+                                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                spinner.setAdapter(adapter);
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            error.printStackTrace();
+                        }
+                    });
+            queue.add(request);
         }else{
             url = Utils.URL_EN;
-        }
-        RequestQueue queue = Volley.newRequestQueue(getActivity());
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-                            JSONObject dofus = response.getJSONObject("dofus");
-                            Iterator<String> iterator = dofus.keys();
-                            while(iterator.hasNext()){
-                                String next = iterator.next();
-                                JSONObject item = dofus.getJSONObject(next);
-                                bonus.add(item.getString("bonusTitle"));
+            RequestQueue queue = Volley.newRequestQueue(getActivity());
+            JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
+                    new Response.Listener<JSONObject>() {
+                        @Override
+                        public void onResponse(JSONObject response) {
+                            try {
+                                JSONObject dofus = response.getJSONObject("dofus");
+                                Iterator<String> iterator = dofus.keys();
+                                while(iterator.hasNext()){
+                                    String next = iterator.next();
+                                    JSONObject item = dofus.getJSONObject(next);
+                                    bonus.add(item.getString("bonusTitle"));
+                                }
+
+                                List<String> list_bonus = new ArrayList<String>(bonus);
+                                Collections.sort(list_bonus);
+                                ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_item, list_bonus);
+                                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                                spinner.setAdapter(adapter);
+                            } catch (JSONException e) {
+                                e.printStackTrace();
                             }
-
-                            List<String> list_bonus = new ArrayList<String>(bonus);
-                            Collections.sort(list_bonus);
-                            ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_item, list_bonus);
-                            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                            spinner.setAdapter(adapter);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
                         }
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        error.printStackTrace();
-                    }
-                });
-        queue.add(request);
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            error.printStackTrace();
+                        }
+                    });
+            queue.add(request);
+        }
+    }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        addItemsOnSpinner(v);
     }
 
     @Override

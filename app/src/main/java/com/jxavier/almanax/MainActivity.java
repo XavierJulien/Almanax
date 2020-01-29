@@ -76,7 +76,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     final String  date = new SimpleDateFormat("MM-dd").format(calendar.getTime());
 
     private Context context = MainActivity.this;
-    public boolean lang;
     FloatingActionButton fab;
     Fragment fragment = null;
 
@@ -88,11 +87,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        if(!Preferences.getPrefsBoolean("lang",context)){
-            lang = false;
+        if(Preferences.getPrefs("Lang mode",context).equals("FR")){
             setTitle("Almanax du jour");
         }else{
-            lang = true;
             setTitle("Almanax of the day");
         }
         //------------------------------------------------------------------------------------------
@@ -144,7 +141,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         MenuItem nav_week = menuNav.findItem(R.id.nav_week);
         MenuItem nav_calendar = menuNav.findItem(R.id.nav_calendar);
         MenuItem nav_search = menuNav.findItem(R.id.nav_search);
-        if(!Preferences.getPrefsBoolean("lang",context)){
+        if(Preferences.getPrefs("Lang mode",context).equals("FR")){
             nav_today.setTitle("Aujourd'hui");
             nav_week.setTitle("Semaine");
             nav_calendar.setTitle("Calendrier");
@@ -186,7 +183,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
         if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
            connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
-            Utils.setTodayAlmanax(progressBar1,progressBar2,bossView,objectIDView,nameView,offeringView,bonusTitleView,bonusDescView,date,context,lang);
+            Utils.setTodayAlmanax(progressBar1,progressBar2,bossView,objectIDView,nameView,offeringView,bonusTitleView,bonusDescView,date,context,Preferences.getPrefs("Lang mode",context).equals("FR"));
         }else{
             Glide.with(context)
                     .load(R.drawable.picto_asset_dofus)
@@ -233,11 +230,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         MenuItem nav_calendar = menuNav.findItem(R.id.nav_calendar);
         MenuItem nav_search = menuNav.findItem(R.id.nav_search);
         if(Preferences.getPrefs("Lang mode",context).equals("FR")){
-            lang = false;
-            if(fragment instanceof Fragment){
-                setTitle("Almanax du jour");
-                nav_today.setChecked(true);
-            }
+            setTitle("Almanax du jour");
+            nav_today.setChecked(true);
             if(fragment instanceof ProgressionFragment){
                 nav_calendar.setChecked(true);
                 setTitle("Calendrier");
@@ -251,11 +245,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 setTitle("7 prochains jours");
             }
         }else{
-            lang = true;
-            if(fragment instanceof Fragment){
-                nav_today.setChecked(true);
-                setTitle("Almanax of the day");
-            }
+            nav_today.setChecked(true);
+            setTitle("Almanax of the day");
             if(fragment instanceof ProgressionFragment){
                 nav_calendar.setChecked(true);
                 setTitle("Calendar");
@@ -300,7 +291,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
         if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
                 connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
-            Utils.setTodayAlmanax(progressBar1,progressBar2,bossView,objectIDView,nameView,offeringView,bonusTitleView,bonusDescView,date,context,lang);
+            Utils.setTodayAlmanax(progressBar1,progressBar2,bossView,objectIDView,nameView,offeringView,bonusTitleView,bonusDescView,date,context,Preferences.getPrefs("Lang mode",context).equals("FR"));
         }else{
             Glide.with(context)
                     .load(R.drawable.picto_asset_dofus)
@@ -567,7 +558,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             seasonView.setBackgroundResource(R.drawable.winter_season);
             clockView.setBackgroundResource(R.drawable.winter_clock);
             backgroundView.setBackgroundResource(R.drawable.winter_bg_almanax);
-            if(lang){
+            if(Preferences.getPrefs("Lang mode",context).equals("FR")){
                 almanax_season.setText("Hiver");
             }else{
                 almanax_season.setText("Winter");
@@ -578,7 +569,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             seasonView.setBackgroundResource(R.drawable.autumn_season);
             clockView.setBackgroundResource(R.drawable.autumn_clock);
             backgroundView.setBackgroundResource(R.drawable.autumn_bg_almanax);
-            if(lang){
+            if(Preferences.getPrefs("Lang mode",context).equals("FR")){
                 almanax_season.setText("Automne");
             }else{
                 almanax_season.setText("Autumn");
@@ -589,7 +580,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             seasonView.setBackgroundResource(R.drawable.summer_season);
             clockView.setBackgroundResource(R.drawable.summer_clock);
             backgroundView.setBackgroundResource(R.drawable.summer_bg_almanax);
-            if(lang){
+            if(Preferences.getPrefs("Lang mode",context).equals("FR")){
                 almanax_season.setText("Été");
             }else{
                 almanax_season.setText("Summer");
@@ -600,7 +591,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             seasonView.setBackgroundResource(R.drawable.spring_season);
             clockView.setBackgroundResource(R.drawable.spring_clock);
             backgroundView.setBackgroundResource(R.drawable.spring_bg_almanax);
-            if(lang){
+            if(Preferences.getPrefs("Lang mode",context).equals("FR")){
                 almanax_season.setText("Printemps");
             }else{
                 almanax_season.setText("Spring");

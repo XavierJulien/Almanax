@@ -150,7 +150,7 @@ public class SearchFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        if(!Preferences.getPrefsBoolean("lang",getContext())){
+        if(Preferences.getPrefs("Lang mode",getContext()).equals("FR")){
             getActivity().setTitle("Recherche");
         }else{
             getActivity().setTitle("Search");

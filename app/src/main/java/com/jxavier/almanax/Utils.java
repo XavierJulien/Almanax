@@ -47,7 +47,7 @@ public class Utils {
         put("01", "Javian");
     }};
     public static String URL_EN = "https://api.jsonbin.io/b/5e3079f33d75894195e09cff";
-    public static String URL_FR = "https://api.jsonbin.io/b/5e2824785df640720839f2e3";
+    public static String URL_FR = "https://api.jsonbin.io/b/5e31f8cb50a7fe418c5630bb";
 
     //--------------------------------------------------------------
     // REQUESTS METHODS
@@ -67,7 +67,7 @@ public class Utils {
         Calendar calendar = Calendar.getInstance();
         final int dayOfYear = calendar.get(Calendar.DAY_OF_YEAR);
         String url;
-        if(Preferences.getPrefs("Lang mode",context).equals("FR")){
+        if(lang){
             url = Utils.URL_FR;
             RequestQueue queue = Volley.newRequestQueue(context);
             JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,

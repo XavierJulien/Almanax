@@ -50,7 +50,7 @@ public class SemaineFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         //you can set the title for your toolbar here for different fragments different titles
-        if(!Preferences.getPrefsBoolean("lang",getContext())){
+        if(Preferences.getPrefs("Lang mode",getContext()).equals("FR")){
             getActivity().setTitle("7 prochains jours");
         }else{
             getActivity().setTitle("Next 7 days");

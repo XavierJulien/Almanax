@@ -47,12 +47,13 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
         switch_lang = findViewById(R.id.switch_lang);
         valider = findViewById(R.id.valider);
         tv_lang = findViewById(R.id.lang_text);
-        if(Preferences.getPrefs("Lang mode",context).equals("EN")){
-            switch_lang.setChecked(true);
-            tv_lang.setText("Langue : Anglais");
-        }else{
+
+        if(Preferences.getPrefs("Lang mode",context).equals("FR")){
             switch_lang.setChecked(false);
             tv_lang.setText("Langue : Français");
+        }else{
+            switch_lang.setChecked(true);
+            tv_lang.setText("Langue : Anglais");
         }
         switch_settings.setChecked(Boolean.valueOf(Preferences.getPrefs("Notification mode",context)));
         if (switch_settings.isChecked()) {
@@ -74,11 +75,9 @@ public class SettingsActivity extends AppCompatActivity implements View.OnClickL
                 //enable notif
                 if (!isChecked) {
                     Preferences.setPrefs("Lang mode", "FR",context);
-                    Preferences.setPrefs("lang",false,context);
                     tv_lang.setText("Langue : Français");
                 } else {
                     Preferences.setPrefs("Lang mode", "EN",context);
-                    Preferences.setPrefs("lang",true,context);
                     tv_lang.setText("Langue : Anglais");
                 }
 

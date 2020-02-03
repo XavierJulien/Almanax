@@ -154,8 +154,10 @@ public class ProgressionFragment extends Fragment {
                                     try {
                                         JSONObject dofus = response.getJSONObject("dofus");
                                         final JSONObject objectif = dofus.getJSONObject(""+month+"-"+day);
+                                        int nb_day = 160+dayOfYear;
+                                        if(nb_day>=192) nb_day+=13;
                                         Glide.with(getContext())
-                                                .load("https://staticns.ankama.com/krosmoz/img/uploads/event/"+(160+dayOfYear)+"/boss_all_96_128.png")
+                                                .load("https://staticns.ankama.com/krosmoz/img/uploads/event/"+(nb_day)+"/boss_all_96_128.png")
                                                 .listener(new RequestListener<Drawable>() {
                                                     @Override
                                                     public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
@@ -213,8 +215,10 @@ public class ProgressionFragment extends Fragment {
                                     try {
                                         JSONObject dofus = response.getJSONObject("dofus");
                                         final JSONObject objectif = dofus.getJSONObject("" + month + "-" + day);
+                                        int nb_day = 160+dayOfYear;
+                                        if(nb_day>=192) nb_day+=13;
                                         Glide.with(getContext())
-                                                .load("https://staticns.ankama.com/krosmoz/img/uploads/event/" + (160 + dayOfYear) + "/boss_all_96_128.png")
+                                                .load("https://staticns.ankama.com/krosmoz/img/uploads/event/" + (nb_day) + "/boss_all_96_128.png")
                                                 .listener(new RequestListener<Drawable>() {
                                                     @Override
                                                     public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {

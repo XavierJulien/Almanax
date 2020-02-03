@@ -39,41 +39,42 @@
 23-->C:\Users\Julien\AndroidStudioProjects\Almanax\app\src\main\AndroidManifest.xml:15:9-44
 24        android:supportsRtl="true"
 24-->C:\Users\Julien\AndroidStudioProjects\Almanax\app\src\main\AndroidManifest.xml:16:9-35
-25        android:theme="@style/AppTheme" >
-25-->C:\Users\Julien\AndroidStudioProjects\Almanax\app\src\main\AndroidManifest.xml:17:9-40
-26        <activity
-26-->C:\Users\Julien\AndroidStudioProjects\Almanax\app\src\main\AndroidManifest.xml:18:9-21:61
-27            android:name="com.jxavier.almanax.SettingsActivity"
-27-->C:\Users\Julien\AndroidStudioProjects\Almanax\app\src\main\AndroidManifest.xml:19:13-45
-28            android:label="@string/title_activity_settings"
-28-->C:\Users\Julien\AndroidStudioProjects\Almanax\app\src\main\AndroidManifest.xml:20:13-60
-29            android:screenOrientation="portrait" />
-29-->C:\Users\Julien\AndroidStudioProjects\Almanax\app\src\main\AndroidManifest.xml:21:13-49
-30        <activity
-30-->C:\Users\Julien\AndroidStudioProjects\Almanax\app\src\main\AndroidManifest.xml:22:9-32:20
-31            android:name="com.jxavier.almanax.MainActivity"
-31-->C:\Users\Julien\AndroidStudioProjects\Almanax\app\src\main\AndroidManifest.xml:23:13-41
-32            android:label="@string/app_name"
-32-->C:\Users\Julien\AndroidStudioProjects\Almanax\app\src\main\AndroidManifest.xml:24:13-45
-33            android:screenOrientation="portrait"
-33-->C:\Users\Julien\AndroidStudioProjects\Almanax\app\src\main\AndroidManifest.xml:26:13-49
-34            android:theme="@style/AppTheme.NoActionBar" >
-34-->C:\Users\Julien\AndroidStudioProjects\Almanax\app\src\main\AndroidManifest.xml:25:13-56
-35            <intent-filter>
-35-->C:\Users\Julien\AndroidStudioProjects\Almanax\app\src\main\AndroidManifest.xml:27:13-31:29
-36                <action android:name="android.intent.action.MAIN" />
-36-->C:\Users\Julien\AndroidStudioProjects\Almanax\app\src\main\AndroidManifest.xml:28:17-69
-36-->C:\Users\Julien\AndroidStudioProjects\Almanax\app\src\main\AndroidManifest.xml:28:25-66
-37
-38                <category android:name="android.intent.category.LAUNCHER" />
-38-->C:\Users\Julien\AndroidStudioProjects\Almanax\app\src\main\AndroidManifest.xml:30:17-77
-38-->C:\Users\Julien\AndroidStudioProjects\Almanax\app\src\main\AndroidManifest.xml:30:27-74
-39            </intent-filter>
-40        </activity>
-41
-42        <receiver android:name="com.jxavier.almanax.notification.AlarmReceiver" />
-42-->C:\Users\Julien\AndroidStudioProjects\Almanax\app\src\main\AndroidManifest.xml:33:9-63
-42-->C:\Users\Julien\AndroidStudioProjects\Almanax\app\src\main\AndroidManifest.xml:33:19-61
-43    </application>
-44
-45</manifest>
+25        android:testOnly="true"
+26        android:theme="@style/AppTheme" >
+26-->C:\Users\Julien\AndroidStudioProjects\Almanax\app\src\main\AndroidManifest.xml:17:9-40
+27        <activity
+27-->C:\Users\Julien\AndroidStudioProjects\Almanax\app\src\main\AndroidManifest.xml:18:9-21:61
+28            android:name="com.jxavier.almanax.SettingsActivity"
+28-->C:\Users\Julien\AndroidStudioProjects\Almanax\app\src\main\AndroidManifest.xml:19:13-45
+29            android:label="@string/title_activity_settings"
+29-->C:\Users\Julien\AndroidStudioProjects\Almanax\app\src\main\AndroidManifest.xml:20:13-60
+30            android:screenOrientation="portrait" />
+30-->C:\Users\Julien\AndroidStudioProjects\Almanax\app\src\main\AndroidManifest.xml:21:13-49
+31        <activity
+31-->C:\Users\Julien\AndroidStudioProjects\Almanax\app\src\main\AndroidManifest.xml:22:9-32:20
+32            android:name="com.jxavier.almanax.MainActivity"
+32-->C:\Users\Julien\AndroidStudioProjects\Almanax\app\src\main\AndroidManifest.xml:23:13-41
+33            android:label="@string/app_name"
+33-->C:\Users\Julien\AndroidStudioProjects\Almanax\app\src\main\AndroidManifest.xml:24:13-45
+34            android:screenOrientation="portrait"
+34-->C:\Users\Julien\AndroidStudioProjects\Almanax\app\src\main\AndroidManifest.xml:26:13-49
+35            android:theme="@style/AppTheme.NoActionBar" >
+35-->C:\Users\Julien\AndroidStudioProjects\Almanax\app\src\main\AndroidManifest.xml:25:13-56
+36            <intent-filter>
+36-->C:\Users\Julien\AndroidStudioProjects\Almanax\app\src\main\AndroidManifest.xml:27:13-31:29
+37                <action android:name="android.intent.action.MAIN" />
+37-->C:\Users\Julien\AndroidStudioProjects\Almanax\app\src\main\AndroidManifest.xml:28:17-69
+37-->C:\Users\Julien\AndroidStudioProjects\Almanax\app\src\main\AndroidManifest.xml:28:25-66
+38
+39                <category android:name="android.intent.category.LAUNCHER" />
+39-->C:\Users\Julien\AndroidStudioProjects\Almanax\app\src\main\AndroidManifest.xml:30:17-77
+39-->C:\Users\Julien\AndroidStudioProjects\Almanax\app\src\main\AndroidManifest.xml:30:27-74
+40            </intent-filter>
+41        </activity>
+42
+43        <receiver android:name="com.jxavier.almanax.notification.AlarmReceiver" />
+43-->C:\Users\Julien\AndroidStudioProjects\Almanax\app\src\main\AndroidManifest.xml:33:9-63
+43-->C:\Users\Julien\AndroidStudioProjects\Almanax\app\src\main\AndroidManifest.xml:33:19-61
+44    </application>
+45
+46</manifest>

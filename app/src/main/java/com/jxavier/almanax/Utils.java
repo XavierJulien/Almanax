@@ -2,6 +2,7 @@ package com.jxavier.almanax;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -77,8 +78,11 @@ public class Utils {
                             try {
                                 JSONObject dofus = response.getJSONObject("dofus");
                                 JSONObject day = dofus.getJSONObject(date);
+                                int nb_day = 160+dayOfYear;
+                                if(nb_day>=192) nb_day+=13;
+                                Log.d("DATE", ""+nb_day);
                                 Glide.with(context)
-                                        .load("https://staticns.ankama.com/krosmoz/img/uploads/event/"+(160+dayOfYear)+"/boss_all_96_128.png")
+                                        .load("https://staticns.ankama.com/krosmoz/img/uploads/event/"+(nb_day)+"/boss_all_96_128.png")
                                         .listener(new RequestListener<Drawable>() {
                                             @Override
                                             public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
@@ -136,8 +140,10 @@ public class Utils {
                             try {
                                 JSONObject dofus = response.getJSONObject("dofus");
                                 JSONObject day = dofus.getJSONObject(date);
+                                int nb_day = 160+dayOfYear;
+                                if(nb_day>=192) nb_day+=13;
                                 Glide.with(context)
-                                        .load("https://staticns.ankama.com/krosmoz/img/uploads/event/"+(160+dayOfYear)+"/boss_all_96_128.png")
+                                        .load("https://staticns.ankama.com/krosmoz/img/uploads/event/"+(nb_day)+"/boss_all_96_128.png")
                                         .listener(new RequestListener<Drawable>() {
                                             @Override
                                             public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
